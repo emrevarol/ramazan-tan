@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BABADER — Babalar ve Çocuklar Derneği</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy: #0a0f2c; --navy-light: #141b3d; --navy-mid: #1a2450;
+            --orange: #f97316; --orange-light: #fb923c; --orange-glow: rgba(249,115,22,0.15);
+            --teal: #14b8a6; --teal-light: #2dd4bf; --teal-glow: rgba(20,184,166,0.12);
+            --purple: #a855f7; --purple-light: #c084fc; --purple-glow: rgba(168,85,247,0.12);
+            --rose: #f43f5e; --rose-light: #fb7185; --rose-glow: rgba(244,63,94,0.12);
+            --blue: #3b82f6; --blue-light: #60a5fa;
+            --gold: #f59e0b; --gold-light: #fbbf24;
+            --grey-50: #f8fafc; --grey-100: #f1f5f9; --grey-200: #e2e8f0;
+            --grey-300: #cbd5e1; --grey-400: #94a3b8; --grey-500: #64748b;
+            --grey-600: #475569; --grey-700: #334155; --grey-800: #1e293b;
+            --white: #ffffff;
+        }
+        *{margin:0;padding:0;box-sizing:border-box}
+        html{scroll-behavior:smooth;font-size:16px}
+        body{font-family:'Inter',-apple-system,sans-serif;color:var(--grey-800);background:var(--white);line-height:1.7;overflow-x:hidden}
+
+        /* ══════ NAV ══════ */
+        nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:1.1rem 2rem;transition:all 0.4s}
+        nav.scrolled{background:rgba(10,15,44,0.92);backdrop-filter:blur(24px);padding:0.7rem 2rem;box-shadow:0 4px 40px rgba(0,0,0,0.3)}
+        .nav-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}
+        .nav-logo{font-family:'Inter';font-size:1.15rem;font-weight:900;color:white;text-decoration:none;letter-spacing:4px}
+        .nav-logo span{background:linear-gradient(135deg,var(--orange),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+        .nav-links{display:flex;gap:1.5rem;list-style:none;align-items:center}
+        .nav-links a{color:rgba(255,255,255,0.7);text-decoration:none;font-size:0.78rem;font-weight:600;letter-spacing:0.3px;transition:all 0.3s;position:relative}
+        .nav-links a:hover{color:var(--orange-light)}
+        .nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:linear-gradient(90deg,var(--orange),var(--gold));transition:width 0.3s;border-radius:2px}
+        .nav-links a:hover::after{width:100%}
+        .nav-back{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);padding:0.35rem 0.85rem;border-radius:8px;display:inline-flex;align-items:center;gap:0.35rem}
+        .nav-back:hover{background:rgba(249,115,22,0.15);border-color:rgba(249,115,22,0.3)}
+        .nav-back::after{display:none!important}
+        .hamburger{display:none;flex-direction:column;cursor:pointer;gap:5px;z-index:1001}
+        .hamburger span{width:24px;height:2px;background:white;transition:all 0.3s;border-radius:2px}
+
+        /* ══════ HERO ══════ */
+        .hero{min-height:100vh;display:flex;align-items:center;background:var(--navy);position:relative;overflow:hidden}
+        .hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,var(--navy) 0%,#0d1535 40%,#111d4a 70%,#0f1740 100%)}
+        .hero-orbs{position:absolute;inset:0;pointer-events:none}
+        .orb{position:absolute;border-radius:50%;filter:blur(80px);opacity:0.5;animation:orbFloat 20s ease-in-out infinite}
+        .orb-1{width:600px;height:600px;background:radial-gradient(circle,rgba(249,115,22,0.12),transparent);top:-15%;right:-10%;animation-delay:0s}
+        .orb-2{width:400px;height:400px;background:radial-gradient(circle,rgba(20,184,166,0.1),transparent);bottom:10%;left:-5%;animation-delay:-7s}
+        .orb-3{width:350px;height:350px;background:radial-gradient(circle,rgba(168,85,247,0.08),transparent);top:40%;right:20%;animation-delay:-14s}
+        @keyframes orbFloat{0%,100%{transform:translate(0,0) scale(1)}25%{transform:translate(30px,-20px) scale(1.05)}50%{transform:translate(-20px,30px) scale(0.95)}75%{transform:translate(15px,15px) scale(1.02)}}
+        .hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.025) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 70% 70% at 50% 50%,black,transparent)}
+        .hero-particles{position:absolute;inset:0;pointer-events:none}
+        .particle{position:absolute;width:3px;height:3px;background:rgba(249,115,22,0.4);border-radius:50%;animation:particleFloat linear infinite}
+        @keyframes particleFloat{0%{transform:translateY(100vh) scale(0);opacity:0}10%{opacity:1}90%{opacity:1}100%{transform:translateY(-10vh) scale(1);opacity:0}}
+        .hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:200px;background:linear-gradient(to top,var(--white),transparent);z-index:1}
+        .hero-content{max-width:900px;margin:0 auto;padding:8rem 2rem 6rem;text-align:center;position:relative;z-index:2}
+        .hero-badge{display:inline-flex;align-items:center;gap:0.6rem;background:linear-gradient(135deg,rgba(249,115,22,0.15),rgba(245,158,11,0.1));border:1px solid rgba(249,115,22,0.25);border-radius:50px;padding:0.45rem 1.3rem;font-size:0.72rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--orange-light);margin-bottom:2rem;backdrop-filter:blur(10px)}
+        .hero-badge::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--orange);animation:pulse 2s infinite;box-shadow:0 0 10px rgba(249,115,22,0.5)}
+        @keyframes pulse{0%,100%{opacity:1;box-shadow:0 0 10px rgba(249,115,22,0.5)}50%{opacity:0.5;box-shadow:0 0 20px rgba(249,115,22,0.3)}}
+        .hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.8rem,5.5vw,4.5rem);font-weight:800;color:white;line-height:1.1;margin-bottom:1rem}
+        .hero h1 em{font-style:italic;background:linear-gradient(135deg,var(--orange),var(--gold-light),var(--orange-light));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+        .hero-sub{font-size:1.1rem;color:rgba(255,255,255,0.5);max-width:550px;margin:0 auto 2.5rem;line-height:1.9}
+        .hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+        .btn{display:inline-flex;align-items:center;gap:0.5rem;padding:0.9rem 2rem;border-radius:10px;font-size:0.88rem;font-weight:700;text-decoration:none;transition:all 0.4s;cursor:pointer;border:none;font-family:'Inter';letter-spacing:0.3px}
+        .btn-warm{background:linear-gradient(135deg,var(--orange),var(--warm-700,#c2410c));color:white;box-shadow:0 4px 20px rgba(249,115,22,0.3)}
+        .btn-warm:hover{transform:translateY(-3px);box-shadow:0 12px 35px rgba(249,115,22,0.4)}
+        .btn-ghost{background:rgba(255,255,255,0.05);color:rgba(255,255,255,0.8);border:1.5px solid rgba(255,255,255,0.15);backdrop-filter:blur(10px)}
+        .btn-ghost:hover{border-color:var(--orange);color:var(--orange-light);background:rgba(249,115,22,0.08);transform:translateY(-3px)}
+
+        /* Stats bar */
+        .hero-stats{display:flex;justify-content:center;gap:2rem;margin-top:3.5rem;flex-wrap:wrap}
+        .hero-stat{text-align:center;padding:1.25rem 1.5rem;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:16px;backdrop-filter:blur(10px);min-width:130px;transition:all 0.3s}
+        .hero-stat:hover{border-color:rgba(249,115,22,0.3);background:rgba(249,115,22,0.06);transform:translateY(-3px)}
+        .hero-stat-num{font-size:1.8rem;font-weight:900;font-family:'Playfair Display';line-height:1}
+        .stat-orange .hero-stat-num{color:var(--orange)}
+        .stat-teal .hero-stat-num{color:var(--teal)}
+        .stat-purple .hero-stat-num{color:var(--purple-light)}
+        .stat-gold .hero-stat-num{color:var(--gold)}
+        .hero-stat-label{font-size:0.68rem;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:1.5px;margin-top:0.35rem}
+
+        /* ══════ SECTIONS ══════ */
+        section{padding:5.5rem 2rem;position:relative}
+        .section-inner{max-width:1100px;margin:0 auto}
+        .section-header{margin-bottom:3rem}
+        .section-label{display:inline-flex;align-items:center;gap:0.75rem;font-size:0.72rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;margin-bottom:0.75rem}
+        .section-label::before{content:'';width:35px;height:2.5px;border-radius:2px}
+        .label-orange{color:var(--orange)}
+        .label-orange::before{background:linear-gradient(90deg,var(--orange),var(--gold))}
+        .label-teal{color:var(--teal)}
+        .label-teal::before{background:linear-gradient(90deg,var(--teal),var(--teal-light))}
+        .label-purple{color:var(--purple)}
+        .label-purple::before{background:linear-gradient(90deg,var(--purple),var(--purple-light))}
+        .label-rose{color:var(--rose)}
+        .label-rose::before{background:linear-gradient(90deg,var(--rose),var(--rose-light))}
+        .label-blue{color:var(--blue)}
+        .label-blue::before{background:linear-gradient(90deg,var(--blue),var(--blue-light))}
+        .label-gold{color:var(--gold)}
+        .label-gold::before{background:linear-gradient(90deg,var(--gold),var(--gold-light))}
+        .section-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.4rem);color:var(--navy);margin-bottom:0.6rem;line-height:1.2}
+        .section-subtitle{font-size:0.98rem;color:var(--grey-500);max-width:600px}
+
+        /* ══════ CARDS ══════ */
+        .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:1.15rem}
+        .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.15rem}
+        .card{background:white;border-radius:14px;padding:1.4rem;border:1px solid var(--grey-200);transition:all 0.4s cubic-bezier(0.16,1,0.3,1);text-decoration:none;color:inherit;display:block;position:relative;overflow:hidden}
+        .card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;transform:scaleX(0);transition:transform 0.4s;transform-origin:left;border-radius:3px 3px 0 0}
+        .card:hover::before{transform:scaleX(1)}
+        .card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,0.08);border-color:transparent}
+        .card-orange::before{background:linear-gradient(90deg,var(--orange),var(--gold))}
+        .card-orange:hover{border-color:rgba(249,115,22,0.2)}
+        .card-teal::before{background:linear-gradient(90deg,var(--teal),var(--teal-light))}
+        .card-teal:hover{border-color:rgba(20,184,166,0.2)}
+        .card-purple::before{background:linear-gradient(90deg,var(--purple),var(--purple-light))}
+        .card-purple:hover{border-color:rgba(168,85,247,0.2)}
+        .card-rose::before{background:linear-gradient(90deg,var(--rose),var(--rose-light))}
+        .card-rose:hover{border-color:rgba(244,63,94,0.2)}
+        .card-blue::before{background:linear-gradient(90deg,var(--blue),var(--blue-light))}
+        .card-blue:hover{border-color:rgba(59,130,246,0.2)}
+        .card-gold::before{background:linear-gradient(90deg,var(--gold),var(--gold-light))}
+        .card-gold:hover{border-color:rgba(245,158,11,0.2)}
+        .tag{display:inline-block;font-size:0.6rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:0.2rem 0.55rem;border-radius:5px;margin-bottom:0.55rem}
+        .tag-haber{background:rgba(59,130,246,0.1);color:var(--blue)}
+        .tag-makale{background:var(--orange-glow);color:var(--orange)}
+        .tag-duyuru{background:rgba(20,184,166,0.1);color:var(--teal)}
+        .tag-psikoloji{background:var(--purple-glow);color:var(--purple)}
+        .tag-soru{background:rgba(245,158,11,0.1);color:var(--gold)}
+        .tag-yasanan{background:var(--rose-glow);color:var(--rose)}
+        .card h3{font-size:0.9rem;font-weight:700;color:var(--navy);margin-bottom:0.3rem;line-height:1.4}
+        .card p{font-size:0.8rem;color:var(--grey-500);line-height:1.6}
+        .card .meta{font-size:0.68rem;color:var(--grey-400);margin-top:0.55rem}
+
+        /* Solution cards */
+        .sol-card{background:white;border-radius:14px;padding:1.5rem;border:1px solid var(--grey-200);transition:all 0.4s;position:relative;overflow:hidden}
+        .sol-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,0.08)}
+        .sol-num{font-size:2.5rem;font-weight:900;font-family:'Playfair Display';line-height:1;margin-bottom:0.5rem;background:linear-gradient(135deg,var(--orange),var(--gold-light));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;opacity:0.3}
+        .sol-card h3{font-size:0.92rem;font-weight:700;color:var(--navy);margin-bottom:0.4rem}
+        .sol-card p{font-size:0.8rem;color:var(--grey-500);line-height:1.6}
+        .sol-card::after{content:'';position:absolute;bottom:-50px;right:-50px;width:120px;height:120px;border-radius:50%;background:var(--orange-glow);transition:all 0.4s}
+        .sol-card:hover::after{transform:scale(1.5);opacity:0.8}
+
+        /* About cards */
+        .about-card{background:white;border-radius:14px;padding:1.3rem;border:1px solid var(--grey-200);transition:all 0.4s;display:flex;gap:1rem;align-items:start}
+        .about-card:hover{border-color:var(--orange);transform:translateX(6px);box-shadow:0 8px 30px rgba(0,0,0,0.06)}
+        .about-icon{width:44px;height:44px;border-radius:12px;flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all 0.3s}
+        .about-icon-orange{background:var(--orange-glow)}
+        .about-icon-teal{background:var(--teal-glow)}
+        .about-icon-purple{background:var(--purple-glow)}
+        .about-icon-rose{background:var(--rose-glow)}
+        .about-card:hover .about-icon{transform:scale(1.1) rotate(5deg)}
+        .about-card h4{font-size:0.88rem;font-weight:700;color:var(--navy);margin-bottom:0.15rem}
+        .about-card p{font-size:0.78rem;color:var(--grey-500);line-height:1.5;margin:0}
+
+        /* Dark sections */
+        .dark{background:var(--navy);color:white;position:relative;overflow:hidden}
+        .dark::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(168,85,247,0.06),transparent 60%),radial-gradient(ellipse at 70% 50%,rgba(249,115,22,0.05),transparent 60%)}
+        .dark .section-title{color:white}
+        .dark .section-subtitle{color:rgba(255,255,255,0.4)}
+        .dark .card{background:rgba(255,255,255,0.04);border-color:rgba(255,255,255,0.08)}
+        .dark .card:hover{background:rgba(255,255,255,0.07);box-shadow:0 12px 40px rgba(0,0,0,0.2)}
+        .dark .card h3{color:white}
+        .dark .card p{color:rgba(255,255,255,0.45)}
+        .dark .card .meta{color:rgba(255,255,255,0.25)}
+
+        /* Gradient dividers */
+        .divider{height:4px;background:linear-gradient(90deg,transparent,var(--orange),var(--gold),var(--teal),transparent);border:none;opacity:0.3;margin:0}
+        .divider-2{background:linear-gradient(90deg,transparent,var(--purple),var(--rose),transparent)}
+        .divider-3{background:linear-gradient(90deg,transparent,var(--teal),var(--blue),transparent)}
+
+        /* Video */
+        .video-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:14px;overflow:hidden;transition:all 0.4s}
+        .video-card:hover{border-color:rgba(249,115,22,0.3);transform:translateY(-4px);box-shadow:0 15px 40px rgba(0,0,0,0.3)}
+        .video-card-embed{aspect-ratio:16/9}
+        .video-card-embed iframe{width:100%;height:100%;border:none}
+        .video-card-info{padding:1.1rem}
+        .video-card-info h3{font-size:0.88rem;font-weight:700;color:white;margin-bottom:0.2rem}
+        .video-card-info p{font-size:0.76rem;color:rgba(255,255,255,0.4)}
+        .video-placeholder{aspect-ratio:16/9;background:linear-gradient(135deg,rgba(255,255,255,0.02),rgba(249,115,22,0.04));display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.75rem}
+        .video-placeholder svg{opacity:0.15}
+        .video-placeholder p{color:rgba(255,255,255,0.25);font-size:0.78rem;text-align:center;line-height:1.4}
+
+        /* Contact */
+        #iletisim{background:var(--grey-50)}
+        .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
+        .contact-info{display:flex;flex-direction:column;gap:1.25rem}
+        .contact-info>p{color:var(--grey-500);line-height:1.8}
+        .contact-item{display:flex;align-items:center;gap:1rem}
+        .contact-icon{width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all 0.3s}
+        .contact-item:hover .contact-icon{transform:scale(1.1) rotate(5deg)}
+        .contact-item h4{font-size:0.82rem;font-weight:700;color:var(--navy)}
+        .contact-item p{font-size:0.85rem;color:var(--grey-500);margin:0}
+        .contact-item a{color:var(--blue);text-decoration:none}
+        .contact-form{background:white;border-radius:16px;padding:2rem;box-shadow:0 4px 30px rgba(0,0,0,0.06);border:1px solid var(--grey-200)}
+        .form-group{margin-bottom:1rem}
+        .form-group label{display:block;font-size:0.73rem;font-weight:700;color:var(--grey-600);margin-bottom:0.35rem;letter-spacing:0.5px;text-transform:uppercase}
+        .form-group input,.form-group textarea,.form-group select{width:100%;padding:0.75rem 1rem;border:1.5px solid var(--grey-200);border-radius:10px;font-family:'Inter';font-size:0.85rem;color:var(--grey-800);transition:all 0.3s;background:var(--grey-50)}
+        .form-group input:focus,.form-group textarea:focus,.form-group select:focus{outline:none;border-color:var(--orange);background:white;box-shadow:0 0 0 4px var(--orange-glow)}
+        .form-group textarea{height:110px;resize:vertical}
+        .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+        .btn-submit{width:100%;padding:0.9rem;background:linear-gradient(135deg,var(--navy),var(--navy-mid));color:white;border:none;border-radius:10px;font-family:'Inter';font-size:0.85rem;font-weight:700;cursor:pointer;transition:all 0.3s}
+        .btn-submit:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(10,15,44,0.3)}
+
+        /* ══════ CHATBOT ══════ */
+        .chat-toggle{position:fixed;bottom:2rem;right:2rem;z-index:999;width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--orange),#ea580c);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 30px rgba(249,115,22,0.4),0 0 0 0 rgba(249,115,22,0.3);transition:all 0.3s;animation:chatPulse 3s ease-in-out infinite}
+        @keyframes chatPulse{0%,100%{box-shadow:0 8px 30px rgba(249,115,22,0.4),0 0 0 0 rgba(249,115,22,0.3)}50%{box-shadow:0 8px 30px rgba(249,115,22,0.4),0 0 0 12px rgba(249,115,22,0)}}
+        .chat-toggle:hover{transform:scale(1.1);animation:none;box-shadow:0 12px 40px rgba(249,115,22,0.5)}
+        .chat-toggle svg{transition:transform 0.3s}
+        .chat-toggle.open svg{transform:rotate(90deg)}
+        .chat-toggle.open{animation:none}
+        .chat-badge{position:absolute;top:-2px;right:-2px;width:20px;height:20px;background:var(--rose);border-radius:50%;font-size:0.65rem;font-weight:800;color:white;display:flex;align-items:center;justify-content:center;border:2px solid white}
+        .chat-window{position:fixed;bottom:6.5rem;right:2rem;z-index:998;width:420px;max-height:580px;border-radius:20px;background:white;box-shadow:0 25px 80px rgba(0,0,0,0.18);border:1px solid var(--grey-200);display:none;flex-direction:column;overflow:hidden}
+        .chat-window.open{display:flex;animation:chatUp 0.4s cubic-bezier(0.16,1,0.3,1)}
+        @keyframes chatUp{from{opacity:0;transform:translateY(20px) scale(0.95)}to{opacity:1;transform:translateY(0) scale(1)}}
+        .chat-header{background:linear-gradient(135deg,var(--navy),var(--navy-mid));padding:1.25rem 1.5rem;display:flex;align-items:center;gap:0.75rem}
+        .chat-avatar{width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,var(--orange),var(--gold));display:flex;align-items:center;justify-content:center;font-size:1.1rem;font-weight:900;color:white;font-family:'Inter'}
+        .chat-header-text h4{color:white;font-size:0.9rem;font-weight:700}
+        .chat-header-text p{color:rgba(255,255,255,0.45);font-size:0.72rem;display:flex;align-items:center;gap:0.4rem}
+        .chat-header-text p::before{content:'';width:7px;height:7px;border-radius:50%;background:#4ade80;animation:pulse 2s infinite}
+        .chat-messages{flex:1;overflow-y:auto;padding:1.25rem;display:flex;flex-direction:column;gap:0.75rem;max-height:370px;min-height:260px;background:var(--grey-50)}
+        .chat-msg{max-width:85%;padding:0.75rem 1rem;border-radius:14px;font-size:0.84rem;line-height:1.65;word-wrap:break-word;animation:msgIn 0.3s ease}
+        @keyframes msgIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+        .chat-msg.bot{background:white;color:var(--grey-800);align-self:flex-start;border-bottom-left-radius:4px;box-shadow:0 1px 4px rgba(0,0,0,0.04)}
+        .chat-msg.user{background:linear-gradient(135deg,var(--navy),var(--navy-mid));color:white;align-self:flex-end;border-bottom-right-radius:4px}
+        .chat-input-area{padding:1rem 1.25rem;border-top:1px solid var(--grey-200);display:flex;gap:0.5rem;background:white}
+        .chat-input{flex:1;padding:0.7rem 1rem;border:1.5px solid var(--grey-200);border-radius:12px;font-family:'Inter';font-size:0.84rem;color:var(--grey-800);outline:none;transition:all 0.3s;background:var(--grey-50)}
+        .chat-input:focus{border-color:var(--orange);background:white;box-shadow:0 0 0 3px var(--orange-glow)}
+        .chat-send{width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,var(--orange),#ea580c);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.3s}
+        .chat-send:hover{transform:scale(1.05);box-shadow:0 4px 15px rgba(249,115,22,0.3)}
+        .chat-send:disabled{opacity:0.4;cursor:not-allowed;transform:none}
+
+        /* ══════ FOOTER ══════ */
+        footer{background:var(--navy);padding:3rem 2rem;text-align:center;position:relative}
+        footer::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--orange),var(--gold),var(--teal),var(--purple),var(--rose))}
+        footer p{color:rgba(255,255,255,0.3);font-size:0.78rem}
+        footer a{color:var(--orange-light);text-decoration:none;transition:color 0.3s}
+        footer a:hover{color:var(--orange)}
+
+        /* ══════ REVEAL ══════ */
+        .reveal{opacity:0;transform:translateY(35px);transition:all 0.9s cubic-bezier(0.16,1,0.3,1)}
+        .reveal.visible{opacity:1;transform:translateY(0)}
+        .reveal-delay-1{transition-delay:0.1s}
+        .reveal-delay-2{transition-delay:0.2s}
+
+        /* ══════ RESPONSIVE ══════ */
+        @media(max-width:900px){
+            .grid-2,.grid-3,.contact-grid{grid-template-columns:1fr}
+            .about-content{grid-template-columns:1fr}
+            .nav-links{display:none;position:fixed;inset:0;background:rgba(10,15,44,0.98);flex-direction:column;align-items:center;justify-content:center;gap:1.75rem}
+            .nav-links.open{display:flex}
+            .hamburger{display:flex}
+            .chat-window{width:calc(100vw - 2rem);right:1rem;bottom:6rem}
+            .hero-stats{gap:0.75rem}
+            .hero-stat{min-width:100px;padding:1rem}
+        }
+        @media(max-width:600px){
+            section{padding:3.5rem 1.25rem}
+            .hero-stats{flex-direction:row;flex-wrap:wrap;justify-content:center}
+        }
+
+        /* About grid */
+        .about-content{display:grid;grid-template-columns:1.2fr 1fr;gap:3.5rem;align-items:start}
+        .about-text p{color:var(--grey-600);margin-bottom:1.2rem;line-height:1.85;font-size:0.95rem}
+        .about-cards{display:flex;flex-direction:column;gap:0.9rem}
+
+        /* ══════ LANG SWITCHER ══════ */
+        .lang-sw{display:flex;gap:3px}
+        .lbtn{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.55);padding:0.25rem 0.5rem;border-radius:6px;font-family:'Inter';font-size:0.65rem;font-weight:700;letter-spacing:0.5px;cursor:pointer;transition:all 0.3s;display:flex;align-items:center;gap:0.25rem}
+        .lbtn span{font-size:0.85rem}
+        .lbtn:hover{background:rgba(255,255,255,0.12);color:white}
+        .lbtn.active{background:linear-gradient(135deg,var(--orange),#ea580c);border-color:var(--orange);color:white}
+
+        /* ══════ NIGHT MODE ══════ */
+        .night-btn{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);width:36px;height:36px;border-radius:8px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.3s}
+        .night-btn:hover{background:rgba(255,255,255,0.15)}
+        body.night{background:#0f172a;color:#e2e8f0}
+        body.night section:not(.hero):not(.dark){background:#0f172a}
+        body.night section[style*="background:var(--grey-50)"]{background:#1e293b!important}
+        body.night .card,.body.night .sol-card,.body.night .about-card{background:#1e293b;border-color:#334155}
+        body.night .card{background:#1e293b;border-color:#334155}
+        body.night .sol-card{background:#1e293b;border-color:#334155}
+        body.night .about-card{background:#1e293b;border-color:#334155}
+        body.night .card h3,.body.night .sol-card h3,.body.night .about-card h4{color:#f1f5f9}
+        body.night .card h3{color:#f1f5f9}
+        body.night .sol-card h3{color:#f1f5f9}
+        body.night .about-card h4{color:#f1f5f9}
+        body.night .card p,.body.night .sol-card p,.body.night .about-card p{color:#94a3b8}
+        body.night .card p{color:#94a3b8}
+        body.night .sol-card p{color:#94a3b8}
+        body.night .about-card p{color:#94a3b8}
+        body.night .about-text p{color:#94a3b8}
+        body.night .section-title{color:#f1f5f9}
+        body.night .section-subtitle{color:#64748b}
+        body.night .divider{opacity:0.15}
+        body.night .contact-form{background:#1e293b;border-color:#334155}
+        body.night .form-group input,.body.night .form-group textarea,.body.night .form-group select{background:#0f172a;border-color:#334155;color:#e2e8f0}
+        body.night .form-group input,body.night .form-group textarea,body.night .form-group select{background:#0f172a;border-color:#334155;color:#e2e8f0}
+        body.night .form-group label{color:#94a3b8}
+        body.night hr.divider{opacity:0.1}
+
+        /* ══════ RTL ══════ */
+        html[dir="rtl"] .section-label::before{margin-left:0.75rem;margin-right:0}
+        html[dir="rtl"] .about-card{flex-direction:row-reverse}
+        html[dir="rtl"] .contact-item{flex-direction:row-reverse}
+        html[dir="rtl"] .nav-links{flex-direction:row-reverse}
+
+        /* ══════ CHATBOT MARKDOWN ══════ */
+        .chat-msg.bot strong{font-weight:700;color:var(--navy)}
+        .chat-msg.bot em{font-style:italic}
+        .chat-msg.bot ul,.chat-msg.bot ol{margin:0.3rem 0 0.3rem 1.2rem;padding:0}
+        .chat-msg.bot li{margin-bottom:0.15rem}
+        .chat-msg.bot code{background:rgba(0,0,0,0.06);padding:0.1rem 0.3rem;border-radius:3px;font-size:0.8rem}
+        .chat-msg.bot p{margin-bottom:0.35rem}
+        .chat-msg.bot p:last-child{margin-bottom:0}
+        body.night .chat-msg.bot{background:#1e293b;color:#e2e8f0}
+        body.night .chat-msg.bot strong{color:var(--orange-light)}
+        body.night .chat-window{background:#0f172a;border-color:#334155}
+        body.night .chat-input-area{background:#0f172a;border-color:#334155}
+        body.night .chat-input{background:#1e293b;border-color:#334155;color:#e2e8f0}
+        body.night .chat-messages{background:#0f172a}
+
+        /* ══════ SCROLL TOP ══════ */
+        .scroll-top{position:fixed;bottom:2rem;left:2rem;z-index:999;width:44px;height:44px;border-radius:12px;background:rgba(10,15,44,0.8);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.1);cursor:pointer;display:none;align-items:center;justify-content:center;transition:all 0.3s}
+        .scroll-top.show{display:flex}
+        .scroll-top:hover{background:var(--orange);transform:translateY(-3px)}
+
+        /* ══════ FORM SUCCESS ══════ */
+        .form-success{display:none;text-align:center;padding:2rem}
+        .form-success.show{display:block}
+        .form-success svg{margin-bottom:1rem}
+        .form-success h3{color:var(--teal);font-size:1.1rem;margin-bottom:0.5rem}
+        .form-success p{color:var(--grey-500);font-size:0.88rem}
+
+        @media(max-width:900px){
+            .lang-sw{gap:2px}
+            .lbtn{padding:0.2rem 0.35rem;font-size:0.6rem}
+            .lbtn span{font-size:0.75rem}
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav id="navbar">
+        <div class="nav-inner">
+            <a href="#" class="nav-logo">BABA<span>DER</span></a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#hakkimizda" onclick="closeMenu()" data-i18n="nav_about">Hakkımızda</a></li>
+                <li><a href="#haberler" onclick="closeMenu()" data-i18n="nav_news">Haberler</a></li>
+                <li><a href="#duyurular" onclick="closeMenu()" data-i18n="nav_announcements">Duyurular</a></li>
+                <li><a href="#makaleler" onclick="closeMenu()" data-i18n="nav_articles">Makaleler</a></li>
+                <li><a href="#sorular" onclick="closeMenu()" data-i18n="nav_faq">Sorular</a></li>
+                <li><a href="#psikoloji" onclick="closeMenu()" data-i18n="nav_psychology">Psikoloji</a></li>
+                <li><a href="#yasananlar" onclick="closeMenu()" data-i18n="nav_stories">Yaşananlar</a></li>
+                <li><a href="#videolar" onclick="closeMenu()" data-i18n="nav_video">Video</a></li>
+                <li><a href="#iletisim" onclick="closeMenu()" data-i18n="nav_contact">İletişim</a></li>
+                <li><a href="index.html" class="nav-back" onclick="closeMenu()">← Ramazan Tan</a></li>
+            </ul>
+            <div style="display:flex;align-items:center;gap:0.75rem;">
+                <div class="lang-sw">
+                    <button class="lbtn active" onclick="setLang('tr')"><span>🇹🇷</span> TR</button>
+                    <button class="lbtn" onclick="setLang('en')"><span>🇬🇧</span> EN</button>
+                    <button class="lbtn" onclick="setLang('es')"><span>🇪🇸</span> ES</button>
+                    <button class="lbtn" onclick="setLang('ar')"><span>🇸🇦</span> AR</button>
+                </div>
+                <button class="night-btn" id="nightBtn" onclick="toggleNight()" title="Dark/Light Mode">
+                    <svg id="nightIcon" width="18" height="18" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+                </button>
+                <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-orbs"><div class="orb orb-1"></div><div class="orb orb-2"></div><div class="orb orb-3"></div></div>
+        <div class="hero-grid"></div>
+        <div class="hero-particles" id="particles"></div>
+        <div class="hero-content">
+            <div class="hero-badge" data-i18n="hero_badge">Baba ve Çocuk Hakları</div>
+            <h1 data-i18n="hero_title">Babalar ve Çocuklar<br><em>Derneği</em></h1>
+            <p class="hero-sub" data-i18n="hero_sub">Aile hukukunda adalet, eşit velayet hakları ve çocukların refahı için mücadele ediyoruz.</p>
+            <div class="hero-btns">
+                <a href="#cozumler" class="btn btn-warm" data-i18n="hero_btn1">Çözüm Önerilerimiz</a>
+                <a href="https://babader.org.tr" target="_blank" class="btn btn-ghost">babader.org.tr →</a>
+            </div>
+            <div class="hero-stats">
+                <div class="hero-stat stat-orange"><div class="hero-stat-num">2017</div><div class="hero-stat-label" data-i18n="stat_founding">Kuruluş</div></div>
+                <div class="hero-stat stat-teal"><div class="hero-stat-num">Ankara</div><div class="hero-stat-label" data-i18n="stat_hq">Merkez</div></div>
+                <div class="hero-stat stat-purple"><div class="hero-stat-num" data-count="12">0</div><div class="hero-stat-label" data-i18n="stat_solutions">Çözüm Önerisi</div></div>
+                <div class="hero-stat stat-gold"><div class="hero-stat-num" data-count="50">0</div><div class="hero-stat-label" data-i18n="stat_pubs">Yayın</div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HAKKIMIZDA -->
+    <section id="hakkimizda">
+        <div class="section-inner">
+            <div class="about-content">
+                <div class="reveal">
+                    <div class="section-header">
+                        <div class="section-label label-orange" data-i18n="sec_about">Hakkımızda</div>
+                        <h2 class="section-title" data-i18n="sec_about_title">Biz Kimiz?</h2>
+                    </div>
+                    <div class="about-text">
+                        <p>Mutlu bir aile kurmak hayaliyle evlenen, ancak hukuk sistemi içinde çeşitli mağduriyetler yaşayan bireyleriz. Kimse evlenirken boşanmayı düşünmez; herkes ömür boyu sürecek bir yol arkadaşlığı arar.</p>
+                        <p>BABADER olarak aile yapısının güçlendirilmesini, boşanma ve ayrılık süreçlerinde babaların ve çocukların haklarının korunmasını, aile hukukunda adil düzenlemeler yapılmasını savunuyoruz.</p>
+                        <p>Derneğimiz aile hukuku alanında araştırmalar yürütmekte, politika analizleri yayımlamakta, çalıştaylar düzenlemekte ve kamuoyu bilinçlendirmesi yapmaktadır.</p>
+                    </div>
+                </div>
+                <div class="about-cards reveal reveal-delay-1">
+                    <div class="about-card">
+                        <div class="about-icon about-icon-orange"><svg width="22" height="22" fill="none" stroke="var(--orange)" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+                        <div><h4>Velayet Hakları</h4><p>Çocukların her iki ebeveynle sağlıklı ilişki kurma hakkını savunuyoruz.</p></div>
+                    </div>
+                    <div class="about-card">
+                        <div class="about-icon about-icon-teal"><svg width="22" height="22" fill="none" stroke="var(--teal)" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+                        <div><h4>Hukuki Reform</h4><p>6284 sayılı yasa ve nafaka uygulamalarında hakkaniyetli değişiklikler.</p></div>
+                    </div>
+                    <div class="about-card">
+                        <div class="about-icon about-icon-purple"><svg width="22" height="22" fill="none" stroke="var(--purple)" stroke-width="2" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg></div>
+                        <div><h4>Araştırma & Yayın</h4><p>Akademik çalışmalar, makaleler ve basın bildirileri.</p></div>
+                    </div>
+                    <div class="about-card">
+                        <div class="about-icon about-icon-rose"><svg width="22" height="22" fill="none" stroke="var(--rose)" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div>
+                        <div><h4>Etkinlikler</h4><p>Çalıştaylar, toplantılar, basın açıklamaları ve medya katılımları.</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- ÇÖZÜM ÖNERİLERİ -->
+    <section id="cozumler">
+        <div class="section-inner">
+            <div class="section-header reveal">
+                <div class="section-label label-orange" data-i18n="sec_solutions">Çözüm Önerilerimiz</div>
+                <h2 class="section-title" data-i18n="sec_solutions_title">Aile Hukukunda Reform</h2>
+                <p class="section-subtitle" data-i18n="sec_solutions_sub">Somut ve uygulanabilir 9 çözüm önerimiz.</p>
+            </div>
+            <div class="grid-3 reveal reveal-delay-1">
+                <div class="sol-card"><div class="sol-num">01</div><h3>Velayet Sistemi</h3><p>Ortak velayet temel ilke olmalı, çocuğun üstün yararı esas alınmalıdır.</p></div>
+                <div class="sol-card"><div class="sol-num">02</div><h3>Nafaka Reformu</h3><p>Süresiz nafaka kaldırılmalı, 3 ay ile 1 yıl arasında sınırlandırılmalıdır.</p></div>
+                <div class="sol-card"><div class="sol-num">03</div><h3>Ebeveyne Yabancılaştırma</h3><p>Çocuğu ebeveynden uzaklaştırma çocuk istismarı sayılmalıdır.</p></div>
+                <div class="sol-card"><div class="sol-num">04</div><h3>6284 Sayılı Yasa</h3><p>Koruma kararları delile dayalı verilmeli, asılsız şikayetlere yaptırım.</p></div>
+                <div class="sol-card"><div class="sol-num">05</div><h3>Yargılama Süreci</h3><p>Boşanma davaları max 18-24 ay, zorunlu arabuluculuk sistemi.</p></div>
+                <div class="sol-card"><div class="sol-num">06</div><h3>Çocuk Haczi</h3><p>İcra yoluyla çocuk teslimi sona ermeli, velayet değişikliği uygulanmalı.</p></div>
+                <div class="sol-card"><div class="sol-num">07</div><h3>Nafaka Hapsi</h3><p>Borç nedeniyle hapis insan hakları ihlalidir, sona erdirilmelidir.</p></div>
+                <div class="sol-card"><div class="sol-num">08</div><h3>Asılsız Suçlamalar</h3><p>İftira atanlara caydırıcı yaptırımlar getirilmelidir.</p></div>
+                <div class="sol-card"><div class="sol-num">09</div><h3>Yargı Hesap Verebilirliği</h3><p>Hakimler hatalı kararlardan sorumlu tutulmalıdır.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="divider divider-3">
+
+    <!-- HABERLER -->
+    <section id="haberler" style="background:var(--grey-50)">
+        <div class="section-inner">
+            <div class="section-header reveal"><div class="section-label label-blue" data-i18n="sec_news">Haberler</div><h2 class="section-title" data-i18n="sec_news_title">Güncel Haberler</h2><p class="section-subtitle" data-i18n="sec_news_sub">Aile hukuku alanının güncel gelişmeleri.</p></div>
+            <div class="grid-2 reveal reveal-delay-1">
+                <a href="https://babader.org.tr/medya-midas-yazdi-turkiye-bu-haberi-konusacak-istanbul-sozlesmesinde-buyuk-degisiklik/" target="_blank" class="card card-blue"><span class="tag tag-haber">Haber</span><h3>Medya Midas: "Türkiye Bu Haberi Konuşacak…"</h3><p>İstanbul Sözleşmesi'nde meclis komisyonunda yapılan büyük değişiklik.</p><div class="meta">20 Şubat 2021</div></a>
+                <a href="https://babader.org.tr/istanbul-sozlesmesinden-cekilme-kararini-destekliyoruz/" target="_blank" class="card card-blue"><span class="tag tag-haber">Haber</span><h3>İstanbul Sözleşmesi'nden Çekilme Kararını Destekliyoruz</h3><p>Çekilme kararına ilişkin derneğimizin resmi açıklaması.</p><div class="meta">20 Mart 2021</div></a>
+                <a href="https://babader.org.tr/tihek-toplantisi-notlari/" target="_blank" class="card card-blue"><span class="tag tag-haber">Haber</span><h3>TİHEK Toplantısı Notları</h3><p>"Şiddet Toplumundan Şefkat Toplumuna" çalıştayı.</p><div class="meta">19 Kasım 2019</div></a>
+                <a href="https://babader.org.tr/nilgun-bodur/" target="_blank" class="card card-blue"><span class="tag tag-haber">Haber</span><h3>Yazar Nilgün Bodur: "Erkekleri Bu Hale Getiren Hemcinslerime Kızıyorum"</h3><p>Aile hukuku süreçlerine dair değerlendirme.</p><div class="meta">25 Ağustos 2019</div></a>
+                <a href="https://babader.org.tr/istanbul-temsilcimiz-hakan-guler-cocugunu-gormeye-gitti-dayak-yedi/" target="_blank" class="card card-blue"><span class="tag tag-haber">Haber</span><h3>İstanbul Temsilcimiz Çocuğunu Görmeye Gitti, Dayak Yedi</h3><p>Hakan Güler'in çocuğunu görmeye gittiğinde yaşadıkları.</p><div class="meta">28 Aralık 2018</div></a>
+                <a href="https://babader.org.tr/istanbul-sozlesmesi-ve-6284-yasa-surecinin-altinda-mor-cati-ekibi-var/" target="_blank" class="card card-blue"><span class="tag tag-haber">Haber</span><h3>İstanbul Sözleşmesi ve 6284 Yasa Sürecinin Altında Mor Çatı Ekibi Var</h3><p>Sözleşme ve yasanın arka planı hakkında.</p><div class="meta">3 Aralık 2018</div></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- DUYURULAR -->
+    <section id="duyurular">
+        <div class="section-inner">
+            <div class="section-header reveal"><div class="section-label label-teal" data-i18n="sec_ann">Duyurular</div><h2 class="section-title" data-i18n="sec_ann_title">Duyurular & Basın Bildirileri</h2><p class="section-subtitle" data-i18n="sec_ann_sub">Resmi açıklamalar ve duyurular.</p></div>
+            <div class="grid-2 reveal reveal-delay-1">
+                <a href="https://babader.org.tr/olagan-genel-kurul-duyurusu/" target="_blank" class="card card-teal"><span class="tag tag-duyuru">Duyuru</span><h3>Olağan Genel Kurul Duyurusu</h3><p>15 Eylül 2024 saat 10:00'da dernek merkezinde.</p><div class="meta">27 Ağustos 2024</div></a>
+                <a href="https://babader.org.tr/istanbul-sozlesmesinin-kaldirilmasina-destek-bildirisi/" target="_blank" class="card card-teal"><span class="tag tag-duyuru">Basın Bildirisi</span><h3>İstanbul Sözleşmesi'nin Kaldırılmasına Destek Bildirisi</h3><p>Sözleşmenin aile hukuku sorunlarının temel kaynağı olduğuna dair bildiri.</p><div class="meta">18 Temmuz 2020</div></a>
+                <a href="https://babader.org.tr/emine-bulut-ve-murat-tasocakin-olumu-uzerine/" target="_blank" class="card card-teal"><span class="tag tag-duyuru">Bildiri</span><h3>Emine Bulut ve Murat Taşocak'ın Ölümü Üzerine</h3><p>Her türlü şiddete karşı olduğumuzu belirten açıklama.</p><div class="meta">24 Ağustos 2019</div></a>
+                <a href="https://babader.org.tr/turkiye-barolar-birligi-kadin-hukuku-komisyonu-tubakkom-aciklamasina-cevabimizdir/" target="_blank" class="card card-teal"><span class="tag tag-duyuru">Bildiri</span><h3>TÜBAKKOM Açıklamasına Cevabımızdır</h3><p>Barolar Birliği Kadın Hukuku Komisyonu'na yanıt.</p><div class="meta">17 Mayıs 2019</div></a>
+                <a href="https://babader.org.tr/aile-baba-ve-cocuk-dernekleri-adina-ortak-basin-bildirisidir/" target="_blank" class="card card-teal"><span class="tag tag-duyuru">Ortak Bildiri</span><h3>Aile Dernekleri Adına Ortak Basın Bildirisi</h3><p>Aile ve baba derneklerinin ortak hazırladığı bildiri.</p><div class="meta">20 Şubat 2019</div></a>
+                <a href="https://babader.org.tr/nafaka-hukuku-hakkinda-goruslerimiz/" target="_blank" class="card card-teal"><span class="tag tag-duyuru">Görüş</span><h3>Nafaka Hukuku Hakkında Görüşlerimiz</h3><p>Üç nafaka türünün detaylı analizi.</p><div class="meta">29 Ekim 2018</div></a>
+            </div>
+        </div>
+    </section>
+
+    <hr class="divider divider-2">
+
+    <!-- MAKALELER -->
+    <section id="makaleler" style="background:var(--grey-50)">
+        <div class="section-inner">
+            <div class="section-header reveal"><div class="section-label label-orange" data-i18n="sec_articles">Makaleler</div><h2 class="section-title" data-i18n="sec_articles_title">Makaleler & Yazılar</h2><p class="section-subtitle" data-i18n="sec_articles_sub">Yazarlarımızın ve konuk yazarların değerlendirmeleri.</p></div>
+            <div class="grid-2 reveal reveal-delay-1">
+                <a href="https://babader.org.tr/6284-sayili-kanun-un-ve-suresiz-nafaka-uygulamasinin-ilmi-disiplinler-acisindan-elestirisi/" target="_blank" class="card card-orange"><span class="tag tag-makale">Konuk Yazar</span><h3>6284 Sayılı Kanun'un İlmi Disiplinler Açısından Eleştirisi</h3><p>Hukuk felsefesi, anayasa hukuku perspektifinden akademik değerlendirme.</p><div class="meta">Vedat KAT — Kasım 2025</div></a>
+                <a href="https://babader.org.tr/kadin-cinayetlerindeki-artis/" target="_blank" class="card card-orange"><span class="tag tag-makale">Yazarlarımız</span><h3>Kadın Cinayetlerindeki Artış</h3><p>İstanbul Sözleşmesi sonrası istatistiklerin analizi.</p><div class="meta">Yasin Emrak — 2022</div></a>
+                <a href="https://babader.org.tr/mesele-esitlik-mi/" target="_blank" class="card card-orange"><span class="tag tag-makale">Yazarlarımız</span><h3>Mesele Eşitlik mi?</h3><p>İstanbul Sözleşmesi'nden çekilme ve feminizm perspektifleri.</p><div class="meta">Yasin Emrak — 27 Mart 2021</div></a>
+                <a href="https://babader.org.tr/istanbul-sozlesmesine-bir-avukat-ve-sosyolog-bakisi/" target="_blank" class="card card-orange"><span class="tag tag-makale">Yazarlarımız</span><h3>İstanbul Sözleşmesine Bir Avukat ve Sosyolog Bakışı</h3><p>Hukuki ve sosyolojik perspektiften eleştiri.</p><div class="meta">İlhami Sayan — 12 Mayıs 2020</div></a>
+                <a href="https://babader.org.tr/bir-cinayetin-konusulmayanlari/" target="_blank" class="card card-orange"><span class="tag tag-makale">Yazarlarımız</span><h3>Bir Cinayetin Konuşulmayanları</h3><p>Failin psikolojik geçmişi ve travma incelemesi.</p><div class="meta">Zühtü Akar — 13 Aralık 2019</div></a>
+                <a href="https://babader.org.tr/annelerin-sir-gunahi-neonatisit/" target="_blank" class="card card-orange"><span class="tag tag-makale">Yazarlarımız</span><h3>Annelerin Sır Günahı: Neonatisit</h3><p>Gizlenen hamilelikler ve yenidoğan cinayetleri analizi.</p><div class="meta">Zühtü Akar — 20 Eylül 2019</div></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SORULAR -->
+    <section id="sorular">
+        <div class="section-inner">
+            <div class="section-header reveal"><div class="section-label label-gold" data-i18n="sec_faq">Sorular</div><h2 class="section-title" data-i18n="sec_faq_title">Sıkça Sorulan Sorular</h2><p class="section-subtitle" data-i18n="sec_faq_sub">Velayet, nafaka ve aile hukuku konuları.</p></div>
+            <div class="grid-2 reveal reveal-delay-1">
+                <a href="https://babader.org.tr/velayet-senaryolari/" target="_blank" class="card card-gold"><span class="tag tag-soru">Velayet</span><h3>Velayet Senaryoları</h3><p>Annede, babada ve ortak velayet kurgularının karşılaştırmalı analizi.</p><div class="meta">28 Aralık 2018</div></a>
+                <a href="https://babader.org.tr/osmanli-ve-islam-hukukunda-nafaka-hakki-bekleme-suresiyle-kisitlidir-daimi-nafaka-yoktur/" target="_blank" class="card card-gold"><span class="tag tag-soru">Dini Açıdan</span><h3>Osmanlı ve İslam Hukukunda Nafaka Hakkı</h3><p>"Nafaka hakkı bekleme süresiyle kısıtlıdır, daimi nafaka yoktur."</p><div class="meta">Prof. Dr. Ahmet Akgündüz — 27 Kasım 2018</div></a>
+                <a href="https://babader.org.tr/islama-gore-bosanma-nafaka-tazminat/" target="_blank" class="card card-gold"><span class="tag tag-soru">Dini Açıdan</span><h3>İslam'a Göre Boşanma, Nafaka, Tazminat</h3><p>İslami perspektiften değerlendirme.</p><div class="meta">23 Mart 2018</div></a>
+                <a href="https://babader.org.tr/magdur-haklari-kanunu-yasa-tasarisi-hakkindababalar-ve-cocuklar-derneginin-gorusleridir/" target="_blank" class="card card-gold"><span class="tag tag-soru">Yasa Tasarısı</span><h3>Mağdur Hakları Kanunu Yasa Tasarısı</h3><p>Yasa tasarısı hakkında derneğimizin resmi görüşleri.</p><div class="meta">14 Aralık 2017</div></a>
+                <a href="https://babader.org.tr/uzun-evliliklerde-50-60-70-yasinda-bosanan-kadin-nafaka-alamazsa-ne-olacak-sokakta-mi-kalsin/" target="_blank" class="card card-gold"><span class="tag tag-soru">Nafaka</span><h3>"Uzun Evliliklerde Boşanan Kadın Nafaka Alamazsa?"</h3><p>Karşı argümanların analizi.</p><div class="meta">17 Ekim 2017</div></a>
+                <a href="https://babader.org.tr/talak-6-ayete-gore-bosanma-velayet-ve-nafaka/" target="_blank" class="card card-gold"><span class="tag tag-soru">Dini Açıdan</span><h3>Talak 6 Ayete Göre Boşanma, Velayet ve Nafaka</h3><p>Kur'an-ı Kerim'deki talak ayetleri ışığında analiz.</p><div class="meta">4 Eylül 2017</div></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- PSİKOLOJİ -->
+    <section id="psikoloji" class="dark">
+        <div class="section-inner" style="position:relative;z-index:1">
+            <div class="section-header reveal"><div class="section-label label-purple" data-i18n="sec_psych">Psikoloji</div><h2 class="section-title" data-i18n="sec_psych_title">Psikoloji & Bilimsel Araştırmalar</h2><p class="section-subtitle" data-i18n="sec_psych_sub">Boşanmanın çocuklar üzerindeki etkileri ve aile psikolojisi.</p></div>
+            <div class="grid-2 reveal reveal-delay-1">
+                <a href="https://babader.org.tr/postpartum-psikiyatrik-bozukluklar/" target="_blank" class="card card-purple"><span class="tag tag-psikoloji">Psikoloji</span><h3>Postpartum Psikiyatrik Bozukluklar</h3><p>Doğum sonrası psikiyatrik bozukluklar: sanılandan daha sık rastlanan komplikasyon.</p><div class="meta">Dr. Erkut Erdoğan — 15 Ocak 2018</div></a>
+                <a href="https://babader.org.tr/asilsiz-tecavuz-suclamalari/" target="_blank" class="card card-purple"><span class="tag tag-psikoloji">Psikoloji</span><h3>Asılsız Tecavüz Suçlamaları</h3><p>Asılsız cinsel saldırı iddialarının motivasyonlarının psikolojik analizi.</p><div class="meta">Dr. Erkut Erdoğan — 14 Ocak 2018</div></a>
+                <a href="https://babader.org.tr/bosanma-ve-cocuk-uzerindeki-etkileri/" target="_blank" class="card card-purple"><span class="tag tag-psikoloji">Psikoloji</span><h3>Boşanma ve Çocuk Üzerindeki Etkileri</h3><p>Psikolojik gelişim üzerindeki etkilerin bilimsel analizi.</p><div class="meta">11 Ocak 2018</div></a>
+                <a href="https://babader.org.tr/cocugun-cinsel-kimlik-gelisiminde-babanin-onemi/" target="_blank" class="card card-purple"><span class="tag tag-psikoloji">Psikoloji</span><h3>Çocuğun Kimlik Gelişiminde Babanın Önemi</h3><p>Baba figürünün rolüne dair bilimsel araştırma.</p><div class="meta">27 Ekim 2017</div></a>
+                <a href="https://babader.org.tr/madea-kompleksi-ve-cocugunu-olduren-anneler/" target="_blank" class="card card-purple"><span class="tag tag-psikoloji">Psikoloji</span><h3>Madea Kompleksi</h3><p>Psikolojik fenomen ve çocuk cinayetlerinin analizi.</p><div class="meta">30 Eylül 2017</div></a>
+                <a href="https://babader.org.tr/munchausen-by-proxy-sendromu/" target="_blank" class="card card-purple"><span class="tag tag-psikoloji">Psikoloji</span><h3>Münchausen by Proxy Sendromu</h3><p>Bakım verenlerin çocuklarında hastalık uydurması sendromu.</p><div class="meta">4 Eylül 2017</div></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- YAŞANANLAR -->
+    <section id="yasananlar">
+        <div class="section-inner">
+            <div class="section-header reveal"><div class="section-label label-rose" data-i18n="sec_stories">Yaşananlar</div><h2 class="section-title" data-i18n="sec_stories_title">Gerçek Hayat Hikayeleri</h2><p class="section-subtitle" data-i18n="sec_stories_sub">Aile hukuku mağdurlarının kendi ağızlarından yaşadıkları.</p></div>
+            <div class="grid-2 reveal reveal-delay-1">
+                <a href="https://babader.org.tr/bu-kanunlar-ailenin-icine-dinamit-gibi-dustu/" target="_blank" class="card card-rose"><span class="tag tag-yasanan">Yaşanan</span><h3>"Bu Kanunlar Ailenin İçine Dinamit Gibi Düştü"</h3><p>53 yaşında gönüllünün Aile Bakanı'na mektubu.</p><div class="meta">31 Mayıs 2019</div></a>
+                <a href="https://babader.org.tr/erken-evlilik-magdurlari-igrenc-yalanlari-ifsa-ediyor/" target="_blank" class="card card-rose"><span class="tag tag-yasanan">Yaşanan</span><h3>Erken Evlilik Mağdurları Yalanları İfşa Ediyor</h3><p>Mağdurların kendi koşullarına dair yalanları açığa çıkarması.</p><div class="meta">2 Eylül 2018</div></a>
+                <a href="https://babader.org.tr/kendi-evladindan-ayirdilar-tum-gariplerin-babasi-oldu/" target="_blank" class="card card-rose"><span class="tag tag-yasanan">Yaşanan</span><h3>"Kendi Evladından Ayırdılar, Tüm Gariplerin Babası Oldu"</h3><p>Çocuğundan ayrılan üyemizin yetimlere baba olan hikayesi.</p><div class="meta">23 Şubat 2018</div></a>
+                <a href="https://babader.org.tr/ikinci-esin-yasadiklari-mail-adresimize-geldi/" target="_blank" class="card card-rose"><span class="tag tag-yasanan">Okuyucu</span><h3>İkinci Eşin Yaşadıkları</h3><p>Nafaka ödemelerinin ikinci eşe ve çocuğa etkisi.</p><div class="meta">20 Ocak 2018</div></a>
+                <a href="https://babader.org.tr/sehidimiz-murat-tasocakin-davasinda-bulunacagiz/" target="_blank" class="card card-rose"><span class="tag tag-yasanan">Anma</span><h3>"Şehidimiz Murat Taşocak'ın Davasında Bulunacağız"</h3><p>Hayatını kaybeden üyemize desteğimiz.</p><div class="meta">12 Ekim 2017</div></a>
+                <a href="https://babader.org.tr/babanin-agzini-ve-ellerini-unutmussun-yalani/" target="_blank" class="card card-rose"><span class="tag tag-yasanan">Propaganda</span><h3>"Babanın Ağzını ve Ellerini Unutmuşsun" Yalanı</h3><p>İnternetteki baba karşıtı propaganda görselinin çürütülmesi.</p><div class="meta">29 Ekim 2017</div></a>
+            </div>
+        </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- VİDEO -->
+    <section id="videolar" class="dark">
+        <div class="section-inner" style="position:relative;z-index:1">
+            <div class="section-header reveal"><div class="section-label label-orange" data-i18n="sec_video">Video</div><h2 class="section-title" data-i18n="sec_video_title">Medya & Video</h2><p class="section-subtitle" data-i18n="sec_video_sub">Çalıştay kayıtları ve medya katılımları.</p></div>
+            <div class="grid-2 reveal reveal-delay-1">
+                <div class="video-card" style="grid-column:span 2">
+                    <div class="video-card-embed" style="aspect-ratio:16/9;max-height:450px">
+                        <iframe src="https://www.youtube.com/embed/XaTv73IKTWQ" title="İstanbul Sözleşmesi ve 6284 — Söz Meydanı" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="width:100%;height:100%;border:none"></iframe>
+                    </div>
+                    <div class="video-card-info" style="padding:1.25rem">
+                        <h3 style="font-size:1rem" data-i18n="vid1_title">İstanbul Sözleşmesi ve 6284 — Söz Meydanı</h3>
+                        <p>Ramazan Tan — Söz Meydanı</p>
+                    </div>
+                </div>
+                <a href="https://babader.org.tr/aile-hukukundaki-sorunlar-ve-cozum-calistayi-mardin/" target="_blank" class="video-card" style="text-decoration:none">
+                    <div class="video-placeholder">
+                        <svg width="56" height="56" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" stroke="rgba(249,115,22,0.4)" stroke-width="1.5"/><path d="M10 8l6 4-6 4V8z" fill="rgba(249,115,22,0.6)"/></svg>
+                        <p>Aile Hukukundaki Sorunlar<br>ve Çözüm Çalıştayı — Mardin</p>
+                    </div>
+                    <div class="video-card-info"><h3 data-i18n="vid2_title">Aile Hukuku Çalıştayı, Mardin</h3><p>Kasım 2018</p></div>
+                </a>
+                <a href="https://babader.org.tr/baba-sevgisi/" target="_blank" class="video-card" style="text-decoration:none">
+                    <div class="video-placeholder">
+                        <svg width="56" height="56" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" stroke="rgba(20,184,166,0.4)" stroke-width="1.5"/><path d="M10 8l6 4-6 4V8z" fill="rgba(20,184,166,0.6)"/></svg>
+                        <p>Baba Sevgisi</p>
+                    </div>
+                    <div class="video-card-info"><h3 data-i18n="vid3_title">Baba Sevgisi</h3><p>Nisan 2018</p></div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- İLETİŞİM -->
+    <section id="iletisim">
+        <div class="section-inner">
+            <div class="section-header reveal"><div class="section-label label-teal" data-i18n="sec_contact">İletişim</div><h2 class="section-title" data-i18n="sec_contact_title">Bize Ulaşın</h2></div>
+            <div class="contact-grid reveal reveal-delay-1">
+                <div class="contact-info">
+                    <p data-i18n="contact_desc">Aile hukuku sorunları, üyelik veya derneğimizin çalışmaları hakkında bize ulaşabilirsiniz.</p>
+                    <div class="contact-item"><div class="contact-icon" style="background:var(--orange-glow)"><svg width="20" height="20" fill="none" stroke="var(--orange)" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div><h4>E-posta</h4><p><a href="mailto:babalarvecocuklardernegi@gmail.com">babalarvecocuklardernegi@gmail.com</a></p></div></div>
+                    <div class="contact-item"><div class="contact-icon" style="background:var(--teal-glow)"><svg width="20" height="20" fill="none" stroke="var(--teal)" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><h4>Adres</h4><p>Hoşdere Cad. No. 185/5, Ankara</p></div></div>
+                    <div class="contact-item"><div class="contact-icon" style="background:var(--purple-glow)"><svg width="20" height="20" fill="none" stroke="var(--purple)" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></div><div><h4>Web</h4><p><a href="https://babader.org.tr" target="_blank">babader.org.tr</a></p></div></div>
+                    <div class="contact-item"><div class="contact-icon" style="background:var(--rose-glow)"><svg width="20" height="20" fill="none" stroke="var(--rose)" stroke-width="2" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div><div><h4>Başkan</h4><p><a href="index.html">Ramazan Tan</a></p></div></div>
+                </div>
+                <form class="contact-form" onsubmit="handleForm(event)">
+                    <div class="form-row"><div class="form-group"><label data-i18n="form_name">Ad</label><input type="text" name="name" required></div><div class="form-group"><label data-i18n="form_surname">Soyad</label><input type="text" name="surname" required></div></div>
+                    <div class="form-group"><label data-i18n="form_email">E-posta</label><input type="email" name="email" required></div>
+                    <div class="form-group"><label data-i18n="form_subject">Konu</label><select name="subject"><option data-i18n="form_opt1">Genel Bilgi</option><option data-i18n="form_opt2">Üyelik</option><option data-i18n="form_opt3">Hukuki Danışmanlık</option><option data-i18n="form_opt4">Basın & Medya</option><option data-i18n="form_opt5">Diğer</option></select></div>
+                    <div class="form-group"><label data-i18n="form_msg">Mesaj</label><textarea name="message" required></textarea></div>
+                    <button type="submit" class="btn-submit" data-i18n="form_send">Mesaj Gönder</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 BABADER — Babalar ve Çocuklar Derneği</p>
+        <p style="margin-top:0.5rem"><a href="https://babader.org.tr" target="_blank">babader.org.tr</a> &nbsp;|&nbsp; <a href="index.html">Ramazan Tan</a></p>
+    </footer>
+
+    <!-- CHATBOT -->
+    <button class="chat-toggle" id="chatToggle" onclick="toggleChat()">
+        <svg width="28" height="28" fill="white" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.03 2 11c0 2.76 1.47 5.22 3.76 6.84L4 22l4.46-2.23C9.6 20.23 10.77 20.5 12 20.5c5.52 0 10-3.53 10-8.5S17.52 2 12 2z"/></svg>
+        <div class="chat-badge">1</div>
+    </button>
+    <div class="chat-window" id="chatWindow">
+        <div class="chat-header">
+            <div class="chat-avatar">B</div>
+            <div class="chat-header-text"><h4>BABADER Asistan</h4><p>Çevrimiçi — Sorularınızı yanıtlıyorum</p></div>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <div class="chat-msg bot">Merhaba! Ben BABADER'in dijital asistanıyım. Derneğimiz, çözüm önerilerimiz, aile hukuku veya başka bir konuda soru sorabilirsiniz. Size yardımcı olmaktan mutluluk duyarım!</div>
+        </div>
+        <div class="chat-input-area">
+            <input type="text" class="chat-input" id="chatInput" placeholder="Sorunuzu yazın..." onkeydown="if(event.key==='Enter')sendMessage()">
+            <button class="chat-send" id="chatSend" onclick="sendMessage()"><svg width="18" height="18" fill="white" viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg></button>
+        </div>
+    </div>
+
+    <!-- Scroll to top -->
+    <button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+        <svg width="18" height="18" fill="none" stroke="white" stroke-width="2.5" viewBox="0 0 24 24"><path d="M18 15l-6-6-6 6"/></svg>
+    </button>
+
+    <!-- Config (API keys — not in git) -->
+    <script src="config.js"></script>
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <script>
+    // ══════ PARTICLES ══════
+    (function(){const c=document.getElementById('particles');for(let i=0;i<25;i++){const p=document.createElement('div');p.className='particle';p.style.left=Math.random()*100+'%';p.style.animationDuration=(8+Math.random()*12)+'s';p.style.animationDelay=(-Math.random()*20)+'s';p.style.width=p.style.height=(1+Math.random()*3)+'px';const colors=['rgba(249,115,22,0.4)','rgba(20,184,166,0.3)','rgba(168,85,247,0.3)','rgba(245,158,11,0.35)'];p.style.background=colors[Math.floor(Math.random()*colors.length)];c.appendChild(p)}})();
+
+    // ══════ ANIMATED COUNTERS ══════
+    function animateCounters(){document.querySelectorAll('[data-count]').forEach(el=>{const target=parseInt(el.dataset.count);const suffix='+';let current=0;const step=Math.max(1,Math.floor(target/60));const timer=setInterval(()=>{current+=step;if(current>=target){current=target;clearInterval(timer)}el.textContent=current+suffix},25)})}
+    const counterObs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){animateCounters();counterObs.disconnect()}})},{threshold:0.5});
+    document.querySelectorAll('.hero-stats').forEach(el=>counterObs.observe(el));
+
+    // ══════ NAV ══════
+    const navbar=document.getElementById('navbar');
+    window.addEventListener('scroll',()=>{
+        navbar.classList.toggle('scrolled',window.scrollY>50);
+        const st=document.getElementById('scrollTop');
+        if(st)st.classList.toggle('show',window.scrollY>500);
+    });
+    function toggleMenu(){document.getElementById('navLinks').classList.toggle('open')}
+    function closeMenu(){document.getElementById('navLinks').classList.remove('open')}
+
+    // ══════ REVEAL ══════
+    const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:0.08});
+    document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+    // ══════ SMOOTH SCROLL ══════
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{e.preventDefault();const t=document.querySelector(a.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth'})})});
+
+    // ══════ NIGHT MODE ══════
+    let isNight = localStorage.getItem('babader-night')==='true';
+    function applyNight(){
+        document.body.classList.toggle('night',isNight);
+        const icon=document.getElementById('nightIcon');
+        if(icon){
+            icon.innerHTML = isNight
+                ? '<circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>'
+                : '<path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>';
+        }
+    }
+    function toggleNight(){isNight=!isNight;localStorage.setItem('babader-night',isNight);applyNight()}
+    applyNight();
+
+    // ══════ i18n TRANSLATIONS ══════
+    const T = {
+        tr: {
+            hero_badge:'Baba ve Çocuk Hakları', hero_title:'Babalar ve Çocuklar<br><em>Derneği</em>', hero_sub:'Aile hukukunda adalet, eşit velayet hakları ve çocukların refahı için mücadele ediyoruz.', hero_btn1:'Çözüm Önerilerimiz',
+            stat_founding:'Kuruluş', stat_hq:'Merkez', stat_solutions:'Çözüm Önerisi', stat_pubs:'Yayın',
+            nav_about:'Hakkımızda', nav_news:'Haberler', nav_announcements:'Duyurular', nav_articles:'Makaleler', nav_faq:'Sorular', nav_psychology:'Psikoloji', nav_stories:'Yaşananlar', nav_video:'Video', nav_contact:'İletişim',
+            sec_about:'Hakkımızda', sec_about_title:'Biz Kimiz?',
+            sec_solutions:'Çözüm Önerilerimiz', sec_solutions_title:'Aile Hukukunda Reform', sec_solutions_sub:'Somut ve uygulanabilir 9 çözüm önerimiz.',
+            sec_news:'Haberler', sec_news_title:'Güncel Haberler', sec_news_sub:'Aile hukuku alanının güncel gelişmeleri.',
+            sec_ann:'Duyurular', sec_ann_title:'Duyurular & Basın Bildirileri', sec_ann_sub:'Resmi açıklamalar ve duyurular.',
+            sec_articles:'Makaleler', sec_articles_title:'Makaleler & Yazılar', sec_articles_sub:'Yazarlarımızın ve konuk yazarların değerlendirmeleri.',
+            sec_faq:'Sorular', sec_faq_title:'Sıkça Sorulan Sorular', sec_faq_sub:'Velayet, nafaka ve aile hukuku konuları.',
+            sec_psych:'Psikoloji', sec_psych_title:'Psikoloji & Bilimsel Araştırmalar', sec_psych_sub:'Boşanmanın çocuklar üzerindeki etkileri ve aile psikolojisi.',
+            sec_stories:'Yaşananlar', sec_stories_title:'Gerçek Hayat Hikayeleri', sec_stories_sub:'Aile hukuku mağdurlarının kendi ağızlarından yaşadıkları.',
+            sec_video:'Video', sec_video_title:'Medya & Video', sec_video_sub:'Çalıştay kayıtları ve medya katılımları.',
+            sec_contact:'İletişim', sec_contact_title:'Bize Ulaşın',
+            contact_desc:'Aile hukuku sorunları, üyelik veya derneğimizin çalışmaları hakkında bize ulaşabilirsiniz.',
+            form_name:'Ad', form_surname:'Soyad', form_email:'E-posta', form_subject:'Konu', form_msg:'Mesaj', form_send:'Mesaj Gönder',
+            form_opt1:'Genel Bilgi', form_opt2:'Üyelik', form_opt3:'Hukuki Danışmanlık', form_opt4:'Basın & Medya', form_opt5:'Diğer',
+            vid1_title:'İstanbul Sözleşmesi ve 6284 — Söz Meydanı', vid2_title:'Aile Hukuku Çalıştayı, Mardin', vid3_title:'Baba Sevgisi',
+            chat_placeholder:'Sorunuzu yazın...', chat_greeting:'Merhaba! Ben BABADER\'in dijital asistanıyım. Derneğimiz, çözüm önerilerimiz, aile hukuku veya başka bir konuda soru sorabilirsiniz.',
+            form_sent:'Gönderildi!', form_error:'Hata oluştu, tekrar deneyin.'
+        },
+        en: {
+            hero_badge:'Father & Child Rights', hero_title:'Fathers and Children<br><em>Association</em>', hero_sub:'Fighting for justice in family law, equal custody rights, and the wellbeing of children.', hero_btn1:'Our Solutions',
+            stat_founding:'Founded', stat_hq:'Headquarters', stat_solutions:'Solutions', stat_pubs:'Publications',
+            nav_about:'About', nav_news:'News', nav_announcements:'Announcements', nav_articles:'Articles', nav_faq:'FAQ', nav_psychology:'Psychology', nav_stories:'Stories', nav_video:'Video', nav_contact:'Contact',
+            sec_about:'About Us', sec_about_title:'Who Are We?',
+            sec_solutions:'Our Solutions', sec_solutions_title:'Family Law Reform', sec_solutions_sub:'Our 9 concrete and actionable proposals.',
+            sec_news:'News', sec_news_title:'Latest News', sec_news_sub:'Current developments in family law.',
+            sec_ann:'Announcements', sec_ann_title:'Announcements & Press Releases', sec_ann_sub:'Official statements and announcements.',
+            sec_articles:'Articles', sec_articles_title:'Articles & Opinions', sec_articles_sub:'Perspectives from our writers and guest authors.',
+            sec_faq:'FAQ', sec_faq_title:'Frequently Asked Questions', sec_faq_sub:'Custody, alimony, and family law topics.',
+            sec_psych:'Psychology', sec_psych_title:'Psychology & Research', sec_psych_sub:'Effects of divorce on children and family psychology.',
+            sec_stories:'Stories', sec_stories_title:'Real Life Stories', sec_stories_sub:'Experiences told by family law victims in their own words.',
+            sec_video:'Video', sec_video_title:'Media & Video', sec_video_sub:'Workshop recordings and media appearances.',
+            sec_contact:'Contact', sec_contact_title:'Get in Touch',
+            contact_desc:'Reach out about family law issues, membership, or our activities.',
+            form_name:'First Name', form_surname:'Last Name', form_email:'Email', form_subject:'Subject', form_msg:'Message', form_send:'Send Message',
+            form_opt1:'General Info', form_opt2:'Membership', form_opt3:'Legal Advice', form_opt4:'Press & Media', form_opt5:'Other',
+            vid1_title:'Istanbul Convention & 6284 — Söz Meydanı', vid2_title:'Family Law Workshop, Mardin', vid3_title:'Father\'s Love',
+            chat_placeholder:'Type your question...', chat_greeting:'Hello! I\'m BABADER\'s digital assistant. Feel free to ask about our association, our proposals, family law, or anything else.',
+            form_sent:'Sent!', form_error:'Error, please try again.'
+        },
+        es: {
+            hero_badge:'Derechos de Padres e Hijos', hero_title:'Asociación de Padres<br><em>e Hijos</em>', hero_sub:'Luchamos por la justicia en el derecho de familia, la custodia igualitaria y el bienestar de los niños.', hero_btn1:'Nuestras Soluciones',
+            stat_founding:'Fundación', stat_hq:'Sede Central', stat_solutions:'Soluciones', stat_pubs:'Publicaciones',
+            nav_about:'Nosotros', nav_news:'Noticias', nav_announcements:'Anuncios', nav_articles:'Artículos', nav_faq:'Preguntas', nav_psychology:'Psicología', nav_stories:'Historias', nav_video:'Video', nav_contact:'Contacto',
+            sec_about:'Sobre Nosotros', sec_about_title:'¿Quiénes Somos?',
+            sec_solutions:'Nuestras Soluciones', sec_solutions_title:'Reforma del Derecho Familiar', sec_solutions_sub:'Nuestras 9 propuestas concretas y aplicables.',
+            sec_news:'Noticias', sec_news_title:'Últimas Noticias', sec_news_sub:'Desarrollos actuales en derecho familiar.',
+            sec_ann:'Anuncios', sec_ann_title:'Anuncios y Comunicados', sec_ann_sub:'Declaraciones oficiales y anuncios.',
+            sec_articles:'Artículos', sec_articles_title:'Artículos y Opiniones', sec_articles_sub:'Perspectivas de nuestros escritores e invitados.',
+            sec_faq:'Preguntas', sec_faq_title:'Preguntas Frecuentes', sec_faq_sub:'Custodia, pensión alimenticia y derecho familiar.',
+            sec_psych:'Psicología', sec_psych_title:'Psicología e Investigación', sec_psych_sub:'Efectos del divorcio en los niños y psicología familiar.',
+            sec_stories:'Historias', sec_stories_title:'Historias Reales', sec_stories_sub:'Experiencias contadas por las víctimas en sus propias palabras.',
+            sec_video:'Video', sec_video_title:'Medios y Video', sec_video_sub:'Grabaciones de talleres y apariciones en medios.',
+            sec_contact:'Contacto', sec_contact_title:'Contáctenos',
+            contact_desc:'Escríbanos sobre derecho familiar, membresía o nuestras actividades.',
+            form_name:'Nombre', form_surname:'Apellido', form_email:'Correo', form_subject:'Asunto', form_msg:'Mensaje', form_send:'Enviar Mensaje',
+            form_opt1:'Info General', form_opt2:'Membresía', form_opt3:'Asesoría Legal', form_opt4:'Prensa y Medios', form_opt5:'Otro',
+            vid1_title:'Convención de Estambul y 6284 — Söz Meydanı', vid2_title:'Taller de Derecho Familiar, Mardin', vid3_title:'Amor de Padre',
+            chat_placeholder:'Escriba su pregunta...', chat_greeting:'¡Hola! Soy el asistente digital de BABADER. Puede preguntar sobre nuestra asociación, propuestas, derecho familiar o cualquier otro tema.',
+            form_sent:'¡Enviado!', form_error:'Error, inténtelo de nuevo.'
+        },
+        ar: {
+            hero_badge:'حقوق الآباء والأطفال', hero_title:'جمعية الآباء<br><em>والأطفال</em>', hero_sub:'نناضل من أجل العدالة في قانون الأسرة، وحقوق الحضانة المتساوية، ورفاهية الأطفال.', hero_btn1:'حلولنا',
+            stat_founding:'التأسيس', stat_hq:'المقر', stat_solutions:'حلول', stat_pubs:'منشورات',
+            nav_about:'من نحن', nav_news:'أخبار', nav_announcements:'إعلانات', nav_articles:'مقالات', nav_faq:'أسئلة', nav_psychology:'علم النفس', nav_stories:'قصص', nav_video:'فيديو', nav_contact:'اتصل بنا',
+            sec_about:'من نحن', sec_about_title:'من نحن؟',
+            sec_solutions:'حلولنا', sec_solutions_title:'إصلاح قانون الأسرة', sec_solutions_sub:'مقترحاتنا التسعة الملموسة والقابلة للتطبيق.',
+            sec_news:'أخبار', sec_news_title:'آخر الأخبار', sec_news_sub:'التطورات الراهنة في قانون الأسرة.',
+            sec_ann:'إعلانات', sec_ann_title:'إعلانات وبيانات صحفية', sec_ann_sub:'البيانات الرسمية والإعلانات.',
+            sec_articles:'مقالات', sec_articles_title:'مقالات وآراء', sec_articles_sub:'آراء كتّابنا والكتّاب الضيوف.',
+            sec_faq:'أسئلة', sec_faq_title:'الأسئلة الشائعة', sec_faq_sub:'الحضانة والنفقة وقانون الأسرة.',
+            sec_psych:'علم النفس', sec_psych_title:'علم النفس والأبحاث', sec_psych_sub:'آثار الطلاق على الأطفال وعلم نفس الأسرة.',
+            sec_stories:'قصص', sec_stories_title:'قصص واقعية', sec_stories_sub:'تجارب يرويها الضحايا بكلماتهم.',
+            sec_video:'فيديو', sec_video_title:'الإعلام والفيديو', sec_video_sub:'تسجيلات ورش العمل والظهور الإعلامي.',
+            sec_contact:'اتصل بنا', sec_contact_title:'تواصل معنا',
+            contact_desc:'تواصل معنا بشأن قضايا قانون الأسرة أو العضوية أو أنشطتنا.',
+            form_name:'الاسم', form_surname:'اللقب', form_email:'البريد الإلكتروني', form_subject:'الموضوع', form_msg:'الرسالة', form_send:'إرسال الرسالة',
+            form_opt1:'معلومات عامة', form_opt2:'عضوية', form_opt3:'استشارة قانونية', form_opt4:'صحافة وإعلام', form_opt5:'أخرى',
+            vid1_title:'اتفاقية إسطنبول و6284 — سوز ميداني', vid2_title:'ورشة قانون الأسرة، ماردين', vid3_title:'حب الأب',
+            chat_placeholder:'اكتب سؤالك...', chat_greeting:'مرحباً! أنا المساعد الرقمي لجمعية بابادر. يمكنك السؤال عن جمعيتنا أو مقترحاتنا أو قانون الأسرة.',
+            form_sent:'تم الإرسال!', form_error:'خطأ، حاول مرة أخرى.'
+        }
+    };
+
+    let currentLang = localStorage.getItem('babader-lang') || 'tr';
+
+    function setLang(lang){
+        currentLang = lang;
+        localStorage.setItem('babader-lang', lang);
+        document.documentElement.lang = lang;
+        document.documentElement.dir = lang==='ar' ? 'rtl' : 'ltr';
+        // Update active button
+        document.querySelectorAll('.lbtn').forEach(b=>b.classList.remove('active'));
+        document.querySelector('.lbtn[onclick="setLang(\''+lang+'\')"]').classList.add('active');
+        // Apply translations
+        const t = T[lang] || T.tr;
+        document.querySelectorAll('[data-i18n]').forEach(el=>{
+            const key = el.dataset.i18n;
+            if(t[key]!==undefined){
+                if(el.tagName==='INPUT'||el.tagName==='TEXTAREA'){el.placeholder=t[key]}
+                else{el.innerHTML=t[key]}
+            }
+        });
+        // Update chatbot placeholder
+        const ci=document.getElementById('chatInput');
+        if(ci && t.chat_placeholder) ci.placeholder=t.chat_placeholder;
+    }
+    // Apply saved lang on load
+    if(currentLang!=='tr') setLang(currentLang);
+
+    // ══════ CONTACT FORM (EmailJS) ══════
+    let emailjsReady=false;
+    function initEmailJS(){
+        if(typeof emailjs!=='undefined'){
+            emailjs.init({publicKey:'TVrQ44ClAdXjk5yv2'});
+            emailjsReady=true;
+            console.log('EmailJS ready');
+        }else{
+            console.warn('EmailJS SDK not loaded, retrying...');
+            // Try loading manually
+            const s=document.createElement('script');
+            s.src='https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js';
+            s.onload=function(){
+                if(typeof emailjs!=='undefined'){emailjs.init({publicKey:'TVrQ44ClAdXjk5yv2'});emailjsReady=true;console.log('EmailJS loaded on retry')}
+            };
+            document.head.appendChild(s);
+        }
+    }
+    initEmailJS();
+
+    function handleForm(e){
+        e.preventDefault();
+        const form=e.target;
+        const b=form.querySelector('.btn-submit');
+        const origText=b.textContent;
+        b.textContent='...';b.disabled=true;
+        const t=T[currentLang]||T.tr;
+
+        const params={
+            from_name:form.querySelector('input[name="name"]').value+' '+form.querySelector('input[name="surname"]').value,
+            from_email:form.querySelector('input[name="email"]').value,
+            subject:form.querySelector('select[name="subject"]').value,
+            message:form.querySelector('textarea[name="message"]').value,
+            to_email:'babalarvecocuklardernegi@gmail.com'
+        };
+
+        if(!emailjsReady || typeof emailjs==='undefined'){
+            alert('E-posta servisi yüklenemedi. Lütfen sayfayı bir web sunucusundan açın (file:// yerine http://).');
+            b.textContent=origText;b.disabled=false;
+            return;
+        }
+
+        emailjs.send('BabaderOutlookService','template_4m9i7ev',params)
+            .then(function(){
+                b.textContent=t.form_sent;
+                b.style.background='linear-gradient(135deg,#059669,#10b981)';
+                form.reset();
+                setTimeout(()=>{b.textContent=origText;b.style.background='';b.disabled=false},3000);
+            })
+            .catch(function(err){
+                console.error('EmailJS error:',err);
+                alert('Hata: '+(err.text||err.message||JSON.stringify(err)));
+                b.textContent=origText;b.disabled=false;
+            });
+    }
+
+    // ══════ MARKDOWN PARSER ══════
+    function parseMd(text){
+        let html=text
+            .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+            .replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>')
+            .replace(/\*(.+?)\*/g,'<em>$1</em>')
+            .replace(/`(.+?)`/g,'<code>$1</code>');
+        // Lists
+        const lines=html.split('\n');
+        let result=[], inUl=false, inOl=false;
+        for(let line of lines){
+            const ulMatch=line.match(/^[\-\*]\s+(.+)/);
+            const olMatch=line.match(/^\d+\.\s+(.+)/);
+            if(ulMatch){
+                if(!inUl){result.push('<ul>');inUl=true}
+                result.push('<li>'+ulMatch[1]+'</li>');
+            }else if(olMatch){
+                if(!inOl){result.push('<ol>');inOl=true}
+                result.push('<li>'+olMatch[1]+'</li>');
+            }else{
+                if(inUl){result.push('</ul>');inUl=false}
+                if(inOl){result.push('</ol>');inOl=false}
+                if(line.trim()){result.push('<p>'+line+'</p>')}
+            }
+        }
+        if(inUl)result.push('</ul>');
+        if(inOl)result.push('</ol>');
+        return result.join('');
+    }
+
+    // ══════ CHATBOT ══════
+    const CTX=`Sen BABADER (Babalar ve Çocuklar Derneği) resmi web sitesi asistanısın.
+
+DERNEK BİLGİLERİ:
+- Tam Ad: Babalar ve Çocuklar Derneği (BABADER)
+- Kuruluş: 2017
+- Başkan: Ramazan Tan (aynı zamanda Yenimahalle Devlet Hastanesi'nde İnşaat Mühendisi/Altyapı Sorumlusu, 2013'ten beri)
+- Adres: Hoşdere Cad. No. 185/5, Ankara, Türkiye
+- E-posta: babalarvecocuklardernegi@gmail.com
+- Web: babader.org.tr
+- Amaç: Baba ve çocuk haklarını savunmak, aile hukukunda adil reform için çalışmak
+
+ÇÖZÜM ÖNERİLERİ (9 madde):
+1. Velayet: Ortak velayet temel ilke olmalı, çocuğun üstün yararı esas
+2. Nafaka: Süresiz nafaka kaldırılmalı, 3 ay-1 yıl sınır
+3. EYS (Ebeveyne Yabancılaştırma): Çocuğu ebeveynden uzaklaştırma = çocuk istismarı
+4. 6284 Sayılı Yasa: Koruma kararları delile dayalı olmalı, asılsız şikayetlere yaptırım
+5. Yargılama: Max 18-24 ay, zorunlu arabuluculuk
+6. Çocuk Haczi: İcra yoluyla teslim sona ermeli
+7. Nafaka Hapsi: Borç nedeniyle hapis = insan hakları ihlali
+8. Asılsız Suçlamalar: İftiraya caydırıcı yaptırım
+9. Yargı: Hakimler hatalı kararlardan sorumlu tutulmalı
+
+FAALİYETLER: Aile hukuku araştırmaları, politika analizleri, çalıştaylar (Mardin 2018), basın bildirileri, TV katılımları (Söz Meydanı), yayınlar
+
+Kullanıcının diline göre yanıt ver. Nazik, profesyonel, bilgilendirici ol. Kısa ve öz cevaplar ver. Markdown formatı kullan (bold, liste vb.).`;
+
+    let chatHistory=[];
+
+    function toggleChat(){
+        const w=document.getElementById('chatWindow'),b=document.getElementById('chatToggle');
+        w.classList.toggle('open');b.classList.toggle('open');
+        const badge=b.querySelector('.chat-badge');
+        if(badge)badge.style.display='none';
+    }
+
+    async function sendMessage(){
+        const input=document.getElementById('chatInput');
+        const msg=input.value.trim();
+        if(!msg)return;
+        input.value='';
+        addMsg(msg,'user');
+        chatHistory.push({role:'user',content:msg});
+        const sendBtn=document.getElementById('chatSend');
+        sendBtn.disabled=true;
+        const typingEl=addMsg('...','bot');
+        typingEl.style.fontStyle='italic';typingEl.style.opacity='0.5';
+
+        try{
+            const langHint = currentLang==='tr'?'Türkçe': currentLang==='en'?'English': currentLang==='es'?'Español':'العربية';
+            const r=await fetch('https://api.anthropic.com/v1/messages',{
+                method:'POST',
+                headers:{'Content-Type':'application/json','x-api-key':(typeof BABADER_CONFIG!=='undefined'?BABADER_CONFIG.ANTHROPIC_KEY:''),'anthropic-version':'2023-06-01','anthropic-dangerous-direct-browser-access':'true'},
+                body:JSON.stringify({model:'claude-haiku-4-5-20251001',max_tokens:600,system:CTX+'\n\nYanıt dili: '+langHint,messages:chatHistory})
+            });
+            const data=await r.json();
+            typingEl.remove();
+            if(data.content&&data.content[0]){
+                const reply=data.content[0].text;
+                addMsg(reply,'bot',true);
+                chatHistory.push({role:'assistant',content:reply});
+                if(chatHistory.length>16)chatHistory=chatHistory.slice(-12);
+            }else if(data.error){addMsg('Hata: '+data.error.message,'bot')}
+        }catch(err){typingEl.remove();addMsg('Bağlantı hatası. Tekrar deneyin.','bot')}
+        sendBtn.disabled=false;
+        document.getElementById('chatInput').focus();
+    }
+
+    function addMsg(text,cls,useMarkdown){
+        const div=document.createElement('div');div.className='chat-msg '+cls;
+        if(useMarkdown && cls==='bot'){div.innerHTML=parseMd(text)}
+        else{div.textContent=text}
+        const c=document.getElementById('chatMessages');c.appendChild(div);c.scrollTop=c.scrollHeight;return div;
+    }
+    </script>
+</body>
+</html>
