@@ -544,6 +544,8 @@
         }
         .footer-inner { max-width: 1000px; margin: 0 auto; }
         .footer-line { width: 40px; height: 2px; background: var(--blue-500); margin: 0 auto 1rem; }
+        .visitor-counter{display:flex;align-items:center;justify-content:center;gap:0.5rem;margin-bottom:0.75rem;opacity:0.7;transition:opacity 0.3s}
+        .visitor-counter:hover{opacity:1}
         footer p { color: rgba(255,255,255,0.4); font-size: 0.8rem; }
         footer a { color: var(--blue-400); text-decoration: none; }
 
@@ -985,6 +987,10 @@
     <footer>
         <div class="footer-inner">
             <div class="footer-line"></div>
+            <div class="visitor-counter">
+                <svg width="16" height="16" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4-4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+                <img src="https://api.visitorbadge.io/api/visitors?path=emrevarol-ramazan-tan-index&label=%20&countColor=%23f97316&labelColor=%230a0f2c&style=flat" alt="visitors" style="height:22px;vertical-align:middle">
+            </div>
             <p>&copy; 2026 Ramazan Tan. <span data-i18n="footer_rights">All rights reserved.</span></p>
         </div>
     </footer>

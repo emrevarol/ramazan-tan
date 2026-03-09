@@ -234,6 +234,8 @@
         footer{background:var(--navy);padding:3rem 2rem;text-align:center;position:relative}
         footer::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--orange),var(--gold),var(--teal),var(--purple),var(--rose))}
         footer p{color:rgba(255,255,255,0.3);font-size:0.78rem}
+        .visitor-counter{display:flex;align-items:center;justify-content:center;gap:0.5rem;margin-bottom:0.75rem;opacity:0.7;transition:opacity 0.3s}
+        .visitor-counter:hover{opacity:1}
         footer a{color:var(--orange-light);text-decoration:none;transition:color 0.3s}
         footer a:hover{color:var(--orange)}
 
@@ -608,6 +610,10 @@
     </section>
 
     <footer>
+        <div class="visitor-counter">
+            <svg width="16" height="16" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4-4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+            <img src="https://api.visitorbadge.io/api/visitors?path=emrevarol-ramazan-tan-babader&label=%20&countColor=%23f97316&labelColor=%230a0f2c&style=flat" alt="visitors" style="height:22px;vertical-align:middle">
+        </div>
         <p data-i18n="footer_1">&copy; 2026 BABADER — Babalar ve Çocuklar Derneği</p>
         <p style="margin-top:0.5rem" data-i18n="footer_2"><a href="https://babader.org.tr" target="_blank">babader.org.tr</a> &nbsp;|&nbsp; <a href="index.html">Ramazan Tan</a></p>
     </footer>
