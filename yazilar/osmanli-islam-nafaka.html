@@ -34,11 +34,14 @@
         footer{background:var(--navy);padding:2rem;text-align:center}
         footer p{color:rgba(255,255,255,0.3);font-size:0.75rem}
         footer a{color:var(--orange-light);text-decoration:none}
+        .lang-bar{text-align:center;padding:0.75rem;background:var(--grey-50);border-bottom:1px solid var(--grey-200)} .lang-btn{border:1px solid var(--grey-200);background:white;padding:0.3rem 0.8rem;margin:0 0.2rem;border-radius:6px;cursor:pointer;font-size:0.75rem;font-weight:600;color:var(--grey-500);transition:all 0.3s} .lang-btn.active{background:var(--navy);color:white;border-color:var(--navy)}
     </style>
 </head>
 <body>
-    <div class="top-bar"><div class="top-inner"><a href="babader.html" class="logo">BABA<span>DER</span></a><a href="babader.html">← Ana Sayfa</a></div></div>
+    <div class="top-bar"><div class="top-inner"><a href="../babader.html" class="logo">BABA<span>DER</span></a><a href="../babader.html" id="nav-back">← Ana Sayfa</a></div></div>
+    <div class="lang-bar"><button class="lang-btn active" data-lang="tr" onclick="setArticleLang('tr')">TR</button><button class="lang-btn" data-lang="en" onclick="setArticleLang('en')">EN</button><button class="lang-btn" data-lang="es" onclick="setArticleLang('es')">ES</button><button class="lang-btn" data-lang="ar" onclick="setArticleLang('ar')">AR</button></div>
     <article>
+        <div class="lang-content" data-lang="tr">
         <span class="tag">Dini Açıdan</span>
         <h1>Osmanlı ve İslam Hukukunda Nafaka Hakkı</h1>
         <div class="meta">Prof. Dr. Ahmet Akgündüz — 27 Kasım 2018</div>
@@ -47,8 +50,40 @@
 <p>Bekleme süresini koruyan kadınlar, eski kocalarından yiyecek, giyecek ve barınmayı kapsayan geçimlik desteğe hak kazanmaktadır — ancak yalnızca bu tanımlı süre boyunca.</p>
 <p><strong>"İddet nafakası" belirlenmiş süreyle sınırlı kalmaktadır. Bu hukuk sistemi altında daimi nafaka düzenlemeleri oluşturulmamıştır.</strong></p>
 <p>İslam hukuku aslında velayeti öncelikli olarak babalara vermiş, annelerin vasi olarak görev yapmasına izin vermiş ve çocuk bakımı sağlayıcıları için nafaka ödemesi gerektirmiştir.</p></div>
-        <a href="babader.html#sorular" class="back-link">← Geri Dön</a>
+        </div>
+        <div class="lang-content" data-lang="en" style="display:none">
+        <span class="tag">Religious Perspective</span>
+        <h1>The Right to Alimony in Ottoman and Islamic Law</h1>
+        <div class="meta">Prof. Dr. Ahmet Akgündüz — November 27, 2018</div>
+        <div class="content"><p>The article examines alimony rights within the framework of Ottoman and Islamic law. The "iddah" (waiting period) serves important functions such as determining pregnancy status and allowing a period of reflection in revocable divorce cases.</p>
+<p>Two types of waiting periods are discussed: the death iddah lasting four months and ten days for widows, and the divorce iddah which varies depending on circumstances.</p>
+<p>Women observing the waiting period are entitled to maintenance support from their former husbands covering food, clothing, and shelter — but only for this defined period.</p>
+<p><strong>The "iddah alimony" remains limited to the prescribed period. No permanent alimony arrangements were established under this legal system.</strong></p>
+<p>Islamic law actually granted custody primarily to fathers, allowed mothers to serve as guardians, and required alimony payments for childcare providers.</p></div>
+        </div>
+        <div class="lang-content" data-lang="es" style="display:none">
+        <span class="tag">Perspectiva Religiosa</span>
+        <h1>El Derecho a la Pensi&oacute;n Alimenticia en el Derecho Otomano e Isl&aacute;mico</h1>
+        <div class="meta">Prof. Dr. Ahmet Akgündüz — 27 de noviembre de 2018</div>
+        <div class="content"><p>El art&iacute;culo examina los derechos de pensi&oacute;n alimenticia en el marco del derecho otomano e isl&aacute;mico. El "iddah" (per&iacute;odo de espera) cumple funciones importantes como determinar el estado de embarazo y permitir un per&iacute;odo de reflexi&oacute;n en casos de divorcio revocable.</p>
+<p>Se discuten dos tipos de per&iacute;odos de espera: el iddah por fallecimiento, que dura cuatro meses y diez d&iacute;as para las viudas, y el iddah por divorcio, que var&iacute;a seg&uacute;n las circunstancias.</p>
+<p>Las mujeres que observan el per&iacute;odo de espera tienen derecho a recibir manutenci&oacute;n de sus exmaridos que cubre alimentaci&oacute;n, vestimenta y alojamiento, pero solo durante este per&iacute;odo definido.</p>
+<p><strong>La "pensi&oacute;n del iddah" se limita al per&iacute;odo prescrito. No se establecieron acuerdos de pensi&oacute;n alimenticia permanente bajo este sistema legal.</strong></p>
+<p>El derecho isl&aacute;mico en realidad otorgaba la custodia principalmente a los padres, permit&iacute;a a las madres actuar como tutoras y exig&iacute;a pagos de manutenci&oacute;n para los cuidadores de los hijos.</p></div>
+        </div>
+        <div class="lang-content" data-lang="ar" style="display:none">
+        <span class="tag">منظور ديني</span>
+        <h1>حق النفقة في القانون العثماني والإسلامي</h1>
+        <div class="meta">أ.د. أحمد آق غوندوز — 27 نوفمبر 2018</div>
+        <div class="content"><p>يتناول المقال حقوق النفقة في إطار القانون العثماني والإسلامي. تؤدي "العدة" (فترة الانتظار) وظائف مهمة مثل تحديد حالة الحمل والسماح بفترة تأمل في حالات الطلاق الرجعي.</p>
+<p>يُناقش نوعان من فترات الانتظار: عدة الوفاة التي تستمر أربعة أشهر وعشرة أيام للأرامل، وعدة الطلاق التي تختلف حسب الظروف.</p>
+<p>يحق للنساء اللواتي يلتزمن بفترة العدة الحصول على نفقة من أزواجهن السابقين تشمل الطعام والملبس والمسكن — ولكن فقط خلال هذه الفترة المحددة.</p>
+<p><strong>تبقى "نفقة العدة" محدودة بالفترة المقررة. لم تُنشأ ترتيبات نفقة دائمة في ظل هذا النظام القانوني.</strong></p>
+<p>في الواقع، منح القانون الإسلامي الحضانة بشكل أساسي للآباء، وسمح للأمهات بالعمل كأوصياء، واشترط دفع النفقة لمقدمي رعاية الأطفال.</p></div>
+        </div>
+        <a href="../babader.html#sorular" class="back-link"><span id="back-link-text">← Geri Dön</span></a>
     </article>
-    <footer><p>&copy; 2026 BABADER — Babalar ve Çocuklar Derneği | <a href="babader.html">Ana Sayfa</a></p></footer>
+    <footer><p>&copy; 2026 BABADER — Babalar ve Çocuklar Derneği | <a href="../babader.html">Ana Sayfa</a></p></footer>
+    <script src="lang.js"></script>
 </body>
 </html>

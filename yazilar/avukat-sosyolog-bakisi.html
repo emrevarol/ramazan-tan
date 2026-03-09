@@ -34,11 +34,14 @@
         footer{background:var(--navy);padding:2rem;text-align:center}
         footer p{color:rgba(255,255,255,0.3);font-size:0.75rem}
         footer a{color:var(--orange-light);text-decoration:none}
+        .lang-bar{text-align:center;padding:0.75rem;background:var(--grey-50);border-bottom:1px solid var(--grey-200)} .lang-btn{border:1px solid var(--grey-200);background:white;padding:0.3rem 0.8rem;margin:0 0.2rem;border-radius:6px;cursor:pointer;font-size:0.75rem;font-weight:600;color:var(--grey-500);transition:all 0.3s} .lang-btn.active{background:var(--navy);color:white;border-color:var(--navy)}
     </style>
 </head>
 <body>
-    <div class="top-bar"><div class="top-inner"><a href="babader.html" class="logo">BABA<span>DER</span></a><a href="babader.html">← Ana Sayfa</a></div></div>
+    <div class="top-bar"><div class="top-inner"><a href="../babader.html" class="logo">BABA<span>DER</span></a><a href="../babader.html" id="nav-back">← Ana Sayfa</a></div></div>
+    <div class="lang-bar"><button class="lang-btn active" data-lang="tr" onclick="setArticleLang('tr')">TR</button><button class="lang-btn" data-lang="en" onclick="setArticleLang('en')">EN</button><button class="lang-btn" data-lang="es" onclick="setArticleLang('es')">ES</button><button class="lang-btn" data-lang="ar" onclick="setArticleLang('ar')">AR</button></div>
     <article>
+        <div class="lang-content" data-lang="tr">
         <span class="tag">Yazarlarımız</span>
         <h1>İstanbul Sözleşmesine Bir Avukat ve Sosyolog Bakışı</h1>
         <div class="meta">İlhami Sayan — 12 Mayıs 2020</div>
@@ -46,8 +49,43 @@
 <p>Sayan, sözleşmenin imzacı ülkelere önemli iç hukuk değişiklikleri dayatan "kültürel bir Sevr Antlaşması" işlevi gördüğünü ileri sürmektedir. Sözleşme, 11 Mayıs 2011'de imzalanmış ve yaklaşık 26 dakikada meclis tartışması olmadan onaylanmıştır.</p>
 <p>"Şiddet" tanımının psikolojik ve ekonomik zararı kapsayacak şekilde genişletilmesi, olağan aile disiplinini suç haline getirdiği gerekçesiyle eleştirilmektedir.</p>
 <p>Sözleşmenin GREVIO'yu (Uzman Grubu) denetim mekanizması olarak kurması, ulusal egemenliği sınırlayan sömürge tarzı bir denetim organı olarak nitelendirilmektedir.</p></div>
-        <a href="babader.html#makaleler" class="back-link">← Geri Dön</a>
+        <a href="../babader.html#makaleler" class="back-link"><span id="back-link-text">← Geri Dön</span></a>
+        </div>
+
+        <div class="lang-content" data-lang="en" style="display:none">
+        <span class="tag">Our Authors</span>
+        <h1>The Istanbul Convention from a Lawyer's and Sociologist's Perspective</h1>
+        <div class="meta">Ilhami Sayan — May 12, 2020</div>
+        <div class="content"><p>Lawyer and sociologist Ilhami Sayan presents a critical analysis of the Istanbul Convention.</p>
+<p>Sayan argues that the convention functions as a "cultural Treaty of Sevres," imposing significant domestic legal changes on signatory countries. The convention was signed on May 11, 2011, and ratified in approximately 26 minutes without parliamentary debate.</p>
+<p>The expansion of the definition of "violence" to include psychological and economic harm is criticized for criminalizing ordinary family discipline.</p>
+<p>The convention's establishment of GREVIO (Group of Experts) as a monitoring mechanism is characterized as a colonial-style oversight body that restricts national sovereignty.</p></div>
+        <a href="../babader.html#makaleler" class="back-link"><span>← Go Back</span></a>
+        </div>
+
+        <div class="lang-content" data-lang="es" style="display:none">
+        <span class="tag">Nuestros Autores</span>
+        <h1>El Convenio de Estambul desde la Perspectiva de un Abogado y Sociologo</h1>
+        <div class="meta">Ilhami Sayan — 12 de mayo de 2020</div>
+        <div class="content"><p>El abogado y sociologo Ilhami Sayan presenta un analisis critico del Convenio de Estambul.</p>
+<p>Sayan sostiene que el convenio funciona como un "Tratado de Sevres cultural", imponiendo cambios legales internos significativos a los paises signatarios. El convenio fue firmado el 11 de mayo de 2011 y ratificado en aproximadamente 26 minutos sin debate parlamentario.</p>
+<p>La ampliacion de la definicion de "violencia" para incluir el dano psicologico y economico es criticada por criminalizar la disciplina familiar ordinaria.</p>
+<p>El establecimiento del GREVIO (Grupo de Expertos) como mecanismo de supervision por parte del convenio se caracteriza como un organo de control de estilo colonial que restringe la soberania nacional.</p></div>
+        <a href="../babader.html#makaleler" class="back-link"><span>← Volver</span></a>
+        </div>
+
+        <div class="lang-content" data-lang="ar" style="display:none">
+        <span class="tag">كتّابنا</span>
+        <h1>اتفاقية إسطنبول من منظور محامٍ وعالم اجتماع</h1>
+        <div class="meta">إلهامي سايان — 12 مايو 2020</div>
+        <div class="content"><p>يقدّم المحامي وعالم الاجتماع إلهامي سايان تحليلاً نقدياً لاتفاقية إسطنبول.</p>
+<p>يرى سايان أن الاتفاقية تعمل بمثابة "معاهدة سيفر ثقافية"، تفرض تغييرات قانونية داخلية جوهرية على الدول الموقّعة. وُقِّعت الاتفاقية في 11 مايو 2011 وصُودِق عليها في حوالي 26 دقيقة دون نقاش برلماني.</p>
+<p>يُنتقد توسيع تعريف "العنف" ليشمل الضرر النفسي والاقتصادي بدعوى أنه يُجرِّم الانضباط الأسري العادي.</p>
+<p>يُوصف إنشاء الاتفاقية لمجموعة غريفيو (مجموعة الخبراء) كآلية رقابة بأنه هيئة إشراف استعمارية الطابع تُقيّد السيادة الوطنية.</p></div>
+        <a href="../babader.html#makaleler" class="back-link"><span>← العودة</span></a>
+        </div>
     </article>
-    <footer><p>&copy; 2026 BABADER — Babalar ve Çocuklar Derneği | <a href="babader.html">Ana Sayfa</a></p></footer>
+    <footer><p>&copy; 2026 BABADER — Babalar ve Çocuklar Derneği | <a href="../babader.html">Ana Sayfa</a></p></footer>
+    <script src="lang.js"></script>
 </body>
 </html>

@@ -34,11 +34,14 @@
         footer{background:var(--navy);padding:2rem;text-align:center}
         footer p{color:rgba(255,255,255,0.3);font-size:0.75rem}
         footer a{color:var(--orange-light);text-decoration:none}
+        .lang-bar{text-align:center;padding:0.75rem;background:var(--grey-50);border-bottom:1px solid var(--grey-200)} .lang-btn{border:1px solid var(--grey-200);background:white;padding:0.3rem 0.8rem;margin:0 0.2rem;border-radius:6px;cursor:pointer;font-size:0.75rem;font-weight:600;color:var(--grey-500);transition:all 0.3s} .lang-btn.active{background:var(--navy);color:white;border-color:var(--navy)}
     </style>
 </head>
 <body>
-    <div class="top-bar"><div class="top-inner"><a href="babader.html" class="logo">BABA<span>DER</span></a><a href="babader.html">← Ana Sayfa</a></div></div>
+    <div class="top-bar"><div class="top-inner"><a href="../babader.html" class="logo">BABA<span>DER</span></a><a href="../babader.html" id="nav-back">← Ana Sayfa</a></div></div>
+    <div class="lang-bar"><button class="lang-btn active" data-lang="tr" onclick="setArticleLang('tr')">TR</button><button class="lang-btn" data-lang="en" onclick="setArticleLang('en')">EN</button><button class="lang-btn" data-lang="es" onclick="setArticleLang('es')">ES</button><button class="lang-btn" data-lang="ar" onclick="setArticleLang('ar')">AR</button></div>
     <article>
+        <div class="lang-content" data-lang="tr">
         <span class="tag">Nafaka</span>
         <h1>"Uzun Evliliklerde Boşanan Kadın Nafaka Alamazsa?"</h1>
         <div class="meta">BABADER — 17 Ekim 2017</div>
@@ -50,8 +53,49 @@
 <p>4. Erkekler yaşla birlikte kadınlardan daha hızlı fiziksel gerileme yaşar.</p>
 <p>5. Devlet, aile desteği olmayan yaşlılar için sübvansiyonlu bakım tesisleri sağlamaktadır.</p>
 <p>6. Nafaka savunucularının belgelediği örnekler genellikle ikna edici amaçlarla abartılmıştır.</p></div>
-        <a href="babader.html#sorular" class="back-link">← Geri Dön</a>
+        </div>
+        <div class="lang-content" data-lang="en" style="display:none">
+        <span class="tag">Alimony</span>
+        <h1>"What If a Woman Divorced After a Long Marriage Cannot Receive Alimony?"</h1>
+        <div class="meta">BABADER — October 17, 2017</div>
+        <div class="content"><p>A common argument put forward by opponents of alimony abolition is addressed: what happens to women aged 50-60-70 who divorce after long marriages?</p>
+<p>Six counter-arguments are presented:</p>
+<p>1. Most divorces occur within the first five years of marriage; divorces after long unions are extremely rare.</p>
+<p>2. In long-term marriages, both spouses have legal rights to jointly accumulated assets.</p>
+<p>3. When long marriages end, children are usually grown and will likely support their mothers.</p>
+<p>4. Men experience faster physical decline with age than women.</p>
+<p>5. The state provides subsidized care facilities for elderly people without family support.</p>
+<p>6. Examples documented by alimony advocates are often exaggerated for persuasive purposes.</p></div>
+        </div>
+        <div class="lang-content" data-lang="es" style="display:none">
+        <span class="tag">Pensi&oacute;n Alimenticia</span>
+        <h1>"&iquest;Qu&eacute; pasa si una mujer divorciada tras un matrimonio largo no puede recibir pensi&oacute;n alimenticia?"</h1>
+        <div class="meta">BABADER — 17 de octubre de 2017</div>
+        <div class="content"><p>Se aborda un argumento com&uacute;n presentado por los opositores a la abolici&oacute;n de la pensi&oacute;n alimenticia: &iquest;qu&eacute; sucede con las mujeres de 50-60-70 a&ntilde;os que se divorcian despu&eacute;s de matrimonios largos?</p>
+<p>Se presentan seis contraargumentos:</p>
+<p>1. La mayor&iacute;a de los divorcios ocurren dentro de los primeros cinco a&ntilde;os de matrimonio; los divorcios despu&eacute;s de uniones largas son extremadamente raros.</p>
+<p>2. En matrimonios de larga duraci&oacute;n, ambos c&oacute;nyuges tienen derechos legales sobre los bienes acumulados conjuntamente.</p>
+<p>3. Cuando los matrimonios largos terminan, los hijos generalmente ya son adultos y probablemente apoyar&aacute;n a sus madres.</p>
+<p>4. Los hombres experimentan un deterioro f&iacute;sico m&aacute;s r&aacute;pido con la edad que las mujeres.</p>
+<p>5. El Estado proporciona centros de atenci&oacute;n subvencionados para personas mayores sin apoyo familiar.</p>
+<p>6. Los ejemplos documentados por los defensores de la pensi&oacute;n alimenticia suelen estar exagerados con fines persuasivos.</p></div>
+        </div>
+        <div class="lang-content" data-lang="ar" style="display:none">
+        <span class="tag">النفقة</span>
+        <h1>"ماذا لو لم تستطع المرأة المطلقة بعد زواج طويل الحصول على نفقة؟"</h1>
+        <div class="meta">BABADER — 17 أكتوبر 2017</div>
+        <div class="content"><p>يتم تناول حجة شائعة يطرحها المعارضون لإلغاء النفقة: ماذا يحدث للنساء اللواتي تتراوح أعمارهن بين 50-60-70 عامًا واللواتي يطلقن بعد زيجات طويلة؟</p>
+<p>تُقدم ستة حجج مضادة:</p>
+<p>1. تحدث معظم حالات الطلاق خلال السنوات الخمس الأولى من الزواج؛ والطلاق بعد زيجات طويلة نادر للغاية.</p>
+<p>2. في الزيجات طويلة الأمد، يتمتع كلا الزوجين بحقوق قانونية في الأصول المتراكمة مشتركًا.</p>
+<p>3. عندما تنتهي الزيجات الطويلة، يكون الأبناء عادة قد كبروا ومن المرجح أن يدعموا أمهاتهم.</p>
+<p>4. يعاني الرجال من تراجع جسدي أسرع مع التقدم في السن مقارنة بالنساء.</p>
+<p>5. توفر الدولة مرافق رعاية مدعومة لكبار السن الذين ليس لديهم دعم عائلي.</p>
+<p>6. غالبًا ما تكون الأمثلة التي يوثقها مناصرو النفقة مبالغًا فيها لأغراض الإقناع.</p></div>
+        </div>
+        <a href="../babader.html#sorular" class="back-link"><span id="back-link-text">← Geri Dön</span></a>
     </article>
-    <footer><p>&copy; 2026 BABADER — Babalar ve Çocuklar Derneği | <a href="babader.html">Ana Sayfa</a></p></footer>
+    <footer><p>&copy; 2026 BABADER — Babalar ve Çocuklar Derneği | <a href="../babader.html">Ana Sayfa</a></p></footer>
+    <script src="lang.js"></script>
 </body>
 </html>

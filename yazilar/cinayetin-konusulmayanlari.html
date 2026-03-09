@@ -34,11 +34,14 @@
         footer{background:var(--navy);padding:2rem;text-align:center}
         footer p{color:rgba(255,255,255,0.3);font-size:0.75rem}
         footer a{color:var(--orange-light);text-decoration:none}
+        .lang-bar{text-align:center;padding:0.75rem;background:var(--grey-50);border-bottom:1px solid var(--grey-200)} .lang-btn{border:1px solid var(--grey-200);background:white;padding:0.3rem 0.8rem;margin:0 0.2rem;border-radius:6px;cursor:pointer;font-size:0.75rem;font-weight:600;color:var(--grey-500);transition:all 0.3s} .lang-btn.active{background:var(--navy);color:white;border-color:var(--navy)}
     </style>
 </head>
 <body>
-    <div class="top-bar"><div class="top-inner"><a href="babader.html" class="logo">BABA<span>DER</span></a><a href="babader.html">← Ana Sayfa</a></div></div>
+    <div class="top-bar"><div class="top-inner"><a href="../babader.html" class="logo">BABA<span>DER</span></a><a href="../babader.html" id="nav-back">← Ana Sayfa</a></div></div>
+    <div class="lang-bar"><button class="lang-btn active" data-lang="tr" onclick="setArticleLang('tr')">TR</button><button class="lang-btn" data-lang="en" onclick="setArticleLang('en')">EN</button><button class="lang-btn" data-lang="es" onclick="setArticleLang('es')">ES</button><button class="lang-btn" data-lang="ar" onclick="setArticleLang('ar')">AR</button></div>
     <article>
+        <div class="lang-content" data-lang="tr">
         <span class="tag">Yazarlarımız</span>
         <h1>Bir Cinayetin Konuşulmayanları</h1>
         <div class="meta">Zühtü Akar — 13 Aralık 2019</div>
@@ -46,8 +49,43 @@
 <p>Fail, devlet kurumlarında büyümüş, ebeveyn sevgisinden yoksun kalmış ve fiziksel ve cinsel istismara maruz kaldığı iddia edilmektedir. Tesisten kaçtıktan sonra hırsızlık ve cinayete teşebbüs suçlarını işlemiştir.</p>
 <p>Dikkat çekici bir detay: bir hırsızlık sırasında fail duş almış ve televizyon izlemiştir — bu davranışlar suç niyetinden ziyade normal bir ev yaşamına derin bir özlemi düşündürmektedir.</p>
 <p>Makale, aile mahkemesi kararlarıyla ebeveynlerinden ayrılan yaklaşık 1,5 milyon çocuğu tartışmaktadır. Erich Fromm'un çocukluk travmasının genellikle yetişkinlikte şiddete yol açtığı gözlemini referans alarak, sonuçları yalnızca kınamak yerine kök nedenleri incelememiz gerektiğini vurgulamaktadır.</p></div>
-        <a href="babader.html#makaleler" class="back-link">← Geri Dön</a>
+        <a href="../babader.html#makaleler" class="back-link"><span id="back-link-text">← Geri Dön</span></a>
+        </div>
+
+        <div class="lang-content" data-lang="en" style="display:none">
+        <span class="tag">Our Authors</span>
+        <h1>The Unspoken Aspects of a Murder</h1>
+        <div class="meta">Zuhtu Akar — December 13, 2019</div>
+        <div class="content"><p>This article examines a murder case from a sociological perspective, arguing that society needs to look beyond the crime itself to understand its root causes.</p>
+<p>The perpetrator grew up in state institutions, was deprived of parental love, and allegedly suffered physical and sexual abuse. After escaping from the facility, he committed theft and attempted murder.</p>
+<p>A notable detail: during a burglary, the perpetrator took a shower and watched television — behaviors suggesting a deep longing for a normal home life rather than criminal intent.</p>
+<p>The article discusses approximately 1.5 million children separated from their parents by family court decisions. Referencing Erich Fromm's observation that childhood trauma often leads to violence in adulthood, it emphasizes that we must examine root causes rather than merely condemning outcomes.</p></div>
+        <a href="../babader.html#makaleler" class="back-link"><span>← Go Back</span></a>
+        </div>
+
+        <div class="lang-content" data-lang="es" style="display:none">
+        <span class="tag">Nuestros Autores</span>
+        <h1>Los Aspectos No Hablados de un Asesinato</h1>
+        <div class="meta">Zuhtu Akar — 13 de diciembre de 2019</div>
+        <div class="content"><p>Este articulo examina un caso de asesinato desde una perspectiva sociologica, argumentando que la sociedad necesita mirar mas alla del crimen en si para comprender sus causas raiz.</p>
+<p>El autor crecio en instituciones estatales, fue privado del amor de sus padres y supuestamente sufrio abuso fisico y sexual. Despues de escapar de la institucion, cometio robo e intento de asesinato.</p>
+<p>Un detalle notable: durante un robo, el perpetrador se ducho y vio television — comportamientos que sugieren un profundo anhelo de una vida hogare normal en lugar de intencion criminal.</p>
+<p>El articulo discute aproximadamente 1,5 millones de ninos separados de sus padres por decisiones de tribunales de familia. Haciendo referencia a la observacion de Erich Fromm de que el trauma infantil a menudo conduce a la violencia en la edad adulta, enfatiza que debemos examinar las causas raiz en lugar de simplemente condenar los resultados.</p></div>
+        <a href="../babader.html#makaleler" class="back-link"><span>← Volver</span></a>
+        </div>
+
+        <div class="lang-content" data-lang="ar" style="display:none">
+        <span class="tag">كتّابنا</span>
+        <h1>الجوانب غير المعلنة لجريمة قتل</h1>
+        <div class="meta">زهتو أكار — 13 ديسمبر 2019</div>
+        <div class="content"><p>يتناول هذا المقال قضية قتل من منظور اجتماعي، مؤكداً أن المجتمع بحاجة للنظر إلى ما وراء الجريمة ذاتها لفهم أسبابها الجذرية.</p>
+<p>نشأ الجاني في مؤسسات حكومية، وحُرم من حب الوالدين، ويُزعم أنه تعرّض لإساءة جسدية وجنسية. بعد هروبه من المؤسسة، ارتكب السرقة والشروع في القتل.</p>
+<p>تفصيل لافت: أثناء عملية سطو، استحمّ الجاني وشاهد التلفاز — سلوكيات تشير إلى حنين عميق لحياة منزلية طبيعية وليس إلى نية إجرامية.</p>
+<p>يناقش المقال ما يقارب 1.5 مليون طفل فُصلوا عن والديهم بقرارات محاكم الأسرة. مستشهداً بملاحظة إريك فروم بأن صدمات الطفولة غالباً ما تؤدي إلى العنف في مرحلة البلوغ، يؤكد أنه يجب علينا دراسة الأسباب الجذرية بدلاً من مجرد إدانة النتائج.</p></div>
+        <a href="../babader.html#makaleler" class="back-link"><span>← العودة</span></a>
+        </div>
     </article>
-    <footer><p>&copy; 2026 BABADER — Babalar ve Çocuklar Derneği | <a href="babader.html">Ana Sayfa</a></p></footer>
+    <footer><p>&copy; 2026 BABADER — Babalar ve Çocuklar Derneği | <a href="../babader.html">Ana Sayfa</a></p></footer>
+    <script src="lang.js"></script>
 </body>
 </html>

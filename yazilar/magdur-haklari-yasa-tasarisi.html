@@ -34,22 +34,64 @@
         footer{background:var(--navy);padding:2rem;text-align:center}
         footer p{color:rgba(255,255,255,0.3);font-size:0.75rem}
         footer a{color:var(--orange-light);text-decoration:none}
+        .lang-bar{text-align:center;padding:0.75rem;background:var(--grey-50);border-bottom:1px solid var(--grey-200)} .lang-btn{border:1px solid var(--grey-200);background:white;padding:0.3rem 0.8rem;margin:0 0.2rem;border-radius:6px;cursor:pointer;font-size:0.75rem;font-weight:600;color:var(--grey-500);transition:all 0.3s} .lang-btn.active{background:var(--navy);color:white;border-color:var(--navy)}
     </style>
 </head>
 <body>
-    <div class="top-bar"><div class="top-inner"><a href="babader.html" class="logo">BABA<span>DER</span></a><a href="babader.html">← Ana Sayfa</a></div></div>
+    <div class="top-bar"><div class="top-inner"><a href="../babader.html" class="logo">BABA<span>DER</span></a><a href="../babader.html" id="nav-back">← Ana Sayfa</a></div></div>
+    <div class="lang-bar"><button class="lang-btn active" data-lang="tr" onclick="setArticleLang('tr')">TR</button><button class="lang-btn" data-lang="en" onclick="setArticleLang('en')">EN</button><button class="lang-btn" data-lang="es" onclick="setArticleLang('es')">ES</button><button class="lang-btn" data-lang="ar" onclick="setArticleLang('ar')">AR</button></div>
     <article>
-        <span class="tag">Yasa Tasarısı</span>
-        <h1>Mağdur Hakları Kanunu Yasa Tasarısı</h1>
-        <div class="meta">BABADER (Ramazan Tan, Atıf Kızılkan) — 14 Aralık 2017</div>
-        <div class="content"><p>BABADER, Türkiye'nin önerilen Mağdur Hakları Kanunu hakkında resmi görüşlerini sunmuştur.</p>
-<p>Derneğimiz mağdur korumasını prensipte desteklemekte ancak önerilen yasanın 6284 sayılı Kanun'un sorunlu yönlerini yansıttığı konusunda uyarmaktadır.</p>
-<p><strong>Yetersiz mağdur tanımı:</strong> Mahkeme süreçleri olmadan mağduriyet statüsünün nasıl belirleneceği sorgulanmaktadır.</p>
-<p><strong>Delil standartları:</strong> "Mağdurluk yalnızca kadının beyanına değil, somut delillere dayanmalıdır."</p>
-<p><strong>Hassas grup endişeleri:</strong> Asılsız iddialara dayanarak haksız yere evlerinden çıkarılan babaların gerçek hassas nüfusu oluşturduğu savunulmaktadır.</p>
-<p>Derneğimiz, yasanın tüm demografik gruplar arasında gerçek mağdur koruması yerine öncelikli olarak kadınların korunması için tasarlandığı sonucuna varmıştır.</p></div>
-        <a href="babader.html#sorular" class="back-link">← Geri Dön</a>
+        <div class="lang-content" data-lang="tr">
+        <span class="tag">Yasa Tasarisi</span>
+        <h1>Magdur Haklari Kanunu Yasa Tasarisi</h1>
+        <div class="meta">BABADER (Ramazan Tan, Atif Kizilkan) — 14 Aralik 2017</div>
+        <div class="content"><p>BABADER, Turkiye'nin onerilen Magdur Haklari Kanunu hakkinda resmi goruslerini sunmustur.</p>
+<p>Dernegimiz magdur korumasini prensipte desteklemekte ancak onerilen yasanin 6284 sayili Kanun'un sorunlu yonlerini yansittigi konusunda uyarmaktadir.</p>
+<p><strong>Yetersiz magdur tanimi:</strong> Mahkeme surecleri olmadan magduriyet statusunun nasil belirlenecegi sorgulanmaktadir.</p>
+<p><strong>Delil standartlari:</strong> "Magdurluk yalnizca kadinin beyanina degil, somut delillere dayanmalidir."</p>
+<p><strong>Hassas grup endiseleri:</strong> Asilsiz iddialara dayanarak haksiz yere evlerinden cikarilan babalarin gercek hassas nufusu olusturdugu savunulmaktadir.</p>
+<p>Dernegimiz, yasanin tum demografik gruplar arasinda gercek magdur korumasi yerine oncelikli olarak kadinlarin korumasi icin tasarlandigi sonucuna varmistir.</p></div>
+        </div>
+
+        <div class="lang-content" data-lang="en" style="display:none">
+        <span class="tag">Legislative Bill</span>
+        <h1>Victims' Rights Act Draft Bill</h1>
+        <div class="meta">BABADER (Ramazan Tan, Atif Kizilkan) — December 14, 2017</div>
+        <div class="content"><p>BABADER has submitted its official views on Turkey's proposed Victims' Rights Act.</p>
+<p>Our association supports victim protection in principle but warns that the proposed law mirrors the problematic aspects of Law No. 6284.</p>
+<p><strong>Inadequate victim definition:</strong> The question of how victimhood status will be determined without court proceedings is raised.</p>
+<p><strong>Evidence standards:</strong> "Victimhood must be based on concrete evidence, not solely on the woman's statement."</p>
+<p><strong>Vulnerable group concerns:</strong> It is argued that fathers unjustly removed from their homes based on unfounded allegations constitute the true vulnerable population.</p>
+<p>Our association has concluded that the law is designed primarily for the protection of women rather than genuine victim protection across all demographic groups.</p></div>
+        </div>
+
+        <div class="lang-content" data-lang="es" style="display:none">
+        <span class="tag">Proyecto de Ley</span>
+        <h1>Proyecto de Ley de Derechos de las Victimas</h1>
+        <div class="meta">BABADER (Ramazan Tan, Atif Kizilkan) — 14 de diciembre de 2017</div>
+        <div class="content"><p>BABADER ha presentado sus opiniones oficiales sobre la propuesta de Ley de Derechos de las Victimas de Turquia.</p>
+<p>Nuestra asociacion apoya la proteccion de las victimas en principio, pero advierte que la ley propuesta refleja los aspectos problematicos de la Ley N.o 6284.</p>
+<p><strong>Definicion inadecuada de victima:</strong> Se cuestiona como se determinara el estatus de victima sin procedimientos judiciales.</p>
+<p><strong>Estandares de evidencia:</strong> "La condicion de victima debe basarse en pruebas concretas, no unicamente en la declaracion de la mujer."</p>
+<p><strong>Preocupaciones sobre grupos vulnerables:</strong> Se argumenta que los padres injustamente expulsados de sus hogares basandose en acusaciones infundadas constituyen la verdadera poblacion vulnerable.</p>
+<p>Nuestra asociacion ha concluido que la ley esta disenada principalmente para la proteccion de las mujeres en lugar de una proteccion genuina de las victimas en todos los grupos demograficos.</p></div>
+        </div>
+
+        <div class="lang-content" data-lang="ar" style="display:none">
+        <span class="tag">مشروع قانون</span>
+        <h1>مشروع قانون حقوق الضحايا</h1>
+        <div class="meta">BABADER (رمضان تان، عاطف كيزيلكان) — 14 ديسمبر 2017</div>
+        <div class="content"><p>قدمت جمعية BABADER آراءها الرسمية بشأن مشروع قانون حقوق الضحايا المقترح في تركيا.</p>
+<p>تدعم جمعيتنا حماية الضحايا من حيث المبدأ، لكنها تحذر من أن القانون المقترح يعكس الجوانب الإشكالية للقانون رقم 6284.</p>
+<p><strong>تعريف غير كافٍ للضحية:</strong> يُطرح تساؤل حول كيفية تحديد صفة الضحية دون إجراءات قضائية.</p>
+<p><strong>معايير الأدلة:</strong> "يجب أن تستند صفة الضحية إلى أدلة ملموسة، وليس فقط إلى إفادة المرأة."</p>
+<p><strong>مخاوف بشأن الفئات الهشة:</strong> يُدافع عن أن الآباء الذين أُخرجوا ظلماً من منازلهم بناءً على ادعاءات لا أساس لها يشكلون الفئة الهشة الحقيقية.</p>
+<p>خلصت جمعيتنا إلى أن القانون مصمم أساساً لحماية النساء بدلاً من الحماية الحقيقية للضحايا عبر جميع الفئات الديموغرافية.</p></div>
+        </div>
+
+        <a href="../babader.html#sorular" class="back-link"><span id="back-link-text">← Geri Don</span></a>
     </article>
-    <footer><p>&copy; 2026 BABADER — Babalar ve Çocuklar Derneği | <a href="babader.html">Ana Sayfa</a></p></footer>
+    <footer><p>&copy; 2026 BABADER — Babalar ve Cocuklar Dernegi | <a href="../babader.html">Ana Sayfa</a></p></footer>
+    <script src="lang.js"></script>
 </body>
 </html>

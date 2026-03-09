@@ -34,11 +34,14 @@
         footer{background:var(--navy);padding:2rem;text-align:center}
         footer p{color:rgba(255,255,255,0.3);font-size:0.75rem}
         footer a{color:var(--orange-light);text-decoration:none}
+        .lang-bar{text-align:center;padding:0.75rem;background:var(--grey-50);border-bottom:1px solid var(--grey-200)} .lang-btn{border:1px solid var(--grey-200);background:white;padding:0.3rem 0.8rem;margin:0 0.2rem;border-radius:6px;cursor:pointer;font-size:0.75rem;font-weight:600;color:var(--grey-500);transition:all 0.3s} .lang-btn.active{background:var(--navy);color:white;border-color:var(--navy)}
     </style>
 </head>
 <body>
-    <div class="top-bar"><div class="top-inner"><a href="babader.html" class="logo">BABA<span>DER</span></a><a href="babader.html">← Ana Sayfa</a></div></div>
+    <div class="top-bar"><div class="top-inner"><a href="../babader.html" class="logo">BABA<span>DER</span></a><a href="../babader.html" id="nav-back">← Ana Sayfa</a></div></div>
+    <div class="lang-bar"><button class="lang-btn active" data-lang="tr" onclick="setArticleLang('tr')">TR</button><button class="lang-btn" data-lang="en" onclick="setArticleLang('en')">EN</button><button class="lang-btn" data-lang="es" onclick="setArticleLang('es')">ES</button><button class="lang-btn" data-lang="ar" onclick="setArticleLang('ar')">AR</button></div>
     <article>
+        <div class="lang-content" data-lang="tr">
         <span class="tag">Haber</span>
         <h1>TİHEK Toplantısı Notları</h1>
         <div class="meta">Yasin Emrak — 19 Kasım 2019</div>
@@ -47,8 +50,40 @@
 <p>Çalıştay şiddetin birçok boyutunu ele almış ancak şiddetin ekonomik boyutunu tartışmamıştır. Aile mahkemelerindeki yargısal şiddet ise "yapısal ve kurumsal şiddetin en tehlikeli biçimi" olmasına rağmen tartışmalardan belirgin şekilde dışlanmıştır.</p>
 <p>İstatistiksel veriler, ölüm oranları, iş kazaları ve ekonomik zorluklar açısından erkeklerin birincil mağdur olduğunu göstermektedir. 6284 sayılı Kanun ve yalnızca kadınlar için tasarlanmış KADES uygulaması eleştirilmiştir.</p>
 <p>Derneğimiz, TİHEK'in dengeli yaklaşımına minnettar olduğunu ifade etmiştir. Ancak gözlemler, kaynak dağılımındaki orantısızlığı ve erkek mağdurların marjinalleştirilmesini vurgulamıştır.</p></div>
-        <a href="babader.html#haberler" class="back-link">← Geri Dön</a>
+        </div>
+        <div class="lang-content" data-lang="en" style="display:none">
+        <span class="tag">News</span>
+        <h1>TIHEK Meeting Notes</h1>
+        <div class="meta">Yasin Emrak — November 19, 2019</div>
+        <div class="content"><p>BABADER participated in the workshop titled "From a Society of Violence to a Society of Compassion" organized by TIHEK (Human Rights and Equality Institution of Turkey) on November 15-16, 2019.</p>
+<p>BABADER opposes all forms of violence regardless of the perpetrator or victim. However, in the current period, violence against women is predominantly addressed while violence against men is largely ignored.</p>
+<p>The workshop addressed many dimensions of violence but did not discuss the economic dimension of violence. Judicial violence in family courts was notably excluded from discussions despite being "the most dangerous form of structural and institutional violence."</p>
+<p>Statistical data shows that men are the primary victims in terms of mortality rates, workplace accidents, and economic hardships. Law No. 6284 and the KADES application designed exclusively for women were criticized.</p>
+<p>Our association expressed gratitude for TIHEK's balanced approach. However, the observations highlighted the disproportionate allocation of resources and the marginalization of male victims.</p></div>
+        </div>
+        <div class="lang-content" data-lang="es" style="display:none">
+        <span class="tag">Noticias</span>
+        <h1>Notas de la Reuni&oacute;n del TIHEK</h1>
+        <div class="meta">Yasin Emrak — 19 de noviembre de 2019</div>
+        <div class="content"><p>BABADER particip&oacute; en el taller titulado "De una Sociedad de Violencia a una Sociedad de Compasi&oacute;n" organizado por TIHEK (Instituci&oacute;n de Derechos Humanos e Igualdad de Turqu&iacute;a) los d&iacute;as 15 y 16 de noviembre de 2019.</p>
+<p>BABADER se opone a todas las formas de violencia independientemente del agresor o la v&iacute;ctima. Sin embargo, en el per&iacute;odo actual, se aborda predominantemente la violencia contra la mujer mientras que la violencia contra los hombres es ampliamente ignorada.</p>
+<p>El taller abord&oacute; muchas dimensiones de la violencia pero no discuti&oacute; la dimensi&oacute;n econ&oacute;mica. La violencia judicial en los tribunales de familia fue notablemente excluida de las discusiones a pesar de ser "la forma m&aacute;s peligrosa de violencia estructural e institucional".</p>
+<p>Los datos estad&iacute;sticos muestran que los hombres son las v&iacute;ctimas principales en t&eacute;rminos de tasas de mortalidad, accidentes laborales y dificultades econ&oacute;micas. Se critic&oacute; la Ley N&ordm; 6284 y la aplicaci&oacute;n KADES dise&ntilde;ada exclusivamente para mujeres.</p>
+<p>Nuestra asociaci&oacute;n expres&oacute; su gratitud por el enfoque equilibrado del TIHEK. Sin embargo, las observaciones destacaron la asignaci&oacute;n desproporcionada de recursos y la marginalizaci&oacute;n de las v&iacute;ctimas masculinas.</p></div>
+        </div>
+        <div class="lang-content" data-lang="ar" style="display:none">
+        <span class="tag">أخبار</span>
+        <h1>ملاحظات اجتماع مؤسسة حقوق الإنسان والمساواة التركية</h1>
+        <div class="meta">ياسين إمراك — 19 نوفمبر 2019</div>
+        <div class="content"><p>شاركت BABADER في ورشة العمل بعنوان "من مجتمع العنف إلى مجتمع الرحمة" التي نظمتها مؤسسة حقوق الإنسان والمساواة التركية (TİHEK) في 15-16 نوفمبر 2019.</p>
+<p>تعارض BABADER جميع أشكال العنف بغض النظر عن الجاني أو الضحية. ومع ذلك، في الفترة الحالية، يتم التعامل بشكل رئيسي مع العنف ضد المرأة بينما يتم تجاهل العنف ضد الرجال إلى حد كبير.</p>
+<p>تناولت الورشة أبعادًا عديدة للعنف لكنها لم تناقش البعد الاقتصادي للعنف. تم استبعاد العنف القضائي في محاكم الأسرة بشكل ملحوظ من النقاشات رغم كونه "أخطر أشكال العنف البنيوي والمؤسسي".</p>
+<p>تُظهر البيانات الإحصائية أن الرجال هم الضحايا الأساسيون من حيث معدلات الوفيات وحوادث العمل والصعوبات الاقتصادية. تم انتقاد القانون رقم 6284 وتطبيق KADES المصمم حصريًا للنساء.</p>
+<p>أعربت جمعيتنا عن امتنانها لنهج المؤسسة المتوازن. ومع ذلك، أبرزت الملاحظات التوزيع غير المتناسب للموارد وتهميش الضحايا الذكور.</p></div>
+        </div>
+        <a href="../babader.html#haberler" class="back-link"><span id="back-link-text">← Geri Dön</span></a>
     </article>
-    <footer><p>&copy; 2026 BABADER — Babalar ve Çocuklar Derneği | <a href="babader.html">Ana Sayfa</a></p></footer>
+    <footer><p>&copy; 2026 BABADER — Babalar ve Çocuklar Derneği | <a href="../babader.html">Ana Sayfa</a></p></footer>
+    <script src="lang.js"></script>
 </body>
 </html>

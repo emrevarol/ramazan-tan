@@ -34,11 +34,14 @@
         footer{background:var(--navy);padding:2rem;text-align:center}
         footer p{color:rgba(255,255,255,0.3);font-size:0.75rem}
         footer a{color:var(--orange-light);text-decoration:none}
+        .lang-bar{text-align:center;padding:0.75rem;background:var(--grey-50);border-bottom:1px solid var(--grey-200)} .lang-btn{border:1px solid var(--grey-200);background:white;padding:0.3rem 0.8rem;margin:0 0.2rem;border-radius:6px;cursor:pointer;font-size:0.75rem;font-weight:600;color:var(--grey-500);transition:all 0.3s} .lang-btn.active{background:var(--navy);color:white;border-color:var(--navy)}
     </style>
 </head>
 <body>
-    <div class="top-bar"><div class="top-inner"><a href="babader.html" class="logo">BABA<span>DER</span></a><a href="babader.html">← Ana Sayfa</a></div></div>
+    <div class="top-bar"><div class="top-inner"><a href="../babader.html" class="logo">BABA<span>DER</span></a><a href="../babader.html" id="nav-back">← Ana Sayfa</a></div></div>
+    <div class="lang-bar"><button class="lang-btn active" data-lang="tr" onclick="setArticleLang('tr')">TR</button><button class="lang-btn" data-lang="en" onclick="setArticleLang('en')">EN</button><button class="lang-btn" data-lang="es" onclick="setArticleLang('es')">ES</button><button class="lang-btn" data-lang="ar" onclick="setArticleLang('ar')">AR</button></div>
     <article>
+        <div class="lang-content" data-lang="tr">
         <span class="tag">Psikoloji</span>
         <h1>Çocuğun Kimlik Gelişiminde Babanın Önemi</h1>
         <div class="meta">BABADER — 27 Ekim 2017</div>
@@ -47,8 +50,46 @@
 <p>Babalar, okul öncesi çocukların, özellikle erkek çocukların cinsiyet kimliklerini içselleştirmelerine yardımcı olma konusunda kritik rol oynamaktadır. Baba yokluğu veya zayıf iletişim, uygun cinsiyet rolü modeli eksikliği yaratabilir.</p>
 <p>Kız çocukları babalarıyla daha entelektüel bağlar geliştirmektedir. Bu duygusal bağ, kızların gelecekteki partner seçimleri için temel oluşturmaktadır.</p>
 <p>Biler'in araştırması "baba yokluğu veya minimum baba katılımının" erkeksi kimlik gelişimini olumsuz etkilediğini doğrulamıştır.</p></div>
-        <a href="babader.html#psikoloji" class="back-link">← Geri Dön</a>
+        <a href="../babader.html#psikoloji" class="back-link"><span id="back-link-text">← Geri Dön</span></a>
+        </div>
+
+        <div class="lang-content" data-lang="en" style="display:none">
+        <span class="tag">Psychology</span>
+        <h1>The Importance of the Father in a Child's Identity Development</h1>
+        <div class="meta">BABADER — October 27, 2017</div>
+        <div class="content"><p>During the preschool period, children identify with their parents through imitation; girls model their mothers and boys model their fathers to develop gender roles.</p>
+<p>Research by Lamb and colleagues showed that masculine fathers had sons who displayed masculine traits and daughters who displayed feminine traits.</p>
+<p>Fathers play a critical role in helping preschool children, especially boys, internalize their gender identities. Father absence or poor communication can create a lack of appropriate gender role modeling.</p>
+<p>Daughters develop more intellectual bonds with their fathers. This emotional bond forms the basis for girls' future partner choices.</p>
+<p>Biler's research confirmed that "father absence or minimal father involvement" negatively affects masculine identity development.</p></div>
+        <a href="../babader.html#psikoloji" class="back-link"><span>← Go Back</span></a>
+        </div>
+
+        <div class="lang-content" data-lang="es" style="display:none">
+        <span class="tag">Psicologia</span>
+        <h1>La Importancia del Padre en el Desarrollo de la Identidad del Nino</h1>
+        <div class="meta">BABADER — 27 de octubre de 2017</div>
+        <div class="content"><p>Durante el periodo preescolar, los ninos se identifican con sus padres a traves de la imitacion; las ninas toman como modelo a sus madres y los ninos a sus padres para desarrollar los roles de genero.</p>
+<p>La investigacion de Lamb y sus colegas demostro que los padres masculinos tenian hijos que exhibian rasgos masculinos e hijas que exhibian rasgos femeninos.</p>
+<p>Los padres desempenan un papel critico en ayudar a los ninos en edad preescolar, especialmente a los varones, a internalizar sus identidades de genero. La ausencia paterna o la comunicacion deficiente pueden crear una falta de modelos de roles de genero adecuados.</p>
+<p>Las hijas desarrollan vinculos mas intelectuales con sus padres. Este vinculo emocional forma la base para las futuras elecciones de pareja de las ninas.</p>
+<p>La investigacion de Biler confirmo que "la ausencia paterna o la participacion minima del padre" afecta negativamente el desarrollo de la identidad masculina.</p></div>
+        <a href="../babader.html#psikoloji" class="back-link"><span>← Volver</span></a>
+        </div>
+
+        <div class="lang-content" data-lang="ar" style="display:none">
+        <span class="tag">علم النفس</span>
+        <h1>أهمية الأب في تطوير هوية الطفل</h1>
+        <div class="meta">BABADER — 27 أكتوبر 2017</div>
+        <div class="content"><p>خلال مرحلة ما قبل المدرسة، يتماهى الأطفال مع والديهم من خلال التقليد؛ تتخذ البنات أمهاتهن نموذجاً ويتخذ الأولاد آباءهم نموذجاً لتطوير أدوار الجنسين.</p>
+<p>أظهرت أبحاث لامب وزملائه أن الآباء ذوي السمات الذكورية كان لديهم أبناء يُظهرون سمات ذكورية وبنات يُظهرن سمات أنثوية.</p>
+<p>يلعب الآباء دوراً حاسماً في مساعدة أطفال ما قبل المدرسة، وخاصة الأولاد، على استيعاب هوياتهم الجنسية. يمكن أن يؤدي غياب الأب أو ضعف التواصل إلى نقص في نمذجة الأدوار الجنسية المناسبة.</p>
+<p>تطوّر البنات روابط فكرية أعمق مع آبائهن. يشكّل هذا الرابط العاطفي أساساً لاختيارات البنات المستقبلية للشريك.</p>
+<p>أكدت أبحاث بيلر أن "غياب الأب أو الحد الأدنى من مشاركته" يؤثر سلباً على تطور الهوية الذكورية.</p></div>
+        <a href="../babader.html#psikoloji" class="back-link"><span>← العودة</span></a>
+        </div>
     </article>
-    <footer><p>&copy; 2026 BABADER — Babalar ve Çocuklar Derneği | <a href="babader.html">Ana Sayfa</a></p></footer>
+    <footer><p>&copy; 2026 BABADER — Babalar ve Çocuklar Derneği | <a href="../babader.html">Ana Sayfa</a></p></footer>
+    <script src="lang.js"></script>
 </body>
 </html>

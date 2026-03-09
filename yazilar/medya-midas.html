@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Medya Midas: "Türkiye Bu Haberi Konuşacak…" — BABADER</title>
+    <title>Medya Midas: "Turkiye Bu Haberi Konusacak..." — BABADER</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
     <style>
@@ -34,26 +34,80 @@
         footer{background:var(--navy);padding:2rem;text-align:center}
         footer p{color:rgba(255,255,255,0.3);font-size:0.75rem}
         footer a{color:var(--orange-light);text-decoration:none}
+        .lang-bar{text-align:center;padding:0.75rem;background:var(--grey-50);border-bottom:1px solid var(--grey-200)} .lang-btn{border:1px solid var(--grey-200);background:white;padding:0.3rem 0.8rem;margin:0 0.2rem;border-radius:6px;cursor:pointer;font-size:0.75rem;font-weight:600;color:var(--grey-500);transition:all 0.3s} .lang-btn.active{background:var(--navy);color:white;border-color:var(--navy)}
     </style>
 </head>
 <body>
-    <div class="top-bar"><div class="top-inner"><a href="babader.html" class="logo">BABA<span>DER</span></a><a href="babader.html">← Ana Sayfa</a></div></div>
+    <div class="top-bar"><div class="top-inner"><a href="../babader.html" class="logo">BABA<span>DER</span></a><a href="../babader.html" id="nav-back">← Ana Sayfa</a></div></div>
+    <div class="lang-bar"><button class="lang-btn active" data-lang="tr" onclick="setArticleLang('tr')">TR</button><button class="lang-btn" data-lang="en" onclick="setArticleLang('en')">EN</button><button class="lang-btn" data-lang="es" onclick="setArticleLang('es')">ES</button><button class="lang-btn" data-lang="ar" onclick="setArticleLang('ar')">AR</button></div>
     <article>
+        <div class="lang-content" data-lang="tr">
         <span class="tag">Haber</span>
-        <h1>Medya Midas: "Türkiye Bu Haberi Konuşacak…"</h1>
-        <div class="meta">Yasin Emrak — 20 Şubat 2021</div>
-        <div class="content"><p>İstanbul Sözleşmesi'nin en çok tartışılan konu olan Türkiye'de, araştırmacı medya kuruluşu Medya Midas'a göre, sözleşmenin farklı versiyonları arasında önemli tutarsızlıklar bulunmaktadır.</p>
-<p>Resmi adıyla "Kadınlara Yönelik Şiddet ve Aile İçi Şiddetin Önlenmesi ve Bunlarla Mücadeleye İlişkin Avrupa Konseyi Sözleşmesi" olan sözleşme, 11 Mayıs 2011'de İstanbul'da imzalanmıştır. Meclis, 24 Kasım 2011'de 6251 sayılı Kanun ile onaylamış ve 8 Mart 2012'de Resmi Gazete'de yayımlanmıştır.</p>
-<p>Karşılaştırmalı analiz, Meclis tarafından onaylanan metin ile Resmi Gazete versiyonu arasında önemli farklılıklar ortaya koymaktadır.</p>
-<h3>Terminolojik Değişiklikler</h3>
-<p>"Cinsiyet" terimi, birçok madde ve hükümde "toplumsal cinsiyet" olarak değiştirilmiştir. "Tecavüz" ifadesi giriş bölümlerinde "cinsel taciz" ile değiştirilmiştir. "Cinsel tercih" ise "cinsel yönelim" olarak değiştirilmiştir.</p>
-<h3>Usul Terminolojisi Değişiklikleri</h3>
-<p>"Kovuşturma" birçok fıkrada "soruşturma" ve "işlemler" olarak değiştirilmiştir.</p>
-<h3>Madde Başlıkları Değişiklikleri</h3>
-<p>26. maddenin başlığı "Aile içi şiddete tanık olan çocuklar"dan sadece "Tanık çocuklar"a değişmiştir. 34. maddenin başlığı "Taciz"den "Israrlı takip"e değişmiştir.</p>
-<p>Rapor, bu değişikliklere kimin yetki verdiği, milletvekillerinin bilgilendirilip bilgilendirilmediği ve Türkiye'nin sözleşme kapsamındaki yasal yükümlülükleri açısından meşru metnin hangisi olduğuna dair kritik sorular ortaya koymaktadır.</p></div>
-        <a href="babader.html#haberler" class="back-link">← Geri Dön</a>
+        <h1>Medya Midas: "Turkiye Bu Haberi Konusacak..."</h1>
+        <div class="meta">Yasin Emrak — 20 Subat 2021</div>
+        <div class="content"><p>Istanbul Sozlesmesi'nin en cok tartisilan konu olan Turkiye'de, arastirmaci medya kurulusu Medya Midas'a gore, sozlesmenin farkli versiyonlari arasinda onemli tutarsizliklar bulunmaktadir.</p>
+<p>Resmi adiyla "Kadinlara Yonelik Siddet ve Aile Ici Siddetin Onlenmesi ve Bunlarla Mucadeleye Iliskin Avrupa Konseyi Sozlesmesi" olan sozlesme, 11 Mayis 2011'de Istanbul'da imzalanmistir. Meclis, 24 Kasim 2011'de 6251 sayili Kanun ile onaylamisve 8 Mart 2012'de Resmi Gazete'de yayimlanmistir.</p>
+<p>Karsilastirmali analiz, Meclis tarafindan onaylanan metin ile Resmi Gazete versiyonu arasinda onemli farkliliklar ortaya koymaktadir.</p>
+<h3>Terminolojik Degisiklikler</h3>
+<p>"Cinsiyet" terimi, bircok madde ve hukumde "toplumsal cinsiyet" olarak degistirilmistir. "Tecavuz" ifadesi giris bolumlerinde "cinsel taciz" ile degistirilmistir. "Cinsel tercih" ise "cinsel yonelim" olarak degistirilmistir.</p>
+<h3>Usul Terminolojisi Degisiklikleri</h3>
+<p>"Kovusturma" bircok fikrada "sorusturma" ve "islemler" olarak degistirilmistir.</p>
+<h3>Madde Basliklari Degisiklikleri</h3>
+<p>26. maddenin basligi "Aile ici siddete tanik olan cocuklar"dan sadece "Tanik cocuklar"a degismistir. 34. maddenin basligi "Taciz"den "Israrli takip"e degismistir.</p>
+<p>Rapor, bu degisikliklere kimin yetki verdigi, milletvekillerinin bilgilendirilip bilgilendirilmedigi ve Turkiye'nin sozlesme kapsamindaki yasal yukumlulukleri acisindan mesru metnin hangisi olduguna dair kritik sorular ortaya koymaktadir.</p></div>
+        </div>
+
+        <div class="lang-content" data-lang="en" style="display:none">
+        <span class="tag">News</span>
+        <h1>Media Midas: "Turkey Will Talk About This News..."</h1>
+        <div class="meta">Yasin Emrak — February 20, 2021</div>
+        <div class="content"><p>In Turkey, where the Istanbul Convention is the most debated topic, significant inconsistencies have been found between different versions of the convention, according to investigative media outlet Media Midas.</p>
+<p>The convention, officially titled the "Council of Europe Convention on Preventing and Combating Violence Against Women and Domestic Violence," was signed in Istanbul on May 11, 2011. Parliament ratified it with Law No. 6251 on November 24, 2011, and it was published in the Official Gazette on March 8, 2012.</p>
+<p>Comparative analysis reveals significant differences between the text ratified by Parliament and the Official Gazette version.</p>
+<h3>Terminological Changes</h3>
+<p>The term "sex" was changed to "gender" in numerous articles and provisions. The expression "rape" was replaced with "sexual harassment" in introductory sections. "Sexual preference" was changed to "sexual orientation."</p>
+<h3>Procedural Terminology Changes</h3>
+<p>"Prosecution" was changed to "investigation" and "proceedings" in several paragraphs.</p>
+<h3>Article Title Changes</h3>
+<p>The title of Article 26 was changed from "Children who witness domestic violence" to simply "Witness children." The title of Article 34 was changed from "Harassment" to "Stalking."</p>
+<p>The report raises critical questions about who authorized these changes, whether parliamentarians were informed, and which text constitutes the legitimate one regarding Turkey's legal obligations under the convention.</p></div>
+        </div>
+
+        <div class="lang-content" data-lang="es" style="display:none">
+        <span class="tag">Noticias</span>
+        <h1>Media Midas: "Turquia hablara de esta noticia..."</h1>
+        <div class="meta">Yasin Emrak — 20 de febrero de 2021</div>
+        <div class="content"><p>En Turquia, donde el Convenio de Estambul es el tema mas debatido, se han encontrado inconsistencias significativas entre las diferentes versiones del convenio, segun el medio de investigacion Media Midas.</p>
+<p>El convenio, oficialmente titulado "Convenio del Consejo de Europa sobre Prevencion y Lucha contra la Violencia contra las Mujeres y la Violencia Domestica," fue firmado en Estambul el 11 de mayo de 2011. El Parlamento lo ratifico con la Ley N.o 6251 el 24 de noviembre de 2011 y fue publicado en el Boletin Oficial el 8 de marzo de 2012.</p>
+<p>El analisis comparativo revela diferencias significativas entre el texto ratificado por el Parlamento y la version del Boletin Oficial.</p>
+<h3>Cambios terminologicos</h3>
+<p>El termino "sexo" fue cambiado a "genero" en numerosos articulos y disposiciones. La expresion "violacion" fue reemplazada por "acoso sexual" en las secciones introductorias. "Preferencia sexual" fue cambiada a "orientacion sexual."</p>
+<h3>Cambios en terminologia procesal</h3>
+<p>"Enjuiciamiento" fue cambiado a "investigacion" y "procedimientos" en varios parrafos.</p>
+<h3>Cambios en titulos de articulos</h3>
+<p>El titulo del Articulo 26 fue cambiado de "Ninos que presencian violencia domestica" a simplemente "Ninos testigos." El titulo del Articulo 34 fue cambiado de "Acoso" a "Acecho."</p>
+<p>El informe plantea preguntas criticas sobre quien autorizo estos cambios, si los parlamentarios fueron informados y cual texto constituye el legitimo respecto a las obligaciones legales de Turquia bajo el convenio.</p></div>
+        </div>
+
+        <div class="lang-content" data-lang="ar" style="display:none">
+        <span class="tag">أخبار</span>
+        <h1>ميديا ميداس: "تركيا ستتحدث عن هذا الخبر..."</h1>
+        <div class="meta">ياسين إمراك — 20 فبراير 2021</div>
+        <div class="content"><p>في تركيا، حيث تُعد اتفاقية إسطنبول الموضوع الأكثر إثارة للجدل، تم اكتشاف تناقضات كبيرة بين النسخ المختلفة للاتفاقية، وفقاً لوسيلة الإعلام الاستقصائية ميديا ميداس.</p>
+<p>الاتفاقية المعنونة رسمياً "اتفاقية مجلس أوروبا بشأن منع ومكافحة العنف ضد المرأة والعنف الأسري" وُقّعت في إسطنبول في 11 مايو 2011. صادق عليها البرلمان بالقانون رقم 6251 في 24 نوفمبر 2011، ونُشرت في الجريدة الرسمية في 8 مارس 2012.</p>
+<p>يكشف التحليل المقارن عن اختلافات جوهرية بين النص الذي صادق عليه البرلمان ونسخة الجريدة الرسمية.</p>
+<h3>تغييرات مصطلحية</h3>
+<p>تم تغيير مصطلح "الجنس" إلى "النوع الاجتماعي" في العديد من المواد والأحكام. تم استبدال عبارة "الاغتصاب" بـ"التحرش الجنسي" في الأقسام التمهيدية. تم تغيير "التفضيل الجنسي" إلى "التوجه الجنسي."</p>
+<h3>تغييرات في المصطلحات الإجرائية</h3>
+<p>تم تغيير "المحاكمة" إلى "التحقيق" و"الإجراءات" في عدة فقرات.</p>
+<h3>تغييرات في عناوين المواد</h3>
+<p>تم تغيير عنوان المادة 26 من "الأطفال الذين يشهدون العنف الأسري" إلى "الأطفال الشهود" فقط. تم تغيير عنوان المادة 34 من "التحرش" إلى "الملاحقة."</p>
+<p>يطرح التقرير أسئلة جوهرية حول من أذن بهذه التغييرات، وما إذا كان البرلمانيون قد أُبلغوا، وأي نص يشكل النص الشرعي فيما يتعلق بالتزامات تركيا القانونية بموجب الاتفاقية.</p></div>
+        </div>
+
+        <a href="../babader.html#haberler" class="back-link"><span id="back-link-text">← Geri Don</span></a>
     </article>
-    <footer><p>&copy; 2026 BABADER — Babalar ve Çocuklar Derneği | <a href="babader.html">Ana Sayfa</a></p></footer>
+    <footer><p>&copy; 2026 BABADER — Babalar ve Cocuklar Dernegi | <a href="../babader.html">Ana Sayfa</a></p></footer>
+    <script src="lang.js"></script>
 </body>
 </html>

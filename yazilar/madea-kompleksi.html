@@ -34,11 +34,14 @@
         footer{background:var(--navy);padding:2rem;text-align:center}
         footer p{color:rgba(255,255,255,0.3);font-size:0.75rem}
         footer a{color:var(--orange-light);text-decoration:none}
+        .lang-bar{text-align:center;padding:0.75rem;background:var(--grey-50);border-bottom:1px solid var(--grey-200)} .lang-btn{border:1px solid var(--grey-200);background:white;padding:0.3rem 0.8rem;margin:0 0.2rem;border-radius:6px;cursor:pointer;font-size:0.75rem;font-weight:600;color:var(--grey-500);transition:all 0.3s} .lang-btn.active{background:var(--navy);color:white;border-color:var(--navy)}
     </style>
 </head>
 <body>
-    <div class="top-bar"><div class="top-inner"><a href="babader.html" class="logo">BABA<span>DER</span></a><a href="babader.html">← Ana Sayfa</a></div></div>
+    <div class="top-bar"><div class="top-inner"><a href="../babader.html" class="logo">BABA<span>DER</span></a><a href="../babader.html" id="nav-back">← Ana Sayfa</a></div></div>
+    <div class="lang-bar"><button class="lang-btn active" data-lang="tr" onclick="setArticleLang('tr')">TR</button><button class="lang-btn" data-lang="en" onclick="setArticleLang('en')">EN</button><button class="lang-btn" data-lang="es" onclick="setArticleLang('es')">ES</button><button class="lang-btn" data-lang="ar" onclick="setArticleLang('ar')">AR</button></div>
     <article>
+        <div class="lang-content" data-lang="tr">
         <span class="tag">Psikoloji</span>
         <h1>Madea Kompleksi</h1>
         <div class="meta">BABADER — 30 Eylül 2017</div>
@@ -46,8 +49,41 @@
 <p>Annelerin çocuklarını öldürmesi vakaları artan boşanma oranlarıyla birlikte artmıştır. Ruh sağlığı uzmanları "her üç anneden birinin bu duruma yönelik eğilimler sergilediğini" tahmin etmektedir.</p>
 <p>Durum tipik olarak duygusal sıkıntı ve çözülmemiş aile çatışmaları yaşayan kadınlarda ortaya çıkar. Bu bireyler genellikle çocuklarına yönelen derin bir kızgınlık besler.</p>
 <p>Mitolojik köken: Medea, sadakatsiz kocasından intikam almak için iki çocuğunu öldürmüştür. Bu antik anlatı, ihanet ve intikamla motive edilen modern çocuk öldürme vakalarını anlamak için psikolojik çerçeve sağlamaktadır.</p></div>
-        <a href="babader.html#psikoloji" class="back-link">← Geri Dön</a>
+        </div>
+
+        <div class="lang-content" data-lang="en" style="display:none">
+        <span class="tag">Psychology</span>
+        <h1>The Medea Complex</h1>
+        <div class="meta">BABADER — September 30, 2017</div>
+        <div class="content"><p>The psychological condition known as the "Medea Complex" or "Malicious Mother Syndrome," first formally described by Dr. Richard Gardner, is examined.</p>
+<p>Cases of mothers killing their children have increased alongside rising divorce rates. Mental health professionals estimate that "one in three mothers displays tendencies toward this condition."</p>
+<p>The condition typically manifests in women experiencing emotional distress and unresolved family conflicts. These individuals often harbor deep resentment directed at their children.</p>
+<p>Mythological origin: Medea killed her two children to take revenge on her unfaithful husband. This ancient narrative provides a psychological framework for understanding modern cases of filicide motivated by betrayal and vengeance.</p></div>
+        </div>
+
+        <div class="lang-content" data-lang="es" style="display:none">
+        <span class="tag">Psicologia</span>
+        <h1>El Complejo de Medea</h1>
+        <div class="meta">BABADER — 30 de septiembre de 2017</div>
+        <div class="content"><p>Se examina la condicion psicologica conocida como el "Complejo de Medea" o "Sindrome de la Madre Maliciosa," descrita formalmente por primera vez por el Dr. Richard Gardner.</p>
+<p>Los casos de madres que matan a sus hijos han aumentado junto con las crecientes tasas de divorcio. Los profesionales de salud mental estiman que "una de cada tres madres muestra tendencias hacia esta condicion."</p>
+<p>La condicion se manifiesta tipicamente en mujeres que experimentan angustia emocional y conflictos familiares no resueltos. Estas personas suelen albergar un profundo resentimiento dirigido hacia sus hijos.</p>
+<p>Origen mitologico: Medea mato a sus dos hijos para vengarse de su esposo infiel. Esta narrativa antigua proporciona un marco psicologico para comprender los casos modernos de filicidio motivados por la traicion y la venganza.</p></div>
+        </div>
+
+        <div class="lang-content" data-lang="ar" style="display:none">
+        <span class="tag">علم النفس</span>
+        <h1>عقدة ميديا</h1>
+        <div class="meta">BABADER — 30 سبتمبر 2017</div>
+        <div class="content"><p>يتم فحص الحالة النفسية المعروفة باسم "عقدة ميديا" أو "متلازمة الأم الخبيثة"، التي وصفها رسمياً لأول مرة الدكتور ريتشارد غاردنر.</p>
+<p>ازدادت حالات قتل الأمهات لأطفالهن بالتزامن مع ارتفاع معدلات الطلاق. يقدر متخصصو الصحة النفسية أن "واحدة من كل ثلاث أمهات تظهر ميولاً نحو هذه الحالة."</p>
+<p>تظهر هذه الحالة عادةً لدى النساء اللواتي يعانين من ضائقة عاطفية وصراعات عائلية لم تُحل. غالباً ما يحمل هؤلاء الأفراد استياءً عميقاً موجهاً نحو أطفالهم.</p>
+<p>الأصل الأسطوري: قتلت ميديا طفليها انتقاماً من زوجها الخائن. توفر هذه الرواية القديمة إطاراً نفسياً لفهم حالات قتل الأطفال الحديثة المدفوعة بالخيانة والانتقام.</p></div>
+        </div>
+
+        <a href="../babader.html#psikoloji" class="back-link"><span id="back-link-text">← Geri Don</span></a>
     </article>
-    <footer><p>&copy; 2026 BABADER — Babalar ve Çocuklar Derneği | <a href="babader.html">Ana Sayfa</a></p></footer>
+    <footer><p>&copy; 2026 BABADER — Babalar ve Cocuklar Dernegi | <a href="../babader.html">Ana Sayfa</a></p></footer>
+    <script src="lang.js"></script>
 </body>
 </html>

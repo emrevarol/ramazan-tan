@@ -34,11 +34,14 @@
         footer{background:var(--navy);padding:2rem;text-align:center}
         footer p{color:rgba(255,255,255,0.3);font-size:0.75rem}
         footer a{color:var(--orange-light);text-decoration:none}
+        .lang-bar{text-align:center;padding:0.75rem;background:var(--grey-50);border-bottom:1px solid var(--grey-200)} .lang-btn{border:1px solid var(--grey-200);background:white;padding:0.3rem 0.8rem;margin:0 0.2rem;border-radius:6px;cursor:pointer;font-size:0.75rem;font-weight:600;color:var(--grey-500);transition:all 0.3s} .lang-btn.active{background:var(--navy);color:white;border-color:var(--navy)}
     </style>
 </head>
 <body>
-    <div class="top-bar"><div class="top-inner"><a href="babader.html" class="logo">BABA<span>DER</span></a><a href="babader.html">← Ana Sayfa</a></div></div>
+    <div class="top-bar"><div class="top-inner"><a href="../babader.html" class="logo">BABA<span>DER</span></a><a href="../babader.html" id="nav-back">← Ana Sayfa</a></div></div>
+    <div class="lang-bar"><button class="lang-btn active" data-lang="tr" onclick="setArticleLang('tr')">TR</button><button class="lang-btn" data-lang="en" onclick="setArticleLang('en')">EN</button><button class="lang-btn" data-lang="es" onclick="setArticleLang('es')">ES</button><button class="lang-btn" data-lang="ar" onclick="setArticleLang('ar')">AR</button></div>
     <article>
+        <div class="lang-content" data-lang="tr">
         <span class="tag">Psikoloji</span>
         <h1>Postpartum Psikiyatrik Bozukluklar</h1>
         <div class="meta">Dr. Erkut Erdoğan — 15 Ocak 2018</div>
@@ -47,8 +50,40 @@
 <p><strong>Postpartum Psikoz:</strong> Vakaların %0,1-0,2'sinde görülen en şiddetli form. Önceki puerperel psikoz öyküsü olanlar için %70 nüks riski vardır. Tedavi hastane yatışı gerektirir.</p>
 <p><strong>Postpartum Depresyon:</strong> Doğum sonrası kadınların %10-15'ini etkiler. Türk çalışmalarında öz bildirim ölçümleriyle %21,2-54,2 gibi daha yüksek yaygınlık oranları rapor edilmiştir.</p>
 <p>Normal doğum sonrası uyum ile patolojik durumları ayırt etmek zorlu olmaya devam etmektedir.</p></div>
-        <a href="babader.html#psikoloji" class="back-link">← Geri Dön</a>
+        </div>
+        <div class="lang-content" data-lang="en" style="display:none">
+        <span class="tag">Psychology</span>
+        <h1>Postpartum Psychiatric Disorders</h1>
+        <div class="meta">Dr. Erkut Erdoğan — January 15, 2018</div>
+        <div class="content"><p>A comprehensive article examining psychiatric disorders that emerge in the postpartum period.</p>
+<p><strong>Postpartum Blues:</strong> Temporary emotional fluctuations including tearfulness, irritability, and anxiety. 75% of women experience spontaneous resolution of symptoms.</p>
+<p><strong>Postpartum Psychosis:</strong> The most severe form, occurring in 0.1-0.2% of cases. There is a 70% recurrence risk for those with a history of previous puerperal psychosis. Treatment requires hospitalization.</p>
+<p><strong>Postpartum Depression:</strong> Affects 10-15% of postpartum women. Turkish studies have reported higher prevalence rates of 21.2-54.2% using self-report measures.</p>
+<p>Distinguishing normal postpartum adjustment from pathological conditions continues to be challenging.</p></div>
+        </div>
+        <div class="lang-content" data-lang="es" style="display:none">
+        <span class="tag">Psicolog&iacute;a</span>
+        <h1>Trastornos Psiqui&aacute;tricos Posparto</h1>
+        <div class="meta">Dr. Erkut Erdoğan — 15 de enero de 2018</div>
+        <div class="content"><p>Un art&iacute;culo exhaustivo que examina los trastornos psiqui&aacute;tricos que surgen en el per&iacute;odo posparto.</p>
+<p><strong>Tristeza Posparto:</strong> Fluctuaciones emocionales temporales que incluyen llanto, irritabilidad y ansiedad. El 75% de las mujeres experimenta una resoluci&oacute;n espont&aacute;nea de los s&iacute;ntomas.</p>
+<p><strong>Psicosis Posparto:</strong> La forma m&aacute;s grave, que ocurre en el 0,1-0,2% de los casos. Existe un riesgo de recurrencia del 70% para quienes tienen antecedentes de psicosis puerperal previa. El tratamiento requiere hospitalizaci&oacute;n.</p>
+<p><strong>Depresi&oacute;n Posparto:</strong> Afecta al 10-15% de las mujeres en el posparto. Estudios turcos han reportado tasas de prevalencia m&aacute;s altas del 21,2-54,2% utilizando medidas de autoinforme.</p>
+<p>Distinguir la adaptaci&oacute;n posparto normal de las condiciones patol&oacute;gicas sigue siendo un desaf&iacute;o.</p></div>
+        </div>
+        <div class="lang-content" data-lang="ar" style="display:none">
+        <span class="tag">علم النفس</span>
+        <h1>الاضطرابات النفسية بعد الولادة</h1>
+        <div class="meta">د. إركوت أردوغان — 15 يناير 2018</div>
+        <div class="content"><p>مقال شامل يتناول الاضطرابات النفسية التي تظهر في فترة ما بعد الولادة.</p>
+<p><strong>كآبة ما بعد الولادة:</strong> تقلبات عاطفية مؤقتة تشمل البكاء والتهيج والقلق. تشهد 75% من النساء زوال الأعراض تلقائيًا.</p>
+<p><strong>ذهان ما بعد الولادة:</strong> الشكل الأشد خطورة، يحدث في 0.1-0.2% من الحالات. هناك خطر تكرار بنسبة 70% لمن لديهن تاريخ سابق من ذهان النفاس. يتطلب العلاج دخول المستشفى.</p>
+<p><strong>اكتئاب ما بعد الولادة:</strong> يصيب 10-15% من النساء بعد الولادة. أفادت الدراسات التركية بمعدلات انتشار أعلى تتراوح بين 21.2-54.2% باستخدام مقاييس التقرير الذاتي.</p>
+<p>لا يزال التمييز بين التكيف الطبيعي بعد الولادة والحالات المرضية أمرًا صعبًا.</p></div>
+        </div>
+        <a href="../babader.html#psikoloji" class="back-link"><span id="back-link-text">← Geri Dön</span></a>
     </article>
-    <footer><p>&copy; 2026 BABADER — Babalar ve Çocuklar Derneği | <a href="babader.html">Ana Sayfa</a></p></footer>
+    <footer><p>&copy; 2026 BABADER — Babalar ve Çocuklar Derneği | <a href="../babader.html">Ana Sayfa</a></p></footer>
+    <script src="lang.js"></script>
 </body>
 </html>

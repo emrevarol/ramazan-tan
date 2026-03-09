@@ -34,11 +34,14 @@
         footer{background:var(--navy);padding:2rem;text-align:center}
         footer p{color:rgba(255,255,255,0.3);font-size:0.75rem}
         footer a{color:var(--orange-light);text-decoration:none}
+        .lang-bar{text-align:center;padding:0.75rem;background:var(--grey-50);border-bottom:1px solid var(--grey-200)} .lang-btn{border:1px solid var(--grey-200);background:white;padding:0.3rem 0.8rem;margin:0 0.2rem;border-radius:6px;cursor:pointer;font-size:0.75rem;font-weight:600;color:var(--grey-500);transition:all 0.3s} .lang-btn.active{background:var(--navy);color:white;border-color:var(--navy)}
     </style>
 </head>
 <body>
-    <div class="top-bar"><div class="top-inner"><a href="babader.html" class="logo">BABA<span>DER</span></a><a href="babader.html">← Ana Sayfa</a></div></div>
+    <div class="top-bar"><div class="top-inner"><a href="../babader.html" class="logo">BABA<span>DER</span></a><a href="../babader.html" id="nav-back">← Ana Sayfa</a></div></div>
+    <div class="lang-bar"><button class="lang-btn active" data-lang="tr" onclick="setArticleLang('tr')">TR</button><button class="lang-btn" data-lang="en" onclick="setArticleLang('en')">EN</button><button class="lang-btn" data-lang="es" onclick="setArticleLang('es')">ES</button><button class="lang-btn" data-lang="ar" onclick="setArticleLang('ar')">AR</button></div>
     <article>
+        <div class="lang-content" data-lang="tr">
         <span class="tag">Bildiri</span>
         <h1>TÜBAKKOM Açıklamasına Cevabımızdır</h1>
         <div class="meta">BABADER — 17 Mayıs 2019</div>
@@ -47,8 +50,40 @@
 <p><strong>Nafaka Adaletsizliği:</strong> Nafaka "yasal talan" olarak nitelendirilmekte, başkasının yoksulluğuna neden olmayan birinden ödeme talep etmenin temel olarak adaletsiz olduğu savunulmaktadır.</p>
 <p><strong>Kadın İstihdamı:</strong> "Birçok sektör aktif olarak kadın işçi aramaktadır" ve kadınlar arasındaki işsizlik genellikle sistemik engellerden ziyade tercihi yansıtmaktadır.</p>
 <p>Nafaka bağımlılığı değil bağımsızlığı teşvik eden reformlar çağrısında bulunduk.</p></div>
-        <a href="babader.html#duyurular" class="back-link">← Geri Dön</a>
+        </div>
+        <div class="lang-content" data-lang="en" style="display:none">
+        <span class="tag">Statement</span>
+        <h1>Our Response to the TUBAKKOM Statement</h1>
+        <div class="meta">BABADER — May 17, 2019</div>
+        <div class="content"><p>BABADER responds to the statement by the Union of Turkish Bar Associations Women's Law Commission regarding alimony reform.</p>
+<p><strong>On Gender Equality:</strong> If the legal system is supposed to treat both genders equally, why does a "Women's Law Commission" exist? A corresponding "Men's Law Commission" should also exist to address similar imbalances.</p>
+<p><strong>Alimony Injustice:</strong> Alimony is characterized as "legal plunder," arguing that demanding payment from someone who did not cause another's poverty is fundamentally unjust.</p>
+<p><strong>Women's Employment:</strong> "Many sectors are actively seeking female workers" and unemployment among women generally reflects preference rather than systemic barriers.</p>
+<p>We called for reforms that promote independence rather than alimony dependency.</p></div>
+        </div>
+        <div class="lang-content" data-lang="es" style="display:none">
+        <span class="tag">Comunicado</span>
+        <h1>Nuestra Respuesta al Comunicado de TUBAKKOM</h1>
+        <div class="meta">BABADER — 17 de mayo de 2019</div>
+        <div class="content"><p>BABADER responde al comunicado de la Comisi&oacute;n de Derecho de la Mujer de la Uni&oacute;n de Colegios de Abogados de Turqu&iacute;a sobre la reforma de la pensi&oacute;n alimenticia.</p>
+<p><strong>Sobre la Igualdad de G&eacute;nero:</strong> Si el sistema legal debe tratar a ambos g&eacute;neros por igual, &iquest;por qu&eacute; existe una "Comisi&oacute;n de Derecho de la Mujer"? Tambi&eacute;n deber&iacute;a existir una "Comisi&oacute;n de Derecho del Hombre" correspondiente para abordar desequilibrios similares.</p>
+<p><strong>Injusticia de la Pensi&oacute;n Alimenticia:</strong> La pensi&oacute;n alimenticia se caracteriza como "saqueo legal", argumentando que exigir el pago a alguien que no caus&oacute; la pobreza de otro es fundamentalmente injusto.</p>
+<p><strong>Empleo Femenino:</strong> "Muchos sectores buscan activamente trabajadoras" y el desempleo entre las mujeres generalmente refleja preferencia en lugar de barreras sist&eacute;micas.</p>
+<p>Hicimos un llamado a reformas que promuevan la independencia en lugar de la dependencia de la pensi&oacute;n alimenticia.</p></div>
+        </div>
+        <div class="lang-content" data-lang="ar" style="display:none">
+        <span class="tag">بيان</span>
+        <h1>ردنا على بيان لجنة قانون المرأة في اتحاد نقابات المحامين التركية</h1>
+        <div class="meta">BABADER — 17 مايو 2019</div>
+        <div class="content"><p>تردّ BABADER على بيان لجنة قانون المرأة التابعة لاتحاد نقابات المحامين التركية بشأن إصلاح النفقة.</p>
+<p><strong>حول المساواة بين الجنسين:</strong> إذا كان من المفترض أن يعامل النظام القانوني كلا الجنسين بالتساوي، فلماذا توجد "لجنة قانون المرأة"؟ يجب أن توجد أيضًا "لجنة قانون الرجل" مقابلة لمعالجة اختلالات مماثلة.</p>
+<p><strong>ظلم النفقة:</strong> توصف النفقة بأنها "نهب قانوني"، حيث يُحتج بأن مطالبة شخص لم يتسبب في فقر آخر بالدفع أمر ظالم جوهريًا.</p>
+<p><strong>توظيف المرأة:</strong> "العديد من القطاعات تبحث بنشاط عن عاملات" والبطالة بين النساء تعكس عمومًا التفضيل وليس العوائق المنهجية.</p>
+<p>دعونا إلى إصلاحات تعزز الاستقلالية بدلاً من الاعتماد على النفقة.</p></div>
+        </div>
+        <a href="../babader.html#duyurular" class="back-link"><span id="back-link-text">← Geri Dön</span></a>
     </article>
-    <footer><p>&copy; 2026 BABADER — Babalar ve Çocuklar Derneği | <a href="babader.html">Ana Sayfa</a></p></footer>
+    <footer><p>&copy; 2026 BABADER — Babalar ve Çocuklar Derneği | <a href="../babader.html">Ana Sayfa</a></p></footer>
+    <script src="lang.js"></script>
 </body>
 </html>

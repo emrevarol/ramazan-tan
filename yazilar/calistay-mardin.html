@@ -34,11 +34,14 @@
         footer{background:var(--navy);padding:2rem;text-align:center}
         footer p{color:rgba(255,255,255,0.3);font-size:0.75rem}
         footer a{color:var(--orange-light);text-decoration:none}
+        .lang-bar{text-align:center;padding:0.75rem;background:var(--grey-50);border-bottom:1px solid var(--grey-200)} .lang-btn{border:1px solid var(--grey-200);background:white;padding:0.3rem 0.8rem;margin:0 0.2rem;border-radius:6px;cursor:pointer;font-size:0.75rem;font-weight:600;color:var(--grey-500);transition:all 0.3s} .lang-btn.active{background:var(--navy);color:white;border-color:var(--navy)}
     </style>
 </head>
 <body>
-    <div class="top-bar"><div class="top-inner"><a href="babader.html" class="logo">BABA<span>DER</span></a><a href="babader.html">← Ana Sayfa</a></div></div>
+    <div class="top-bar"><div class="top-inner"><a href="../babader.html" class="logo">BABA<span>DER</span></a><a href="../babader.html" id="nav-back">← Ana Sayfa</a></div></div>
+    <div class="lang-bar"><button class="lang-btn active" data-lang="tr" onclick="setArticleLang('tr')">TR</button><button class="lang-btn" data-lang="en" onclick="setArticleLang('en')">EN</button><button class="lang-btn" data-lang="es" onclick="setArticleLang('es')">ES</button><button class="lang-btn" data-lang="ar" onclick="setArticleLang('ar')">AR</button></div>
     <article>
+        <div class="lang-content" data-lang="tr">
         <span class="tag">Video</span>
         <h1>Aile Hukukundaki Sorunlar ve Çözüm Çalıştayı — Mardin</h1>
         <div class="meta">BABADER — Kasım 2018</div>
@@ -47,8 +50,46 @@
 <p>Adem Çevik: "Erkekler evlerinden çıkarılabiliyor ama hayvanlar çıkarılamıyor."</p>
 <p>Yasin Emrak, baba yokluğunun anne yokluğundan daha büyük gelişimsel sonuçlar taşıdığını gösteren bilimsel kanıtları vurgulamıştır.</p>
 <p>Prof. İbrahim Özcoşar, aile anlaşmazlıklarının çözümünde Batı laik modellerini benimsemek yerine İslami ilkelerin kültürel olarak uygun çerçeveler aracılığıyla uygulanması gerektiğini vurgulamıştır.</p></div>
-        <a href="babader.html#videolar" class="back-link">← Geri Dön</a>
+        <a href="../babader.html#videolar" class="back-link"><span id="back-link-text">← Geri Dön</span></a>
+        </div>
+
+        <div class="lang-content" data-lang="en" style="display:none">
+        <span class="tag">Video</span>
+        <h1>Workshop on Problems and Solutions in Family Law — Mardin</h1>
+        <div class="meta">BABADER — November 2018</div>
+        <div class="content"><p>This workshop held in Mardin brought together legal experts, religious scholars, civil society leaders, and family rights advocates to discuss family law issues and proposed solutions.</p>
+<p><strong>Key Topics Discussed:</strong> Custody practices favoring mothers, indefinite alimony provisions, enforcement of Law No. 6284, parental alienation syndrome, early marriage legislation.</p>
+<p>Adem Cevik: "Men can be removed from their homes, but animals cannot."</p>
+<p>Yasin Emrak emphasized scientific evidence showing that father absence carries greater developmental consequences than mother absence.</p>
+<p>Prof. Ibrahim Ozcoshar emphasized that Islamic principles should be applied through culturally appropriate frameworks in resolving family disputes, rather than adopting Western secular models.</p></div>
+        <a href="../babader.html#videolar" class="back-link"><span>← Go Back</span></a>
+        </div>
+
+        <div class="lang-content" data-lang="es" style="display:none">
+        <span class="tag">Video</span>
+        <h1>Taller sobre Problemas y Soluciones en Derecho de Familia — Mardin</h1>
+        <div class="meta">BABADER — Noviembre 2018</div>
+        <div class="content"><p>Este taller celebrado en Mardin reunio a expertos juridicos, eruditos religiosos, lideres de la sociedad civil y defensores de los derechos familiares para discutir problemas del derecho de familia y soluciones propuestas.</p>
+<p><strong>Temas Principales Discutidos:</strong> Practicas de custodia que favorecen a las madres, disposiciones de pension alimenticia indefinida, aplicacion de la Ley N.o 6284, sindrome de alienacion parental, legislacion sobre matrimonio precoz.</p>
+<p>Adem Cevik: "Los hombres pueden ser expulsados de sus hogares, pero los animales no."</p>
+<p>Yasin Emrak enfatizo la evidencia cientifica que muestra que la ausencia paterna conlleva mayores consecuencias en el desarrollo que la ausencia materna.</p>
+<p>El Prof. Ibrahim Ozcoshar enfatizo que los principios islamicos deben aplicarse a traves de marcos culturalmente apropiados en la resolucion de disputas familiares, en lugar de adoptar modelos seculares occidentales.</p></div>
+        <a href="../babader.html#videolar" class="back-link"><span>← Volver</span></a>
+        </div>
+
+        <div class="lang-content" data-lang="ar" style="display:none">
+        <span class="tag">فيديو</span>
+        <h1>ورشة عمل حول مشكلات وحلول قانون الأسرة — ماردين</h1>
+        <div class="meta">BABADER — نوفمبر 2018</div>
+        <div class="content"><p>جمعت هذه الورشة المنعقدة في ماردين خبراء قانونيين وعلماء دين وقادة مجتمع مدني ومدافعين عن حقوق الأسرة لمناقشة قضايا قانون الأسرة والحلول المقترحة.</p>
+<p><strong>المواضيع الرئيسية المطروحة:</strong> ممارسات الحضانة المنحازة للأمهات، أحكام النفقة غير المحددة المدة، تطبيق القانون رقم 6284، متلازمة الاغتراب الوالدي، تشريعات الزواج المبكر.</p>
+<p>آدم تشفيك: "يمكن إخراج الرجال من منازلهم، لكن لا يمكن إخراج الحيوانات."</p>
+<p>أكد ياسين إمراك على الأدلة العلمية التي تُظهر أن غياب الأب يحمل عواقب تنموية أكبر من غياب الأم.</p>
+<p>أكد البروفيسور إبراهيم أوزجوشار أنه ينبغي تطبيق المبادئ الإسلامية من خلال أطر ملائمة ثقافياً في حل النزاعات الأسرية، بدلاً من تبنّي النماذج العلمانية الغربية.</p></div>
+        <a href="../babader.html#videolar" class="back-link"><span>← العودة</span></a>
+        </div>
     </article>
-    <footer><p>&copy; 2026 BABADER — Babalar ve Çocuklar Derneği | <a href="babader.html">Ana Sayfa</a></p></footer>
+    <footer><p>&copy; 2026 BABADER — Babalar ve Çocuklar Derneği | <a href="../babader.html">Ana Sayfa</a></p></footer>
+    <script src="lang.js"></script>
 </body>
 </html>

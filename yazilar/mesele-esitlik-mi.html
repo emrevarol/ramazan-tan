@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mesele Eşitlik mi? — BABADER</title>
+    <title>Mesele Esitlik mi? — BABADER</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
     <style>
@@ -34,20 +34,56 @@
         footer{background:var(--navy);padding:2rem;text-align:center}
         footer p{color:rgba(255,255,255,0.3);font-size:0.75rem}
         footer a{color:var(--orange-light);text-decoration:none}
+        .lang-bar{text-align:center;padding:0.75rem;background:var(--grey-50);border-bottom:1px solid var(--grey-200)} .lang-btn{border:1px solid var(--grey-200);background:white;padding:0.3rem 0.8rem;margin:0 0.2rem;border-radius:6px;cursor:pointer;font-size:0.75rem;font-weight:600;color:var(--grey-500);transition:all 0.3s} .lang-btn.active{background:var(--navy);color:white;border-color:var(--navy)}
     </style>
 </head>
 <body>
-    <div class="top-bar"><div class="top-inner"><a href="babader.html" class="logo">BABA<span>DER</span></a><a href="babader.html">← Ana Sayfa</a></div></div>
+    <div class="top-bar"><div class="top-inner"><a href="../babader.html" class="logo">BABA<span>DER</span></a><a href="../babader.html" id="nav-back">← Ana Sayfa</a></div></div>
+    <div class="lang-bar"><button class="lang-btn active" data-lang="tr" onclick="setArticleLang('tr')">TR</button><button class="lang-btn" data-lang="en" onclick="setArticleLang('en')">EN</button><button class="lang-btn" data-lang="es" onclick="setArticleLang('es')">ES</button><button class="lang-btn" data-lang="ar" onclick="setArticleLang('ar')">AR</button></div>
     <article>
-        <span class="tag">Yazarlarımız</span>
-        <h1>Mesele Eşitlik mi?</h1>
+        <div class="lang-content" data-lang="tr">
+        <span class="tag">Yazarlarimiz</span>
+        <h1>Mesele Esitlik mi?</h1>
         <div class="meta">Yasin Emrak — 27 Mart 2021</div>
-        <div class="content"><p>Türkiye'de cinsiyet eşitliği tartışmalarının temelden yanlış çerçevelendiğini savunulmaktadır. Kadın hakları savunucularının genellikle gerçek eşitlik yerine ayrıcalıklar aradığı ileri sürülmektedir.</p>
-<p>Hukuk davaları, kamu kaynaklarına erişim, sosyal güvenlik, eğitim ve mülk sahipliğinde erkeklerin sistematik dezavantajlar yaşadığı çeşitli alanlar incelenmektedir.</p>
-<p>Erkekler orantısız şekilde tehlikeli mesleklerde çalışmakta ve cinayet mağdurlarının çoğunluğunu oluşturmaktadır. Türkiye erkek cinayetlerinde en yüksek oranlar arasında yer alırken, kadın cinayetlerinde küresel istatistiklere göre çok düşük oranlara sahiptir.</p>
-<p>Gerçek eşitliğin kadınların mevcut ayrıcalıklardan vazgeçmesini ve tüm sektörlerde eşit sorumlulukları kabul etmesini gerektireceği sonucuna varılmaktadır. Makale İstanbul Sözleşmesi'nden çekilmeyi desteklemektedir.</p></div>
-        <a href="babader.html#makaleler" class="back-link">← Geri Dön</a>
+        <div class="content"><p>Turkiye'de cinsiyet esitligi tartismalarinin temelden yanlis cercelendigini savunulmaktadir. Kadin haklari savunucularinin genellikle gercek esitlik yerine ayricaliklar aradigi ileri surulmektedir.</p>
+<p>Hukuk davalari, kamu kaynaklarina erisim, sosyal guvenlik, egitim ve mulk sahipliginde erkeklerin sistematik dezavantajlar yasadigi cesitli alanlar incelenmektedir.</p>
+<p>Erkekler orantisiz sekilde tehlikeli mesleklerde calismakta ve cinayet magdurlarinin cogunlugunu olusturmaktadir. Turkiye erkek cinayetlerinde en yuksek oranlar arasinda yer alirken, kadin cinayetlerinde kuresel istatistiklere gore cok dusuk oranlara sahiptir.</p>
+<p>Gercek esitligin kadinlarin mevcut ayricalikalardan vazgecmesini ve tum sektorlerde esit sorumluluklari kabul etmesini gerektireceği sonucuna varilmaktadir. Makale Istanbul Sozlesmesi'nden cekilmeyi desteklemektedir.</p></div>
+        </div>
+
+        <div class="lang-content" data-lang="en" style="display:none">
+        <span class="tag">Our Writers</span>
+        <h1>Is Equality Really the Issue?</h1>
+        <div class="meta">Yasin Emrak — March 27, 2021</div>
+        <div class="content"><p>It is argued that gender equality debates in Turkey are fundamentally misframed. It is asserted that women's rights advocates generally seek privileges rather than genuine equality.</p>
+<p>Various areas are examined where men experience systematic disadvantages in legal cases, access to public resources, social security, education, and property ownership.</p>
+<p>Men disproportionately work in dangerous occupations and constitute the majority of homicide victims. Turkey ranks among the highest rates for male homicides while having very low rates for female homicides according to global statistics.</p>
+<p>It is concluded that true equality would require women to relinquish their current privileges and accept equal responsibilities across all sectors. The article supports withdrawal from the Istanbul Convention.</p></div>
+        </div>
+
+        <div class="lang-content" data-lang="es" style="display:none">
+        <span class="tag">Nuestros Escritores</span>
+        <h1>¿Es realmente una cuestion de igualdad?</h1>
+        <div class="meta">Yasin Emrak — 27 de marzo de 2021</div>
+        <div class="content"><p>Se argumenta que los debates sobre igualdad de genero en Turquia estan fundamentalmente mal planteados. Se afirma que las defensoras de los derechos de la mujer generalmente buscan privilegios en lugar de una igualdad genuina.</p>
+<p>Se examinan diversas areas donde los hombres experimentan desventajas sistematicas en casos legales, acceso a recursos publicos, seguridad social, educacion y propiedad.</p>
+<p>Los hombres trabajan desproporcionadamente en ocupaciones peligrosas y constituyen la mayoria de las victimas de homicidio. Turquia se encuentra entre las tasas mas altas de homicidios masculinos mientras tiene tasas muy bajas de homicidios femeninos segun las estadisticas globales.</p>
+<p>Se concluye que la verdadera igualdad requeriria que las mujeres renuncien a sus privilegios actuales y acepten responsabilidades iguales en todos los sectores. El articulo apoya la retirada del Convenio de Estambul.</p></div>
+        </div>
+
+        <div class="lang-content" data-lang="ar" style="display:none">
+        <span class="tag">كتّابنا</span>
+        <h1>هل المسألة حقاً مسألة مساواة؟</h1>
+        <div class="meta">ياسين إمراك — 27 مارس 2021</div>
+        <div class="content"><p>يُدّعى أن نقاشات المساواة بين الجنسين في تركيا مؤطرة بشكل خاطئ جذرياً. يُزعم أن المدافعات عن حقوق المرأة يسعين عموماً إلى امتيازات بدلاً من المساواة الحقيقية.</p>
+<p>يتم فحص مجالات متعددة يعاني فيها الرجال من عيوب منهجية في القضايا القانونية، والوصول إلى الموارد العامة، والضمان الاجتماعي، والتعليم، وملكية العقارات.</p>
+<p>يعمل الرجال بشكل غير متناسب في المهن الخطرة ويشكلون غالبية ضحايا القتل. تحتل تركيا مرتبة من بين أعلى المعدلات في جرائم قتل الذكور بينما لديها معدلات منخفضة جداً في جرائم قتل الإناث وفقاً للإحصاءات العالمية.</p>
+<p>يُستنتج أن المساواة الحقيقية تتطلب من النساء التخلي عن امتيازاتهن الحالية وقبول مسؤوليات متساوية في جميع القطاعات. يدعم المقال الانسحاب من اتفاقية إسطنبول.</p></div>
+        </div>
+
+        <a href="../babader.html#makaleler" class="back-link"><span id="back-link-text">← Geri Don</span></a>
     </article>
-    <footer><p>&copy; 2026 BABADER — Babalar ve Çocuklar Derneği | <a href="babader.html">Ana Sayfa</a></p></footer>
+    <footer><p>&copy; 2026 BABADER — Babalar ve Cocuklar Dernegi | <a href="../babader.html">Ana Sayfa</a></p></footer>
+    <script src="lang.js"></script>
 </body>
 </html>

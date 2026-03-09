@@ -34,11 +34,14 @@
         footer{background:var(--navy);padding:2rem;text-align:center}
         footer p{color:rgba(255,255,255,0.3);font-size:0.75rem}
         footer a{color:var(--orange-light);text-decoration:none}
+        .lang-bar{text-align:center;padding:0.75rem;background:var(--grey-50);border-bottom:1px solid var(--grey-200)} .lang-btn{border:1px solid var(--grey-200);background:white;padding:0.3rem 0.8rem;margin:0 0.2rem;border-radius:6px;cursor:pointer;font-size:0.75rem;font-weight:600;color:var(--grey-500);transition:all 0.3s} .lang-btn.active{background:var(--navy);color:white;border-color:var(--navy)}
     </style>
 </head>
 <body>
-    <div class="top-bar"><div class="top-inner"><a href="babader.html" class="logo">BABA<span>DER</span></a><a href="babader.html">← Ana Sayfa</a></div></div>
+    <div class="top-bar"><div class="top-inner"><a href="../babader.html" class="logo">BABA<span>DER</span></a><a href="../babader.html" id="nav-back">← Ana Sayfa</a></div></div>
+    <div class="lang-bar"><button class="lang-btn active" data-lang="tr" onclick="setArticleLang('tr')">TR</button><button class="lang-btn" data-lang="en" onclick="setArticleLang('en')">EN</button><button class="lang-btn" data-lang="es" onclick="setArticleLang('es')">ES</button><button class="lang-btn" data-lang="ar" onclick="setArticleLang('ar')">AR</button></div>
     <article>
+        <div class="lang-content" data-lang="tr">
         <span class="tag">Basın Bildirisi</span>
         <h1>İstanbul Sözleşmesi'nin Kaldırılmasına Destek Bildirisi</h1>
         <div class="meta">Yasin Emrak — 18 Temmuz 2020</div>
@@ -46,8 +49,37 @@
 <p>Belge, yükselen boşanma oranlarının ve süresiz nafaka uygulamalarının topluma zarar verdiğini savunmaktadır. "Bilimsel araştırmalar ve istatistiksel veriler, baba yokluğunun hem çocuklar hem toplum için daha yıkıcı olduğunu ortaya koymaktadır."</p>
 <p>Bildiri, Aile Bakanlığı bünyesinde kadın ve çocuk birimlerini dengelemek üzere bir "Erkek Sorunları Genel Müdürlüğü" kurulmasını önermektedir.</p>
 <p>Birçok sivil toplum kuruluşu bu bildiriyi imzalamıştır.</p></div>
-        <a href="babader.html#duyurular" class="back-link">← Geri Dön</a>
+        </div>
+        <div class="lang-content" data-lang="en" style="display:none">
+        <span class="tag">Press Release</span>
+        <h1>Statement in Support of Withdrawing from the Istanbul Convention</h1>
+        <div class="meta">Yasin Emrak — July 18, 2020</div>
+        <div class="content"><p>The statement argues that the Istanbul Convention has become a matter of national security and, together with Law No. 6284, represents the primary source of family law problems.</p>
+<p>The document contends that rising divorce rates and indefinite alimony practices are harming society. "Scientific research and statistical data reveal that father absence is more devastating for both children and society."</p>
+<p>The statement proposes the establishment of a "General Directorate of Men's Issues" within the Ministry of Family to balance the existing women's and children's units.</p>
+<p>Several civil society organizations have signed this statement.</p></div>
+        </div>
+        <div class="lang-content" data-lang="es" style="display:none">
+        <span class="tag">Comunicado de Prensa</span>
+        <h1>Declaración de Apoyo a la Retirada del Convenio de Estambul</h1>
+        <div class="meta">Yasin Emrak — 18 de julio de 2020</div>
+        <div class="content"><p>La declaración argumenta que el Convenio de Estambul se ha convertido en una cuestión de seguridad nacional y que, junto con la Ley N.° 6284, representa la fuente principal de los problemas del derecho de familia.</p>
+<p>El documento sostiene que las crecientes tasas de divorcio y las prácticas de pensión alimenticia indefinida están perjudicando a la sociedad. "Las investigaciones científicas y los datos estadísticos revelan que la ausencia paterna es más devastadora tanto para los niños como para la sociedad."</p>
+<p>La declaración propone la creación de una "Dirección General de Asuntos Masculinos" dentro del Ministerio de Familia para equilibrar las unidades existentes de mujeres e infancia.</p>
+<p>Varias organizaciones de la sociedad civil han firmado esta declaración.</p></div>
+        </div>
+        <div class="lang-content" data-lang="ar" style="display:none">
+        <span class="tag">بيان صحفي</span>
+        <h1>بيان دعم الانسحاب من اتفاقية إسطنبول</h1>
+        <div class="meta">ياسين إمراك — 18 يوليو 2020</div>
+        <div class="content"><p>يؤكد البيان أن اتفاقية إسطنبول أصبحت مسألة أمن قومي، وأنها مع القانون رقم 6284 تمثل المصدر الرئيسي لمشاكل قانون الأسرة.</p>
+<p>تؤكد الوثيقة أن ارتفاع معدلات الطلاق وممارسات النفقة غير المحددة المدة تضر بالمجتمع. "تكشف الأبحاث العلمية والبيانات الإحصائية أن غياب الأب أكثر تدميراً لكل من الأطفال والمجتمع."</p>
+<p>يقترح البيان إنشاء "مديرية عامة لشؤون الرجال" ضمن وزارة الأسرة لتحقيق التوازن مع وحدات المرأة والطفل القائمة.</p>
+<p>وقّعت العديد من منظمات المجتمع المدني على هذا البيان.</p></div>
+        </div>
+        <a href="../babader.html#duyurular" class="back-link"><span id="back-link-text">← Geri Dön</span></a>
     </article>
-    <footer><p>&copy; 2026 BABADER — Babalar ve Çocuklar Derneği | <a href="babader.html">Ana Sayfa</a></p></footer>
+    <footer><p>&copy; 2026 BABADER — Babalar ve Çocuklar Derneği | <a href="../babader.html">Ana Sayfa</a></p></footer>
+    <script src="lang.js"></script>
 </body>
 </html>

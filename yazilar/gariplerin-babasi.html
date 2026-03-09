@@ -34,11 +34,14 @@
         footer{background:var(--navy);padding:2rem;text-align:center}
         footer p{color:rgba(255,255,255,0.3);font-size:0.75rem}
         footer a{color:var(--orange-light);text-decoration:none}
+        .lang-bar{text-align:center;padding:0.75rem;background:var(--grey-50);border-bottom:1px solid var(--grey-200)} .lang-btn{border:1px solid var(--grey-200);background:white;padding:0.3rem 0.8rem;margin:0 0.2rem;border-radius:6px;cursor:pointer;font-size:0.75rem;font-weight:600;color:var(--grey-500);transition:all 0.3s} .lang-btn.active{background:var(--navy);color:white;border-color:var(--navy)}
     </style>
 </head>
 <body>
-    <div class="top-bar"><div class="top-inner"><a href="babader.html" class="logo">BABA<span>DER</span></a><a href="babader.html">← Ana Sayfa</a></div></div>
+    <div class="top-bar"><div class="top-inner"><a href="../babader.html" class="logo">BABA<span>DER</span></a><a href="../babader.html" id="nav-back">← Ana Sayfa</a></div></div>
+    <div class="lang-bar"><button class="lang-btn active" data-lang="tr" onclick="setArticleLang('tr')">TR</button><button class="lang-btn" data-lang="en" onclick="setArticleLang('en')">EN</button><button class="lang-btn" data-lang="es" onclick="setArticleLang('es')">ES</button><button class="lang-btn" data-lang="ar" onclick="setArticleLang('ar')">AR</button></div>
     <article>
+        <div class="lang-content" data-lang="tr">
         <span class="tag">Yaşanan</span>
         <h1>"Kendi Evladından Ayırdılar, Tüm Gariplerin Babası Oldu"</h1>
         <div class="meta">BABADER — 23 Şubat 2018</div>
@@ -46,8 +49,37 @@
 <p>Kendi ailesi dağıtılmış, ancak "yabancılarla daha büyük bir aile kurmuştur." Derneğinde namaz kılarken, Allah'a en yakın noktada vefat etmiştir.</p>
 <p>Cenaze namazı 23 Şubat 2018'de Cuma namazı sonrası Ulu Cami'de kılınmış, ardından Derecik Mezarlığı'na defnedilmiştir.</p>
 <p>"Başımız sağ olsun, mekânı cennet olsun."</p></div>
-        <a href="babader.html#yasananlar" class="back-link">← Geri Dön</a>
+        </div>
+        <div class="lang-content" data-lang="en" style="display:none">
+        <span class="tag">Lived Experience</span>
+        <h1>"They Separated Him from His Own Child, He Became a Father to All the Destitute"</h1>
+        <div class="meta">BABADER — February 23, 2018</div>
+        <div class="content"><p>The passing of Huseyin Kilinc, president of the UH-DE Mutual Aid Association, is announced.</p>
+<p>His own family was torn apart, yet he "built a larger family with strangers." He passed away while praying at his association, at the closest point to God.</p>
+<p>The funeral prayer was held after Friday prayers at the Grand Mosque on February 23, 2018, followed by burial at Derecik Cemetery.</p>
+<p>"May we endure this loss, and may his resting place be paradise."</p></div>
+        </div>
+        <div class="lang-content" data-lang="es" style="display:none">
+        <span class="tag">Experiencia Vivida</span>
+        <h1>"Lo Separaron de Su Propio Hijo, Se Convirtió en Padre de Todos los Desamparados"</h1>
+        <div class="meta">BABADER — 23 de febrero de 2018</div>
+        <div class="content"><p>Se anuncia el fallecimiento de Hüseyin Kılınç, presidente de la Asociación de Ayuda Mutua UH-DE.</p>
+<p>Su propia familia fue destrozada, pero "construyó una familia más grande con extraños." Falleció mientras rezaba en su asociación, en el punto más cercano a Dios.</p>
+<p>La oración fúnebre se celebró después de la oración del viernes en la Gran Mezquita el 23 de febrero de 2018, seguida del entierro en el Cementerio de Derecik.</p>
+<p>"Que soportemos esta pérdida, y que su morada sea el paraíso."</p></div>
+        </div>
+        <div class="lang-content" data-lang="ar" style="display:none">
+        <span class="tag">تجربة معاشة</span>
+        <h1>"فصلوه عن ابنه، فأصبح أباً لكل المحرومين"</h1>
+        <div class="meta">بابادر — 23 فبراير 2018</div>
+        <div class="content"><p>يُعلن عن وفاة حسين كيلينتش، رئيس جمعية التعاون المتبادل UH-DE.</p>
+<p>تمزقت عائلته، لكنه "بنى عائلة أكبر مع الغرباء." توفي وهو يصلي في جمعيته، في أقرب نقطة إلى الله.</p>
+<p>أُقيمت صلاة الجنازة بعد صلاة الجمعة في الجامع الكبير في 23 فبراير 2018، تلاه الدفن في مقبرة ديرجيك.</p>
+<p>"رحمه الله وأسكنه فسيح جناته."</p></div>
+        </div>
+        <a href="../babader.html#yasananlar" class="back-link"><span id="back-link-text">← Geri Dön</span></a>
     </article>
-    <footer><p>&copy; 2026 BABADER — Babalar ve Çocuklar Derneği | <a href="babader.html">Ana Sayfa</a></p></footer>
+    <footer><p>&copy; 2026 BABADER — Babalar ve Çocuklar Derneği | <a href="../babader.html">Ana Sayfa</a></p></footer>
+    <script src="lang.js"></script>
 </body>
 </html>

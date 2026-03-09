@@ -34,11 +34,14 @@
         footer{background:var(--navy);padding:2rem;text-align:center}
         footer p{color:rgba(255,255,255,0.3);font-size:0.75rem}
         footer a{color:var(--orange-light);text-decoration:none}
+        .lang-bar{text-align:center;padding:0.75rem;background:var(--grey-50);border-bottom:1px solid var(--grey-200)} .lang-btn{border:1px solid var(--grey-200);background:white;padding:0.3rem 0.8rem;margin:0 0.2rem;border-radius:6px;cursor:pointer;font-size:0.75rem;font-weight:600;color:var(--grey-500);transition:all 0.3s} .lang-btn.active{background:var(--navy);color:white;border-color:var(--navy)}
     </style>
 </head>
 <body>
-    <div class="top-bar"><div class="top-inner"><a href="babader.html" class="logo">BABA<span>DER</span></a><a href="babader.html">← Ana Sayfa</a></div></div>
+    <div class="top-bar"><div class="top-inner"><a href="../babader.html" class="logo">BABA<span>DER</span></a><a href="../babader.html" id="nav-back">← Ana Sayfa</a></div></div>
+    <div class="lang-bar"><button class="lang-btn active" data-lang="tr" onclick="setArticleLang('tr')">TR</button><button class="lang-btn" data-lang="en" onclick="setArticleLang('en')">EN</button><button class="lang-btn" data-lang="es" onclick="setArticleLang('es')">ES</button><button class="lang-btn" data-lang="ar" onclick="setArticleLang('ar')">AR</button></div>
     <article>
+        <div class="lang-content" data-lang="tr">
         <span class="tag">Konuk Yazar</span>
         <h1>6284 Sayılı Kanun'un İlmi Disiplinler Açısından Eleştirisi</h1>
         <div class="meta">Vedat KAT — Kasım 2025</div>
@@ -48,8 +51,49 @@
 <p><strong>Yargı Etiği:</strong> Bangalore İlkeleri'ne göre kanunun tek taraflı uygulaması yargı tarafsızlığını ve adil yargılanma güvencelerini zayıflatmaktadır.</p>
 <p><strong>Uluslararası Karşılaştırmalar:</strong> Analiz, çoğu yargı alanının delil gerektirdiğini, duruşma fırsatı sağladığını ve koruma kararı süresini sınırladığını göstermektedir.</p>
 <p><strong>Öneriler:</strong> 6284 sayılı Kanun yerine önleyici ve onarıcı yaklaşımları içeren kapsamlı bir "Aile Kanunu" önerilmektedir.</p></div>
-        <a href="babader.html#makaleler" class="back-link">← Geri Dön</a>
+        <a href="../babader.html#makaleler" class="back-link"><span id="back-link-text">← Geri Dön</span></a>
+        </div>
+
+        <div class="lang-content" data-lang="en" style="display:none">
+        <span class="tag">Guest Author</span>
+        <h1>A Scholarly Critique of Law No. 6284 from Multiple Academic Disciplines</h1>
+        <div class="meta">Vedat KAT — November 2025</div>
+        <div class="content"><p>This comprehensive critical analysis examines Law No. 6284 on the Protection of the Family and Prevention of Violence Against Women, along with indefinite alimony practices, from multiple scientific and legal perspectives.</p>
+<p><strong>Philosophy of Law:</strong> The law applies protective measures based solely on women's statements without requiring evidence, which contradicts the "presumption of innocence" and natural law principles.</p>
+<p><strong>Constitutional Issues:</strong> The law conflicts with constitutional provisions regarding the right to a fair trial, equality before the law, and the restriction of fundamental freedoms.</p>
+<p><strong>Judicial Ethics:</strong> According to the Bangalore Principles, the unilateral application of the law undermines judicial impartiality and fair trial guarantees.</p>
+<p><strong>International Comparisons:</strong> The analysis shows that most jurisdictions require evidence, provide hearing opportunities, and limit the duration of protection orders.</p>
+<p><strong>Recommendations:</strong> A comprehensive "Family Law" incorporating preventive and restorative approaches is proposed to replace Law No. 6284.</p></div>
+        <a href="../babader.html#makaleler" class="back-link"><span>← Go Back</span></a>
+        </div>
+
+        <div class="lang-content" data-lang="es" style="display:none">
+        <span class="tag">Autor Invitado</span>
+        <h1>Critica Academica de la Ley N.o 6284 desde Multiples Disciplinas Cientificas</h1>
+        <div class="meta">Vedat KAT — Noviembre 2025</div>
+        <div class="content"><p>Este analisis critico exhaustivo examina la Ley N.o 6284 sobre la Proteccion de la Familia y la Prevencion de la Violencia contra la Mujer, junto con las practicas de pension alimenticia indefinida, desde multiples perspectivas cientificas y juridicas.</p>
+<p><strong>Filosofia del Derecho:</strong> La ley aplica medidas de proteccion basandose unicamente en las declaraciones de las mujeres sin requerir pruebas, lo que contradice la "presuncion de inocencia" y los principios del derecho natural.</p>
+<p><strong>Problemas Constitucionales:</strong> La ley entra en conflicto con las disposiciones constitucionales relativas al derecho a un juicio justo, la igualdad ante la ley y la restriccion de las libertades fundamentales.</p>
+<p><strong>Etica Judicial:</strong> Segun los Principios de Bangalore, la aplicacion unilateral de la ley socava la imparcialidad judicial y las garantias de un juicio justo.</p>
+<p><strong>Comparaciones Internacionales:</strong> El analisis muestra que la mayoria de las jurisdicciones requieren pruebas, ofrecen oportunidades de audiencia y limitan la duracion de las ordenes de proteccion.</p>
+<p><strong>Recomendaciones:</strong> Se propone una "Ley de Familia" integral que incorpore enfoques preventivos y restaurativos para reemplazar la Ley N.o 6284.</p></div>
+        <a href="../babader.html#makaleler" class="back-link"><span>← Volver</span></a>
+        </div>
+
+        <div class="lang-content" data-lang="ar" style="display:none">
+        <span class="tag">كاتب ضيف</span>
+        <h1>نقد علمي للقانون رقم 6284 من منظور تخصصات أكاديمية متعددة</h1>
+        <div class="meta">وداد كات — نوفمبر 2025</div>
+        <div class="content"><p>يتناول هذا التحليل النقدي الشامل القانون رقم 6284 المتعلق بحماية الأسرة ومنع العنف ضد المرأة، إلى جانب ممارسات النفقة غير المحددة المدة، من منظورات علمية وقانونية متعددة.</p>
+<p><strong>فلسفة القانون:</strong> يطبّق القانون تدابير حماية بناءً على أقوال النساء فقط دون اشتراط أدلة، وهو ما يتعارض مع مبدأ "قرينة البراءة" ومبادئ القانون الطبيعي.</p>
+<p><strong>إشكاليات دستورية:</strong> يتعارض القانون مع الأحكام الدستورية المتعلقة بالحق في محاكمة عادلة والمساواة أمام القانون وتقييد الحريات الأساسية.</p>
+<p><strong>أخلاقيات القضاء:</strong> وفقاً لمبادئ بنغالور، فإن التطبيق الأحادي الجانب للقانون يُضعف حياد القضاء وضمانات المحاكمة العادلة.</p>
+<p><strong>مقارنات دولية:</strong> يُظهر التحليل أن معظم الولايات القضائية تشترط تقديم أدلة وتوفر فرص الاستماع وتحدّد مدة أوامر الحماية.</p>
+<p><strong>التوصيات:</strong> يُقترح سنّ "قانون أسرة" شامل يتضمن نُهُجاً وقائية وتصالحية ليحلّ محل القانون رقم 6284.</p></div>
+        <a href="../babader.html#makaleler" class="back-link"><span>← العودة</span></a>
+        </div>
     </article>
-    <footer><p>&copy; 2026 BABADER — Babalar ve Çocuklar Derneği | <a href="babader.html">Ana Sayfa</a></p></footer>
+    <footer><p>&copy; 2026 BABADER — Babalar ve Çocuklar Derneği | <a href="../babader.html">Ana Sayfa</a></p></footer>
+    <script src="lang.js"></script>
 </body>
 </html>

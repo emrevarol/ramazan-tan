@@ -34,11 +34,14 @@
         footer{background:var(--navy);padding:2rem;text-align:center}
         footer p{color:rgba(255,255,255,0.3);font-size:0.75rem}
         footer a{color:var(--orange-light);text-decoration:none}
+        .lang-bar{text-align:center;padding:0.75rem;background:var(--grey-50);border-bottom:1px solid var(--grey-200)} .lang-btn{border:1px solid var(--grey-200);background:white;padding:0.3rem 0.8rem;margin:0 0.2rem;border-radius:6px;cursor:pointer;font-size:0.75rem;font-weight:600;color:var(--grey-500);transition:all 0.3s} .lang-btn.active{background:var(--navy);color:white;border-color:var(--navy)}
     </style>
 </head>
 <body>
-    <div class="top-bar"><div class="top-inner"><a href="babader.html" class="logo">BABA<span>DER</span></a><a href="babader.html">← Ana Sayfa</a></div></div>
+    <div class="top-bar"><div class="top-inner"><a href="../babader.html" class="logo">BABA<span>DER</span></a><a href="../babader.html" id="nav-back">← Ana Sayfa</a></div></div>
+    <div class="lang-bar"><button class="lang-btn active" data-lang="tr" onclick="setArticleLang('tr')">TR</button><button class="lang-btn" data-lang="en" onclick="setArticleLang('en')">EN</button><button class="lang-btn" data-lang="es" onclick="setArticleLang('es')">ES</button><button class="lang-btn" data-lang="ar" onclick="setArticleLang('ar')">AR</button></div>
     <article>
+        <div class="lang-content" data-lang="tr">
         <span class="tag">Okuyucu</span>
         <h1>İkinci Eşin Yaşadıkları</h1>
         <div class="meta">Okuyucu Mektubu — 20 Ocak 2018</div>
@@ -46,8 +49,37 @@
 <p>Eski eş, yetersiz olduğunu iddia ederek nafakanın 1.000 TL'ye çıkarılması için dava açmıştır. Daha önce bir yıl işsiz kaldığını iddia ederek 15.000 TL tazminat talep etmiştir — kayıt dışı çalıştığına dair kanıtlara rağmen.</p>
 <p>Aile, kocanın hapsi tehdidi altında bu miktarı ödemek için borç almıştır. Eski eş çalışmadığını iddia etmesine rağmen aylık 5.000 TL kazandığı gözlemlenmiştir.</p>
 <p>"Çocuğumuza mama bile alamıyoruz." Adalet ve ailenin çöküşü hakkındaki endişeyle mektup sonlanmaktadır.</p></div>
-        <a href="babader.html#yasananlar" class="back-link">← Geri Dön</a>
+        </div>
+        <div class="lang-content" data-lang="en" style="display:none">
+        <span class="tag">Reader</span>
+        <h1>What the Second Wife Experiences</h1>
+        <div class="meta">Reader's Letter — January 20, 2018</div>
+        <div class="content"><p>A second wife shares the difficult circumstances her family faces regarding alimony obligations. She explains that she is married to a man who has a child from a previous relationship and that they pay 600 TL per month in alimony.</p>
+<p>The ex-wife filed a lawsuit to increase the alimony to 1,000 TL, claiming it was insufficient. She had previously demanded 15,000 TL in compensation claiming she was unemployed for a year -- despite evidence that she was working informally.</p>
+<p>The family had to borrow money to pay this amount under the threat of the husband's imprisonment. Although the ex-wife claimed she was not working, she was observed earning 5,000 TL per month.</p>
+<p>"We cannot even buy formula for our baby." The letter concludes with concerns about justice and the collapse of the family.</p></div>
+        </div>
+        <div class="lang-content" data-lang="es" style="display:none">
+        <span class="tag">Lector</span>
+        <h1>Lo Que Vive la Segunda Esposa</h1>
+        <div class="meta">Carta de un Lector — 20 de enero de 2018</div>
+        <div class="content"><p>Una segunda esposa comparte las difíciles circunstancias que enfrenta su familia en relación con las obligaciones de pensión alimenticia. Explica que está casada con un hombre que tiene un hijo de una relación anterior y que pagan 600 TL mensuales de pensión.</p>
+<p>La exesposa presentó una demanda para aumentar la pensión a 1.000 TL, alegando que era insuficiente. Anteriormente había exigido 15.000 TL de indemnización alegando que estuvo desempleada durante un año, a pesar de las pruebas de que trabajaba de manera informal.</p>
+<p>La familia tuvo que pedir dinero prestado para pagar esta cantidad bajo la amenaza de encarcelamiento del esposo. Aunque la exesposa afirmaba no trabajar, se observó que ganaba 5.000 TL mensuales.</p>
+<p>"Ni siquiera podemos comprar leche de fórmula para nuestro bebé." La carta concluye con preocupaciones sobre la justicia y el colapso de la familia.</p></div>
+        </div>
+        <div class="lang-content" data-lang="ar" style="display:none">
+        <span class="tag">قارئ</span>
+        <h1>ما تعانيه الزوجة الثانية</h1>
+        <div class="meta">رسالة قارئ — 20 يناير 2018</div>
+        <div class="content"><p>تشارك زوجة ثانية الظروف الصعبة التي تواجهها عائلتها فيما يتعلق بالتزامات النفقة. توضح أنها متزوجة من رجل لديه طفل من علاقة سابقة وأنهم يدفعون 600 ليرة تركية شهرياً كنفقة.</p>
+<p>رفعت الزوجة السابقة دعوى لزيادة النفقة إلى 1,000 ليرة تركية مدعية أنها غير كافية. كانت قد طالبت سابقاً بتعويض 15,000 ليرة تركية مدعية أنها كانت عاطلة عن العمل لمدة عام — رغم وجود أدلة على عملها بشكل غير رسمي.</p>
+<p>اضطرت العائلة للاقتراض لدفع هذا المبلغ تحت تهديد سجن الزوج. على الرغم من ادعاء الزوجة السابقة بأنها لا تعمل، لوحظ أنها تكسب 5,000 ليرة تركية شهرياً.</p>
+<p>"لا نستطيع حتى شراء حليب لطفلنا." تختتم الرسالة بمخاوف حول العدالة وانهيار الأسرة.</p></div>
+        </div>
+        <a href="../babader.html#yasananlar" class="back-link"><span id="back-link-text">← Geri Dön</span></a>
     </article>
-    <footer><p>&copy; 2026 BABADER — Babalar ve Çocuklar Derneği | <a href="babader.html">Ana Sayfa</a></p></footer>
+    <footer><p>&copy; 2026 BABADER — Babalar ve Çocuklar Derneği | <a href="../babader.html">Ana Sayfa</a></p></footer>
+    <script src="lang.js"></script>
 </body>
 </html>

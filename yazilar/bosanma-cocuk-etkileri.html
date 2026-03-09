@@ -34,11 +34,14 @@
         footer{background:var(--navy);padding:2rem;text-align:center}
         footer p{color:rgba(255,255,255,0.3);font-size:0.75rem}
         footer a{color:var(--orange-light);text-decoration:none}
+        .lang-bar{text-align:center;padding:0.75rem;background:var(--grey-50);border-bottom:1px solid var(--grey-200)} .lang-btn{border:1px solid var(--grey-200);background:white;padding:0.3rem 0.8rem;margin:0 0.2rem;border-radius:6px;cursor:pointer;font-size:0.75rem;font-weight:600;color:var(--grey-500);transition:all 0.3s} .lang-btn.active{background:var(--navy);color:white;border-color:var(--navy)}
     </style>
 </head>
 <body>
-    <div class="top-bar"><div class="top-inner"><a href="babader.html" class="logo">BABA<span>DER</span></a><a href="babader.html">← Ana Sayfa</a></div></div>
+    <div class="top-bar"><div class="top-inner"><a href="../babader.html" class="logo">BABA<span>DER</span></a><a href="../babader.html" id="nav-back">← Ana Sayfa</a></div></div>
+    <div class="lang-bar"><button class="lang-btn active" data-lang="tr" onclick="setArticleLang('tr')">TR</button><button class="lang-btn" data-lang="en" onclick="setArticleLang('en')">EN</button><button class="lang-btn" data-lang="es" onclick="setArticleLang('es')">ES</button><button class="lang-btn" data-lang="ar" onclick="setArticleLang('ar')">AR</button></div>
     <article>
+        <div class="lang-content" data-lang="tr">
         <span class="tag">Psikoloji</span>
         <h1>Boşanma ve Çocuk Üzerindeki Etkileri</h1>
         <div class="meta">Konuk Yazarlar — 11 Ocak 2018</div>
@@ -47,8 +50,46 @@
 <p><strong>Erkek Çocukların Kimlik Gelişimi:</strong> Biller ve Westman'ın araştırması, ödipal dönemde boşanma yaşayan erkek çocukların daha fazla saldırganlık sergilediğini göstermiştir.</p>
 <p><strong>Kız Çocukların Davranış Kalıpları:</strong> Hetherington'ın araştırması, beş yaşından önce babalarını kaybeden 13-17 yaş arası kızların daha erken ve daha sık flört ettiğini göstermiştir.</p>
 <p>Yeniden evlenme ek zorluklar yaratmış, özellikle ergen kızları olumsuz etkilemiştir.</p></div>
-        <a href="babader.html#psikoloji" class="back-link">← Geri Dön</a>
+        <a href="../babader.html#psikoloji" class="back-link"><span id="back-link-text">← Geri Dön</span></a>
+        </div>
+
+        <div class="lang-content" data-lang="en" style="display:none">
+        <span class="tag">Psychology</span>
+        <h1>Divorce and Its Effects on Children</h1>
+        <div class="meta">Guest Authors — January 11, 2018</div>
+        <div class="content"><p>Research on how divorce affects the development of children across different age groups and genders is examined.</p>
+<p><strong>Early Childhood:</strong> Wallerstein's 10-year follow-up study found that younger children experienced significantly fewer emotional problems than older children.</p>
+<p><strong>Boys' Identity Development:</strong> Research by Biller and Westman showed that boys who experienced divorce during the oedipal period displayed greater aggression.</p>
+<p><strong>Girls' Behavioral Patterns:</strong> Hetherington's research showed that girls aged 13-17 who lost their fathers before age five dated earlier and more frequently.</p>
+<p>Remarriage created additional challenges, particularly affecting adolescent girls negatively.</p></div>
+        <a href="../babader.html#psikoloji" class="back-link"><span>← Go Back</span></a>
+        </div>
+
+        <div class="lang-content" data-lang="es" style="display:none">
+        <span class="tag">Psicologia</span>
+        <h1>El Divorcio y sus Efectos en los Ninos</h1>
+        <div class="meta">Autores Invitados — 11 de enero de 2018</div>
+        <div class="content"><p>Se examinan las investigaciones sobre como el divorcio afecta el desarrollo de los ninos en diferentes grupos de edad y generos.</p>
+<p><strong>Primera Infancia:</strong> El estudio de seguimiento de 10 anos de Wallerstein encontro que los ninos mas pequenos experimentaron significativamente menos problemas emocionales que los ninos mayores.</p>
+<p><strong>Desarrollo de la Identidad de los Ninos Varones:</strong> La investigacion de Biller y Westman mostro que los ninos que experimentaron el divorcio durante el periodo edipico mostraron mayor agresividad.</p>
+<p><strong>Patrones de Comportamiento de las Ninas:</strong> La investigacion de Hetherington mostro que las ninas de 13 a 17 anos que perdieron a sus padres antes de los cinco anos comenzaron a tener citas mas temprano y con mayor frecuencia.</p>
+<p>El nuevo matrimonio creo desafios adicionales, afectando negativamente en particular a las adolescentes.</p></div>
+        <a href="../babader.html#psikoloji" class="back-link"><span>← Volver</span></a>
+        </div>
+
+        <div class="lang-content" data-lang="ar" style="display:none">
+        <span class="tag">علم النفس</span>
+        <h1>الطلاق وآثاره على الأطفال</h1>
+        <div class="meta">كتّاب ضيوف — 11 يناير 2018</div>
+        <div class="content"><p>تُستعرض الأبحاث حول كيفية تأثير الطلاق على نمو الأطفال عبر مختلف الفئات العمرية والأجناس.</p>
+<p><strong>الطفولة المبكرة:</strong> وجدت دراسة والرشتاين للمتابعة على مدى 10 سنوات أن الأطفال الأصغر سناً عانوا من مشكلات عاطفية أقل بكثير مقارنة بالأطفال الأكبر سناً.</p>
+<p><strong>تطور هوية الأولاد:</strong> أظهرت أبحاث بيلر ووستمان أن الأولاد الذين عاشوا الطلاق خلال المرحلة الأوديبية أبدوا عدوانية أكبر.</p>
+<p><strong>أنماط سلوك البنات:</strong> أظهرت أبحاث هيذرنغتون أن الفتيات بين 13 و17 عاماً اللواتي فقدن آباءهن قبل سن الخامسة بدأن المواعدة في وقت أبكر وبتكرار أكثر.</p>
+<p>أوجد الزواج مرة أخرى تحديات إضافية، مما أثّر سلباً بشكل خاص على المراهقات.</p></div>
+        <a href="../babader.html#psikoloji" class="back-link"><span>← العودة</span></a>
+        </div>
     </article>
-    <footer><p>&copy; 2026 BABADER — Babalar ve Çocuklar Derneği | <a href="babader.html">Ana Sayfa</a></p></footer>
+    <footer><p>&copy; 2026 BABADER — Babalar ve Çocuklar Derneği | <a href="../babader.html">Ana Sayfa</a></p></footer>
+    <script src="lang.js"></script>
 </body>
 </html>

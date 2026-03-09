@@ -34,11 +34,14 @@
         footer{background:var(--navy);padding:2rem;text-align:center}
         footer p{color:rgba(255,255,255,0.3);font-size:0.75rem}
         footer a{color:var(--orange-light);text-decoration:none}
+        .lang-bar{text-align:center;padding:0.75rem;background:var(--grey-50);border-bottom:1px solid var(--grey-200)} .lang-btn{border:1px solid var(--grey-200);background:white;padding:0.3rem 0.8rem;margin:0 0.2rem;border-radius:6px;cursor:pointer;font-size:0.75rem;font-weight:600;color:var(--grey-500);transition:all 0.3s} .lang-btn.active{background:var(--navy);color:white;border-color:var(--navy)}
     </style>
 </head>
 <body>
-    <div class="top-bar"><div class="top-inner"><a href="babader.html" class="logo">BABA<span>DER</span></a><a href="babader.html">← Ana Sayfa</a></div></div>
+    <div class="top-bar"><div class="top-inner"><a href="../babader.html" class="logo">BABA<span>DER</span></a><a href="../babader.html" id="nav-back">← Ana Sayfa</a></div></div>
+    <div class="lang-bar"><button class="lang-btn active" data-lang="tr" onclick="setArticleLang('tr')">TR</button><button class="lang-btn" data-lang="en" onclick="setArticleLang('en')">EN</button><button class="lang-btn" data-lang="es" onclick="setArticleLang('es')">ES</button><button class="lang-btn" data-lang="ar" onclick="setArticleLang('ar')">AR</button></div>
     <article>
+        <div class="lang-content" data-lang="tr">
         <span class="tag">Velayet</span>
         <h1>Velayet Senaryoları</h1>
         <div class="meta">BABADER — 28 Aralık 2018</div>
@@ -47,8 +50,40 @@
 <p><strong>Senaryo 2 — Sorumsuz Baba, İyi Anne:</strong> Yoksul bir baba genellikle velayeti takip etmez. Sorumsuz bir baba haklarından vazgeçmek için mali tazminat bile sunabilir.</p>
 <p><strong>Senaryo 3 — Her İki Ebeveyn Sorumsuz:</strong> Hiçbir ebeveyn gerçek bakım amacıyla velayet aramaz. Çocuk geniş aile desteğine veya devlet korumasına ihtiyaç duyabilir.</p>
 <p><strong>Senaryo 4 — Her İki Ebeveyn Sorumlu:</strong> Her iki ebeveyn de yetkin olduğunda yasal müdahale gereksiz hale gelir. "Her iki ebeveyn de uygun gelişim aşamalarında çocuğu isteyerek diğerine bırakır."</p></div>
-        <a href="babader.html#sorular" class="back-link">← Geri Dön</a>
+        </div>
+        <div class="lang-content" data-lang="en" style="display:none">
+        <span class="tag">Custody</span>
+        <h1>Custody Scenarios</h1>
+        <div class="meta">BABADER — December 28, 2018</div>
+        <div class="content"><p>This article presents a comparative analysis of custody scenarios in a table format examining five different parent combinations and their outcomes.</p>
+<p><strong>Scenario 1 — Good Father, Irresponsible Mother:</strong> When the mother receives custody, she may use the child for financial gain and take revenge on the father.</p>
+<p><strong>Scenario 2 — Irresponsible Father, Good Mother:</strong> A poor father typically does not pursue custody. An irresponsible father may even offer financial compensation to relinquish his rights.</p>
+<p><strong>Scenario 3 — Both Parents Irresponsible:</strong> Neither parent seeks custody for genuine care purposes. The child may need extended family support or state protection.</p>
+<p><strong>Scenario 4 — Both Parents Responsible:</strong> When both parents are competent, legal intervention becomes unnecessary. "Both parents willingly hand over the child to the other at appropriate developmental stages."</p></div>
+        </div>
+        <div class="lang-content" data-lang="es" style="display:none">
+        <span class="tag">Custodia</span>
+        <h1>Escenarios de Custodia</h1>
+        <div class="meta">BABADER — 28 de diciembre de 2018</div>
+        <div class="content"><p>Este art&iacute;culo presenta un an&aacute;lisis comparativo de escenarios de custodia en formato de tabla que examina cinco combinaciones diferentes de padres y sus resultados.</p>
+<p><strong>Escenario 1 — Buen Padre, Madre Irresponsable:</strong> Cuando la madre recibe la custodia, puede utilizar al hijo para obtener beneficios econ&oacute;micos y vengarse del padre.</p>
+<p><strong>Escenario 2 — Padre Irresponsable, Buena Madre:</strong> Un padre pobre t&iacute;picamente no busca la custodia. Un padre irresponsable puede incluso ofrecer compensaci&oacute;n econ&oacute;mica para renunciar a sus derechos.</p>
+<p><strong>Escenario 3 — Ambos Padres Irresponsables:</strong> Ninguno de los padres busca la custodia con fines de cuidado genuino. El ni&ntilde;o puede necesitar el apoyo de la familia extendida o la protecci&oacute;n del Estado.</p>
+<p><strong>Escenario 4 — Ambos Padres Responsables:</strong> Cuando ambos padres son competentes, la intervenci&oacute;n legal se vuelve innecesaria. "Ambos padres entregan voluntariamente al hijo al otro en las etapas de desarrollo apropiadas."</p></div>
+        </div>
+        <div class="lang-content" data-lang="ar" style="display:none">
+        <span class="tag">الحضانة</span>
+        <h1>سيناريوهات الحضانة</h1>
+        <div class="meta">BABADER — 28 ديسمبر 2018</div>
+        <div class="content"><p>يقدم هذا المقال تحليلاً مقارنًا لسيناريوهات الحضانة في شكل جدول يدرس خمس تركيبات مختلفة من الوالدين ونتائجها.</p>
+<p><strong>السيناريو 1 — أب صالح، أم غير مسؤولة:</strong> عندما تحصل الأم على الحضانة، قد تستخدم الطفل لتحقيق مكاسب مالية والانتقام من الأب.</p>
+<p><strong>السيناريو 2 — أب غير مسؤول، أم صالحة:</strong> عادة لا يسعى الأب الفقير للحصول على الحضانة. قد يعرض الأب غير المسؤول تعويضًا ماليًا للتنازل عن حقوقه.</p>
+<p><strong>السيناريو 3 — كلا الوالدين غير مسؤولين:</strong> لا يسعى أي من الوالدين للحضانة لأغراض الرعاية الحقيقية. قد يحتاج الطفل إلى دعم الأسرة الممتدة أو حماية الدولة.</p>
+<p><strong>السيناريو 4 — كلا الوالدين مسؤولان:</strong> عندما يكون كلا الوالدين مؤهلين، يصبح التدخل القانوني غير ضروري. "يسلّم كلا الوالدين الطفل طوعًا للآخر في مراحل النمو المناسبة."</p></div>
+        </div>
+        <a href="../babader.html#sorular" class="back-link"><span id="back-link-text">← Geri Dön</span></a>
     </article>
-    <footer><p>&copy; 2026 BABADER — Babalar ve Çocuklar Derneği | <a href="babader.html">Ana Sayfa</a></p></footer>
+    <footer><p>&copy; 2026 BABADER — Babalar ve Çocuklar Derneği | <a href="../babader.html">Ana Sayfa</a></p></footer>
+    <script src="lang.js"></script>
 </body>
 </html>

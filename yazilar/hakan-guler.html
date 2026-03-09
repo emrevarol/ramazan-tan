@@ -34,11 +34,14 @@
         footer{background:var(--navy);padding:2rem;text-align:center}
         footer p{color:rgba(255,255,255,0.3);font-size:0.75rem}
         footer a{color:var(--orange-light);text-decoration:none}
+        .lang-bar{text-align:center;padding:0.75rem;background:var(--grey-50);border-bottom:1px solid var(--grey-200)} .lang-btn{border:1px solid var(--grey-200);background:white;padding:0.3rem 0.8rem;margin:0 0.2rem;border-radius:6px;cursor:pointer;font-size:0.75rem;font-weight:600;color:var(--grey-500);transition:all 0.3s} .lang-btn.active{background:var(--navy);color:white;border-color:var(--navy)}
     </style>
 </head>
 <body>
-    <div class="top-bar"><div class="top-inner"><a href="babader.html" class="logo">BABA<span>DER</span></a><a href="babader.html">← Ana Sayfa</a></div></div>
+    <div class="top-bar"><div class="top-inner"><a href="../babader.html" class="logo">BABA<span>DER</span></a><a href="../babader.html" id="nav-back">← Ana Sayfa</a></div></div>
+    <div class="lang-bar"><button class="lang-btn active" data-lang="tr" onclick="setArticleLang('tr')">TR</button><button class="lang-btn" data-lang="en" onclick="setArticleLang('en')">EN</button><button class="lang-btn" data-lang="es" onclick="setArticleLang('es')">ES</button><button class="lang-btn" data-lang="ar" onclick="setArticleLang('ar')">AR</button></div>
     <article>
+        <div class="lang-content" data-lang="tr">
         <span class="tag">Haber</span>
         <h1>İstanbul Temsilcimiz Çocuğunu Görmeye Gitti, Dayak Yedi</h1>
         <div class="meta">BABADER — 28 Aralık 2018</div>
@@ -47,8 +50,40 @@
 <p>Son ziyarette eski eşinin erkek arkadaşı üst kattan saldırmış, yüzüne vurmuş ve çocuğu tutarken merdivenlerden düşmesine neden olmuştur. Bu olay hem babayı hem çocuğu tehlikeye atmıştır.</p>
 <p>Eski eş, iki hafta önce Güler'i bıçaklamaya teşebbüsten 112 gün adli para cezası almıştı. Güler sürekli tehditlerle karşılaştığını ve iki ay önce savcılıktan uzaklaştırma kararı talep ettiğini ancak başvurusunun reddedildiğini bildirmiştir.</p>
 <p>BABADER, velayet hukukunun çocuğun üstün yararı etrafında yeniden düzenlenmesi çağrısında bulunmuştur.</p></div>
-        <a href="babader.html#haberler" class="back-link">← Geri Dön</a>
+        </div>
+        <div class="lang-content" data-lang="en" style="display:none">
+        <span class="tag">News</span>
+        <h1>Our Istanbul Representative Went to See His Child, Was Beaten</h1>
+        <div class="meta">BABADER — December 28, 2018</div>
+        <div class="content"><p>Hakan Guler, 33, was attacked by his ex-wife (24), her parents, and her new partner (F.T.) when he went for a scheduled visit to pick up his 3-year-old son.</p>
+<p>The couple's custody case has been ongoing since 2016, with temporary custody granted to the mother. Despite the mother's attempts to relocate, Guler consistently complied with visitation arrangements.</p>
+<p>During the latest visit, the ex-wife's boyfriend attacked from an upper floor, punched him in the face, and caused him to fall down the stairs while holding the child. This incident endangered both the father and the child.</p>
+<p>The ex-wife had received a 112-day judicial fine two weeks earlier for attempting to stab Guler. Guler reported facing constant threats and stated that he had requested a restraining order from the prosecutor's office two months prior, but his application was denied.</p>
+<p>BABADER called for custody law to be restructured around the best interests of the child.</p></div>
+        </div>
+        <div class="lang-content" data-lang="es" style="display:none">
+        <span class="tag">Noticias</span>
+        <h1>Nuestro Representante en Estambul Fue a Ver a Su Hijo y Fue Golpeado</h1>
+        <div class="meta">BABADER — 28 de diciembre de 2018</div>
+        <div class="content"><p>Hakan Güler, de 33 años, fue agredido por su exesposa (24), los padres de ella y su nueva pareja (F.T.) cuando acudió a una visita programada para recoger a su hijo de 3 años.</p>
+<p>El caso de custodia de la pareja está en curso desde 2016, con custodia temporal otorgada a la madre. A pesar de los intentos de la madre de mudarse, Güler cumplió constantemente con los acuerdos de visita.</p>
+<p>Durante la última visita, el novio de la exesposa atacó desde un piso superior, le golpeó en la cara y provocó que cayera por las escaleras mientras sostenía al niño. Este incidente puso en peligro tanto al padre como al hijo.</p>
+<p>La exesposa había recibido una multa judicial de 112 días dos semanas antes por intentar apuñalar a Güler. Güler informó que enfrentaba amenazas constantes y que había solicitado una orden de alejamiento a la fiscalía dos meses antes, pero su solicitud fue denegada.</p>
+<p>BABADER hizo un llamamiento para que la legislación de custodia se reestructure en torno al interés superior del menor.</p></div>
+        </div>
+        <div class="lang-content" data-lang="ar" style="display:none">
+        <span class="tag">أخبار</span>
+        <h1>ممثلنا في إسطنبول ذهب لرؤية طفله فتعرض للضرب</h1>
+        <div class="meta">بابادر — 28 ديسمبر 2018</div>
+        <div class="content"><p>تعرض حكان غولر (33 عاماً) للاعتداء من قبل زوجته السابقة (24 عاماً) ووالديها وشريكها الجديد (ف.ت.) عندما ذهب في زيارة مقررة لاصطحاب ابنه البالغ من العمر 3 سنوات.</p>
+<p>قضية حضانة الزوجين مستمرة منذ عام 2016، حيث مُنحت الحضانة المؤقتة للأم. على الرغم من محاولات الأم الانتقال، التزم غولر باستمرار بترتيبات الزيارة.</p>
+<p>خلال الزيارة الأخيرة، هاجم صديق الزوجة السابقة من الطابق العلوي، ولكمه في وجهه، وتسبب في سقوطه من الدرج وهو يحمل الطفل. هذا الحادث عرّض كلاً من الأب والطفل للخطر.</p>
+<p>كانت الزوجة السابقة قد حصلت على غرامة قضائية 112 يوماً قبل أسبوعين بتهمة محاولة طعن غولر. أفاد غولر بأنه يواجه تهديدات مستمرة وأنه طلب أمراً تقييدياً من النيابة العامة قبل شهرين، لكن طلبه رُفض.</p>
+<p>دعت بابادر إلى إعادة هيكلة قانون الحضانة حول المصلحة الفضلى للطفل.</p></div>
+        </div>
+        <a href="../babader.html#haberler" class="back-link"><span id="back-link-text">← Geri Dön</span></a>
     </article>
-    <footer><p>&copy; 2026 BABADER — Babalar ve Çocuklar Derneği | <a href="babader.html">Ana Sayfa</a></p></footer>
+    <footer><p>&copy; 2026 BABADER — Babalar ve Çocuklar Derneği | <a href="../babader.html">Ana Sayfa</a></p></footer>
+    <script src="lang.js"></script>
 </body>
 </html>
